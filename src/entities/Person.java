@@ -1,8 +1,7 @@
 package entities;
 
-import java.util.Date;
-
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Pavel Poimanov on 06.03.2016.
@@ -13,8 +12,9 @@ public class Person implements Serializable {
     private String surname;
     private Date birth_date;
     private Date death_date;
-    private String country;
+    private Country country;
     private int imageId;
+
     public int getId() {
         return id;
     }
@@ -22,6 +22,7 @@ public class Person implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
@@ -56,11 +57,11 @@ public class Person implements Serializable {
         this.death_date = death_date;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 

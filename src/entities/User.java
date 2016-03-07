@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Vyacheslav.
  */
-public class User implements Serializable{
+public class User implements Serializable {
 //Все entity Java Bean
 
     private int id;
