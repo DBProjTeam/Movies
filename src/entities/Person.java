@@ -12,7 +12,7 @@ public class Person implements Serializable {
     private String surname;
     private Date birth_date;
     private Date death_date;
-    private Country country;
+    private String country;
     private int imageId;
 
     public int getId() {
@@ -57,11 +57,11 @@ public class Person implements Serializable {
         this.death_date = death_date;
     }
 
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 

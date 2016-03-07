@@ -3,7 +3,10 @@ package dao;
 import entities.Person;
 import util.Connector;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by Едик  Лисогуб on 06.03.2016.
@@ -11,23 +14,23 @@ import java.sql.*;
 public class PersonDAO {
     private static final String GET_PESON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
     Connection connection;
+
     public Person getByPK(int pk) throws SQLException {
-        Person person=null;
+        Person person = null;
         PreparedStatement statement = null;
-        ResultSet res;
+        ResultSet res = null;
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(GET_PESON_BY_ID);
-            statement.setInt(1,pk);
+
+            statement.setInt(1, pk);
             res = statement.executeQuery();
-           if(res.next()){
-               person = obtain(res);
-           }
-        }
-        finally {
-            /* TODO : why? */
-           // connection.close(statement);
-           // connection.close(res);
+            if (res.next()) {
+                person = obtain(res);
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(res);
         }
         return person;
 
