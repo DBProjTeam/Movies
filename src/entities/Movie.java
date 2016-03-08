@@ -10,7 +10,6 @@ public class Movie {
     private int runtime;
     private int year;
     private Date releaseDate;
-    private String language;
     private String description;
     private int image_id;
 
@@ -46,14 +45,7 @@ public class Movie {
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
+    
 
     public String getDescription() {
         return description;
