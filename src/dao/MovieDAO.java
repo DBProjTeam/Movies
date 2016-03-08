@@ -14,6 +14,7 @@ import java.util.List;
 public class MovieDAO {
     private  static String GET_MOVIE_BY_ID="SELECT * FROM movie WHERE movie_ID=?";
     private static String GET_MOVIE_BY_YEAR="SELECT * FROM movie WHERE movie.year=?";
+    private static String GET_MOVIE_ALL ="SELECT * FROM movie";
     Connection connection;
 
     public Movie getByPK(int pk) throws SQLException {
@@ -54,6 +55,22 @@ public class MovieDAO {
         return movies;
     }
 
+    public  List<Movie>getAllMovie()throws SQLException{
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<Movie> movies =new ArrayList<Movie>();
+        try {
+            connection = Connector.getConnection();
+            resultSet = statement.executeQuery(GET_MOVIE_ALL);
+            if (resultSet.next()) {
+                movies.add(obtain(resultSet));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return movies;
+    }
     private Movie obtain(ResultSet resultSet) throws SQLException {
         Movie movie = new Movie();
         movie.setMovie_id(resultSet.getInt("movie_ID"));
