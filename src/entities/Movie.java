@@ -1,11 +1,12 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Станислав on 08.03.16.
  */
-public class Movie {
+public class Movie implements Serializable {
     private int movie_id;
     private int runtime;
     private int year;
@@ -45,7 +46,7 @@ public class Movie {
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
-    
+
 
     public String getDescription() {
         return description;
