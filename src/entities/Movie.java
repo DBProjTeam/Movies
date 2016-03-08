@@ -12,7 +12,6 @@ public class Movie {
     private Date releaseDate;
     private String language;
     private String description;
-    private int visits;
     private int image_id;
 
 
@@ -64,13 +63,6 @@ public class Movie {
         this.description = description;
     }
 
-    public int getVisits() {
-        return visits;
-    }
-
-    public void setVisits(int visits) {
-        this.visits = visits;
-    }
 
     public int getImage_id() {
         return image_id;
