@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class MoviePersonRole implements Serializable {
     private int id;
     private int Movie_Person_Id;
-    private Role role;
+    private String role;
 
     public int getId() {
         return id;
@@ -26,11 +26,11 @@ public class MoviePersonRole implements Serializable {
         Movie_Person_Id = movie_Person_Id;
     }
 
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 }
