@@ -26,7 +26,7 @@ public class CommentDAO {
             statement = connection.prepareStatement(GET_ALL_COMMENT_BY_ID_MOVIE);
             statement.setInt(1, idMovie);
             resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                  comments.add(obtain(resultSet));
             }
         } finally {

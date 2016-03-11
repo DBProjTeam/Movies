@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieDAO {
-    private  static String GET_MOVIE_BY_ID="SELECT * FROM movie WHERE movie_ID=?";
+public class MovieDAO  {
+    private  static String GET_MOVIE_BY_ID="SELECT * FROM movie WHERE movie.movie_ID=?";
     private static String GET_MOVIE_BY_YEAR="SELECT * FROM movie WHERE movie.year=?";
     private static String GET_MOVIE_ALL ="SELECT * FROM movie";
     Connection connection;
@@ -45,7 +45,7 @@ public class MovieDAO {
             statement = connection.prepareStatement(GET_MOVIE_BY_YEAR);
             statement.setInt(1,year);
             resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                 movies.add(obtain(resultSet));
             }
         } finally {
@@ -62,7 +62,7 @@ public class MovieDAO {
         try {
             connection = Connector.getConnection();
             resultSet = statement.executeQuery(GET_MOVIE_ALL);
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                 movies.add(obtain(resultSet));
             }
         } finally {

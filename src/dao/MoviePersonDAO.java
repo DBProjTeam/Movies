@@ -25,7 +25,7 @@ public class MoviePersonDAO {
             statement = connection.prepareStatement(GET_MOVIE_PERSON_BY_ID_MOVIE);
             statement.setInt(1, movie_id);
             resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                 moviePersons.add(obtain(resultSet));
             }
         } finally {

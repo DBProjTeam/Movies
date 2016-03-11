@@ -28,7 +28,7 @@ public class MoviePersonRoleDAO {
             statement = connection.prepareStatement(GET_MOVIE_PERSON_ROLE_BY_MOVIE_PERSON_ID);
             statement.setInt(1, movie_person_ID);
             resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                 moviePersons.add(obtain(resultSet));
             }
         } finally {

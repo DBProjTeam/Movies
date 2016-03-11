@@ -27,7 +27,7 @@ public class RatingDAO {
             statement = connection.prepareStatement(GET_RATING_BY_ID_MOVIE);
             statement.setInt(1, idMovie);
             resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {//Исправлено
                 ratings.add(obtain(resultSet));
             }
         } finally {
