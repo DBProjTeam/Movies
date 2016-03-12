@@ -37,6 +37,25 @@ public class PersonRoleDAO {
         return personRoleViews;
     }
 
+    public List<PersonRoleView> getPersonRoleByPersonId(int person_id) throws SQLException {
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<PersonRoleView> personRoleViews = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(GET_PERSON_ROLE_BY_MOVIE_ID);
+            statement.setInt(1, person_id);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) { 
+                personRoleViews.add(obtain(resultSet));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return personRoleViews;
+    }
+
     private PersonRoleView obtain(ResultSet resultSet)throws SQLException{
         PersonRoleView personRoleView = new PersonRoleView();
         PersonDAO personDAO = new PersonDAO();
