@@ -2,9 +2,11 @@ package actions;
 
 import bin.PersonRoleView;
 import dao.MovieDAO;
+import dao.PersonDAO;
 import dao.RoleDAO;
 import dao.view.PersonRoleDAO;
 import entities.Movie;
+import entities.Person;
 import entities.Role;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +25,8 @@ public class PersonAction extends  Action {
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         int person_id =Integer.parseInt(request.getParameter("person_id"));
+        PersonDAO personDAO = new PersonDAO();
+        Person person=personDAO.getByPK(person_id);
         PersonRoleDAO personRoleDAO = new PersonRoleDAO();
         List<PersonRoleView> personRoleViews = personRoleDAO.getPersonRoleByPersonId(person_id);
         List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(personRoleViews);
@@ -34,6 +38,7 @@ public class PersonAction extends  Action {
         request.setAttribute("movies",moviesWherePersonAttended);
         request.setAttribute("roles",rolesWherePersonAttended);
         request.setAttribute("countMovie",COUNT_MOVIE_WherePersonAttended);
+        request.setAttribute("person",person);
         return new PageAction("",true);// здесь вставить ссылку на страницу поиска!!!!!
     }
 
