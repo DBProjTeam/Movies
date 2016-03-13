@@ -54,7 +54,7 @@ public class PersonAction extends  Action {
                 movies.add(movieDAO.getByPK(personRoleViewGetMovie.getMovie_ID()));
             } else {
                 Movie movie = movieDAO.getByPK(personRoleViewGetMovie.getMovie_ID());
-                if(movies.indexOf(movie)<0){}
+                if(movies.indexOf(movie)>=0){}
                 else {
                     count++;
                     movies.add(movie);
@@ -76,7 +76,7 @@ public class PersonAction extends  Action {
             } else {
                 Role role = new Role();
                 role.setRole(personRoleViewGetRole.getRole());
-                if(roles.indexOf(role)<0){}
+                if(roles.indexOf(role)>=0){}
                 else {
                     roles.add(role);
                 }
