@@ -2,6 +2,8 @@ package util;
 
 import actions.Action;
 import actions.PageForward;
+import actions.profile.ChangeProfile;
+import actions.profile.Login;
 import actions.profile.Registration;
 import constants.PagePath;
 
@@ -19,6 +21,10 @@ public class ActionContainer {
         actionMap.put("registration_page", new PageForward(PagePath.REGISTRATION));
         actionMap.put("registration", new Registration());
         actionMap.put("registration_done", new PageForward(PagePath.REGISTRATION_DONE));
+        actionMap.put("login", new Login());
+        actionMap.put("profile_page", new PageForward(PagePath.PROFILE));
+        actionMap.put("profile_change", new ChangeProfile());
+
 
 
 
