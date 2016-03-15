@@ -1,5 +1,7 @@
-package actions;
+package actions.profile;
 
+import actions.Action;
+import actions.PageAction;
 import constants.PagePath;
 import dao.UserDAO;
 import entities.User;
@@ -12,7 +14,7 @@ import java.sql.SQLException;
 /**
  * Created by Vyacheslav.
  */
-public class LoginAction extends Action {
+public class Login extends Action {
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         String login = request.getParameter("login");

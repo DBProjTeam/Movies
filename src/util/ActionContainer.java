@@ -2,7 +2,7 @@ package util;
 
 import actions.Action;
 import actions.PageForward;
-import actions.Registration;
+import actions.profile.Registration;
 import constants.PagePath;
 
 import java.util.HashMap;
