@@ -20,6 +20,7 @@ public class CommentDAO {
     Connection connection;
     private static String GET_ALL_COMMENT_BY_ID_MOVIE="SELECT * FROM comment WHERE movie_ID=?";
     private static String INSERT_COMMENT="INSERT INTO comment(user_ID, movie_ID, text, date) VALUES(?,?,?,?)";
+    private static String DELETE_COMMENT="DELETE FROM comment WHERE comment_ID = ?";
 
     public List<Comment> getAllCommentByIdMovie(int idMovie) throws SQLException{
         PreparedStatement statement = null;
@@ -56,6 +57,17 @@ public class CommentDAO {
             Connector.close(statement);
         }
     }
+    public void delete(int commentID) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(DELETE_COMMENT);
+            statement.setInt(1, commentID);
+            statement.executeQuery();
+        } finally {
+            Connector.close(statement);
+        }
+    }
 
     private Comment obtain(ResultSet resultSet) throws SQLException {
         Comment comment = new Comment();
@@ -66,6 +78,7 @@ public class CommentDAO {
         comment.setMovie_ID(resultSet.getInt("movie_ID"));
         return comment;
     }
+
 
 
 }
