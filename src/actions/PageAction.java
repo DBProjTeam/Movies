@@ -19,6 +19,7 @@ public class PageAction {
 
     public void setForward(boolean forward) {
         this.forward = forward;
+
     }
 
     public String getPage() {
