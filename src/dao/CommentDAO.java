@@ -12,10 +12,14 @@ import java.util.List;
 
 /**
  * Created by Станислав on 08.03.16.
+ * @author Станислав
+ * @author Vyacheslav
  */
+
 public class CommentDAO {
     Connection connection;
     private static String GET_ALL_COMMENT_BY_ID_MOVIE="SELECT * FROM comment WHERE movie_ID=?";
+    private static String INSERT_COMMENT="INSERT INTO comment(user_ID, movie_ID, text, date) VALUES(?,?,?,?)";
 
     public List<Comment> getAllCommentByIdMovie(int idMovie) throws SQLException{
         PreparedStatement statement = null;
@@ -36,6 +40,23 @@ public class CommentDAO {
         return comments;
 
     }
+
+    public void insert(Comment comment) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(INSERT_COMMENT);
+            statement.setInt(1, comment.getUser_ID());
+            statement.setInt(2, comment.getMovie_ID());
+            statement.setString(3, comment.getText());
+            statement.setDate(4, comment.getDate());
+
+            statement.executeQuery();
+        } finally {
+            Connector.close(statement);
+        }
+    }
+
     private Comment obtain(ResultSet resultSet) throws SQLException {
         Comment comment = new Comment();
         comment.setComment_ID(resultSet.getInt("comment_ID"));
@@ -45,4 +66,6 @@ public class CommentDAO {
         comment.setMovie_ID(resultSet.getInt("movie_ID"));
         return comment;
     }
+
+
 }

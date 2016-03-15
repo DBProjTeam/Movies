@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 /**
  * Created by Vyacheslav.
+ * @author Vyacheslav
  */
 public class Logout extends Action {
 
@@ -21,4 +22,5 @@ public class Logout extends Action {
         }
         return new PageAction("do?action=index", false);
     }
+
 }

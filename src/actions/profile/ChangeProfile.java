@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 /**
  * Created by Vyacheslav.
+ * @author Vyacheslav
  */
 public class ChangeProfile extends Action {
     @Override
