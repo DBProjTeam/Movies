@@ -1,6 +1,7 @@
 package actions;
-
+//Проверен 
 import bin.PersonRoleView;
+import constants.PagePath;
 import dao.CommentDAO;
 import dao.MovieDAO;
 import dao.RatingDAO;
@@ -45,6 +46,7 @@ public class MovieActions extends Action {
         List<PersonRoleView> personRoleActor =getRole(personRoleViewList,ROLE_ACTOR);
         List<PersonRoleView> personRoleDirector =getRole(personRoleViewList,ROLE_DIRECTOR);
 
+
         request.setAttribute("movie",movie);
         request.setAttribute("comments",comments);
         request.setAttribute("roleProducer",personRoleProducer);
@@ -52,7 +54,7 @@ public class MovieActions extends Action {
         request.setAttribute("roleDirector",personRoleDirector);
 
         request.setAttribute("rating",rating);
-        PageAction pageAction = new PageAction("",true);// здесь вставить ссылку на страницу фильмов!!!!!
+        PageAction pageAction = new PageAction(PagePath.MOVIE,true);// здесь вставить ссылку на страницу поиска!!!!!
         return pageAction;
     }
 
@@ -68,11 +70,13 @@ public class MovieActions extends Action {
        return (double)((sum*1.0)/(count*1.0));
    }
 
+        // Исправлен и Залить!!!
+
    private   List<PersonRoleView> getRole(List<PersonRoleView> list,String role){
        ListIterator<PersonRoleView> iterator= list.listIterator();
        List<PersonRoleView>personsRole=new ArrayList<PersonRoleView>();
        int count=0;
-        while (iterator.hasNext()||count<count_mox_role){
+        while (iterator.hasNext()&&count<count_mox_role){
             PersonRoleView personRoleView = iterator.next();
             if(role.equals(personRoleView.getRole())){
                 personsRole.add(personRoleView);
