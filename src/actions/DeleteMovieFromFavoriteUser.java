@@ -22,9 +22,10 @@ public class DeleteMovieFromFavoriteUser extends Action {
         User user = (User) session.getAttribute("user");
         if (user!=null){
             UserMovieFavoriteDAO userMovieFavoriteDAO = new UserMovieFavoriteDAO();
-            int userID= user.getId();
-            int movieID=Integer.parseInt( request.getParameter("movieFavoriteId"));
-            userMovieFavoriteDAO.deleteMovieIdFavoriteUser(userID,movieID);
+            UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
+            userMovieFavorite.setUserID(user.getId());
+            userMovieFavorite.setMovieID(Integer.parseInt( request.getParameter("movieFavoriteId")));
+            userMovieFavoriteDAO.deleteMovieIdFavoriteUser(userMovieFavorite);
         }
         return new PageAction("",false);// здесь вставить ссылку обрат.
     }
