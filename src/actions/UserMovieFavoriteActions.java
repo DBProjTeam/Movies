@@ -25,7 +25,7 @@ public class UserMovieFavoriteActions extends Action {
         List<Movie> movies = getMovieFavorite(movieFavoriteList);
 
         request.setAttribute("movieFavorite",movies);
-        return null;
+        return new PageAction("",true);// здесь вставить ссылку на страницу!!!!!;
     }
 
     private List<Movie> getMovieFavorite(List<UserMovieFavorite> listMovie)throws SQLException{
