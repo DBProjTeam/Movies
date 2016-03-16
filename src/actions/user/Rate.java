@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 /**
  * Created by Vyacheslav.
+ *
  * @author Vyacheslav
  */
 public class Rate extends Action {
@@ -22,19 +23,23 @@ public class Rate extends Action {
 
         int movieID = Integer.parseInt(request.getParameter("movie_id"));
         int score = Integer.parseInt(request.getParameter("score"));
-        String text = request.getParameter("text");
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
 
         RatingDAO ratingDAO = new RatingDAO();
-        Rating rating = new Rating();
-        rating.setUser_ID(user.getId());
-        rating.setMovie_ID(movieID);
-        rating.setScore(score);
-
-        ratingDAO.insertOrUpdate(rating);
+        Rating rating = null;
+        if ((rating = ratingDAO.getRatingByMovieIDAndUserID(movieID, user.getId())) == null) {
+            rating = new Rating();
+            rating.setUser_ID(user.getId());
+            rating.setMovie_ID(movieID);
+            rating.setScore(score);
+            ratingDAO.insert(rating);
+        } else {
+            rating.setScore(score);
+            ratingDAO.update(rating);
+        }
 
         return new PageAction("do?action=movie_page&movie_id=" + movieID, false);
     }
