@@ -16,7 +16,21 @@ import java.util.ListIterator;
  */
 public class UserMovieFavoriteDAO {
     private static final String GET_MOVIE_ID_FAVORITE_MOVIE_USER ="SELECT * FROM user_movie_favorite WHERE user_ID =?";
+    private static final String DELETE_MOVIE_FAVORITE_FROM_USER="DELETE FROM user_movie_favorite WHERE user_ID=? AND movie_ID=?";
     Connection connection;
+
+    public void deleteMovieIdFavoriteUser(int user_ID,int movie_ID)throws SQLException{
+        PreparedStatement statement = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(DELETE_MOVIE_FAVORITE_FROM_USER);
+            statement.setInt(1, user_ID);
+            statement.setInt(2,movie_ID);
+            statement.executeQuery();
+        } finally {
+            Connector.close(statement);
+        }
+    }
 
     public List<UserMovieFavorite> getMovieIdFavoriteUser(int user_id)throws SQLException{
         List<UserMovieFavorite> userMovieFavoritesList = new ArrayList<UserMovieFavorite>();
