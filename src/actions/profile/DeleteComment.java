@@ -23,4 +23,5 @@ public class DeleteComment extends Action {
 
         return new PageAction("do?action=movie_page&movie_id=" + movieID, false);
     }
+
 }

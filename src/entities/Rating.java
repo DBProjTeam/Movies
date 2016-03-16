@@ -36,7 +36,7 @@ public class Rating implements Serializable {
         this.movie_ID = movie_ID;
     }
 
-    public double getScore() {
+    public int getScore() {
         return score;
     }
 

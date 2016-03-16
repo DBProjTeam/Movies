@@ -16,9 +16,12 @@ import java.util.List;
 public class RatingDAO {
     private static String GET_RATING_BY_ID_MOVIE="SELECT *  FROM rating WHERE rating.movie_ID=?";
     private static String ADD_NEW_RATING="INSERT INTO rating (`rating_ID`,`user_ID`,`movie_ID`,`score`)VALUES (NULL,?,?,?)";
+    private static String INSERT_OR_UPDATE_RATING="INSERT INTO rating (`user_ID`,`movie_ID`,`score`) VALUES (?,?,?)" +
+            " ON DUPLICATE KEY UPDATE score=?";
+
     Connection connection;
 
-    public List<Rating> getRatingAllByIdMovie(int idMovie)throws SQLException{
+    public List<Rating> getRatingAllByIdMovie(int idMovie) throws SQLException{
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List<Rating> ratings = new ArrayList<Rating>();
@@ -37,7 +40,21 @@ public class RatingDAO {
         return ratings;
     }
 
+    public void insertOrUpdate(Rating rating)throws SQLException{
+        PreparedStatement statement = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(INSERT_OR_UPDATE_RATING);
+            statement.setInt(1, rating.getUser_ID());
+            statement.setInt(2, rating.getMovie_ID());
+            statement.setInt(3, rating.getScore());
+            statement.setInt(4, rating.getScore());
 
+            statement.executeUpdate();
+        } finally {
+            Connector.close(statement);
+        }
+    }
 
     private Rating obtain(ResultSet resultSet) throws SQLException {
        Rating rating= new Rating();
