@@ -25,7 +25,6 @@ public class DeleteMovieFromFavoriteUser extends Action {
             int userID= user.getId();
             int movieID=Integer.parseInt( request.getParameter("movieFavoriteId"));
             userMovieFavoriteDAO.deleteMovieIdFavoriteUser(userID,movieID);
-            return new PageAction("",true);// здесь вставить ссылку на страницу!!!!!;;
         }
         return new PageAction("",false);// здесь вставить ссылку обрат.
     }
