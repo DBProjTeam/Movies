@@ -91,7 +91,7 @@ public class MovieDAO  {
         }
         return movies;
     }
-    private Movie obtain(ResultSet resultSet) throws SQLException {
+    public Movie obtain(ResultSet resultSet) throws SQLException {
         Movie movie = new Movie();
         movie.setMovie_id(resultSet.getInt("movie_ID"));
         movie.setRuntime(resultSet.getInt("runtime"));

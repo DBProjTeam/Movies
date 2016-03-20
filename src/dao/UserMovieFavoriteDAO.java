@@ -1,5 +1,6 @@
 package dao;
 
+import entities.Movie;
 import entities.UserMovieFavorite;
 import util.Connector;
 
@@ -18,6 +19,10 @@ public class UserMovieFavoriteDAO {
     private static final String GET_MOVIE_ID_FAVORITE_MOVIE_USER ="SELECT * FROM user_movie_favorite WHERE user_ID =?";
     private static final String DELETE_MOVIE_FAVORITE_FROM_USER="DELETE FROM user_movie_favorite WHERE user_ID=? AND movie_ID=?";
     private static final String INSERT_MOVIE_FAVORITE_FROM_USER="INSERT INTO user_movie_favorite (user_movie_favorite_ID,user_ID,movie_ID) VALUES(NULL, ? , ? )";
+
+    private static final String GET_FAVORITE_MOVIES ="SELECT * FROM user_movie_favorite INNER JOIN movie ON " +
+            "user_movie_favorite.movie_ID = movie.movie_ID WHERE user_ID =?";
+
     Connection connection;
 
     public void deleteMovieIdFavoriteUser(UserMovieFavorite userMovieFavorite)throws SQLException{
@@ -53,6 +58,27 @@ public class UserMovieFavoriteDAO {
         }
         return userMovieFavoritesList;
     }
+
+    public List<Movie> getFavoriteMovies(int userId) throws SQLException{
+        List<Movie> userMovieFavoritesList = new ArrayList<Movie>();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        MovieDAO movieDAO = new MovieDAO();
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(GET_FAVORITE_MOVIES);
+            statement.setInt(1, userId);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                userMovieFavoritesList.add(movieDAO.obtain(resultSet));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return userMovieFavoritesList;
+    }
+
 
     private UserMovieFavorite obtain(ResultSet resultSet) throws SQLException {
         UserMovieFavorite userMovieFavorite = new UserMovieFavorite();

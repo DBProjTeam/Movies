@@ -3,7 +3,6 @@ package actions;
 import bin.PersonRoleView;
 import dao.MovieDAO;
 import dao.PersonDAO;
-import dao.RoleDAO;
 import dao.view.PersonRoleDAO;
 import entities.Movie;
 import entities.Person;

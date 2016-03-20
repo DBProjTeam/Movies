@@ -1,5 +1,6 @@
 package actions;
 
+import constants.PagePath;
 import dao.MovieDAO;
 import dao.PersonDAO;
 import entities.Movie;
@@ -19,7 +20,7 @@ public class Search extends Action {
 
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        String word=request.getParameter("search");
+        String word=request.getParameter("search_word");
         List<Movie> movies =searchByTitle(word);
         PersonDAO personDAO = new PersonDAO();
         List<Person>persons= personDAO.searchPersonByNameAndSurname(word);
@@ -29,7 +30,7 @@ public class Search extends Action {
         }
         request.setAttribute("searchMovie", movies);
         request.setAttribute("searchPerson",persons);
-        return new PageAction("",true);// здесь вставить ссылку на страницу поиска!!!!!;
+        return new PageAction(PagePath.SEARCH_RESULT, true);// здесь вставить ссылку на страницу поиска!!!!!;
     }
 
     private List<Movie> searchByTitle(String word) throws SQLException {
