@@ -15,6 +15,8 @@ public class PagePath {
     public static final String SEARCH_RESULT = "/jsp/search_result.jsp";
 
     public static final String MOVIE = "/jsp/movie.jsp";//страница филльм
+    public static final String PERSON ="/jsp/person.jsp";
+
 
 
 }

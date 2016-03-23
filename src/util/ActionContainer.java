@@ -1,9 +1,6 @@
 package util;
 
-import actions.Action;
-import actions.MovieActions;
-import actions.PageForward;
-import actions.Search;
+import actions.*;
 import actions.profile.ChangeProfile;
 import actions.profile.Login;
 import actions.profile.Registration;
@@ -33,6 +30,9 @@ public class ActionContainer {
         actionMap.put("profile_change", new ChangeProfile());
         actionMap.put("favorite_movies", new ViewFavoriteMovies());
 
+
+
+        actionMap.put("person",new PersonAction());
         actionMap.put("movie_page", new MovieActions());
 
         actionMap.put("search", new Search());

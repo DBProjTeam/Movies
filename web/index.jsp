@@ -13,5 +13,6 @@
   <body>
     Start page<br>
   <a href="do?action=registration_page">Регистрация</a>
+  <a href="do?action=person&person_id=100">go</a>
   </body>
 </html>

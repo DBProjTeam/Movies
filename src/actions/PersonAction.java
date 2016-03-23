@@ -1,6 +1,7 @@
 package actions;
 
 import bin.PersonRoleView;
+import constants.PagePath;
 import dao.MovieDAO;
 import dao.PersonDAO;
 import dao.view.PersonRoleDAO;
@@ -23,22 +24,22 @@ public class PersonAction extends  Action {
     private int COUNT_MOVIE_WherePersonAttended=0;
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        int person_id =Integer.parseInt(request.getParameter("person_id"));
+        int person_id = Integer.parseInt(request.getParameter("person_id"));
         PersonDAO personDAO = new PersonDAO();
         Person person=personDAO.getByPK(person_id);
         PersonRoleDAO personRoleDAO = new PersonRoleDAO();
-        List<PersonRoleView> personRoleViews = personRoleDAO.getPersonRoleByPersonId(person_id);
-        List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(personRoleViews);
-        List<Role> rolesWherePersonAttended=getRoleWherePersonAttended(personRoleViews);
-        if (moviesWherePersonAttended.isEmpty()&&rolesWherePersonAttended.isEmpty()){
+//        List<PersonRoleView> personRoleViews = personRoleDAO.getPersonRoleByPersonId(person_id);
+     //   List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(personRoleViews);
+     //   List<Role> rolesWherePersonAttended=getRoleWherePersonAttended(personRoleViews);
+     /*   if (moviesWherePersonAttended.isEmpty()&&rolesWherePersonAttended.isEmpty()){
             //ошыбка или вроде то во
             return null;
         }
         request.setAttribute("movies",moviesWherePersonAttended);
-        request.setAttribute("roles",rolesWherePersonAttended);
-        request.setAttribute("countMovie",COUNT_MOVIE_WherePersonAttended);
+        request.setAttribute("roles",rolesWherePersonAttended);*/
+      //  request.setAttribute("countMovie",COUNT_MOVIE_WherePersonAttended);
         request.setAttribute("person",person);
-        return new PageAction("",true);// здесь вставить ссылку на страницу поиска!!!!!
+        return new PageAction(PagePath.PERSON,true);// здесь вставить ссылку на страницу поиска!!!!!
     }
 
     private List<Movie> getMovieWherePersonAttended(List<PersonRoleView> personRoleViews) throws SQLException {
