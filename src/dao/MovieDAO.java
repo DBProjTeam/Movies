@@ -94,9 +94,10 @@ public class MovieDAO  {
     public Movie obtain(ResultSet resultSet) throws SQLException {
         Movie movie = new Movie();
         movie.setMovie_id(resultSet.getInt("movie_ID"));
-        movie.setRuntime(resultSet.getInt("runtime"));
+        movie.setRuntime(resultSet.getTime("runtime"));
         movie.setDescription(resultSet.getString("description"));
-        movie.setImage_id(resultSet.getInt("year"));
+     //todo поввнимательней кто писал !!!   movie.setImage_id(resultSet.getInt("year"));
+        movie.setYear(resultSet.getInt("year"));
         movie.setReleaseDate(resultSet.getDate("releaseDate"));
         movie.setImage_id(resultSet.getInt("image_ID"));
         return movie;

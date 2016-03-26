@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  */
 public class Movie implements Serializable {
     private int movie_ID;
-    private int runtime;
+    private Time runtime;
     private int year;
     private Date releaseDate;
     private String description;
@@ -23,11 +24,11 @@ public class Movie implements Serializable {
         this.movie_ID = movie_id;
     }
 
-    public int getRuntime() {
+    public Date getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(int runtime) {
+    public void setRuntime(Time runtime) {
         this.runtime = runtime;
     }
 

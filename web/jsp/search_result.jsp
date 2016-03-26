@@ -26,7 +26,6 @@
             <td>${movie.image_id}</td>
         </tr>
     </c:forEach>
-
 </table>
 Люди:<br>
 <table>

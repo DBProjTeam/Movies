@@ -33,7 +33,7 @@ public class ActionContainer {
 
 
         actionMap.put("person",new PersonAction());
-        actionMap.put("movie_page", new MovieActions());
+        actionMap.put("movie", new MovieActions());
 
         actionMap.put("search", new Search());
 

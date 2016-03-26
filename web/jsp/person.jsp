@@ -14,8 +14,36 @@
 <body>
 <%@ include file="/jsp/jspf/head.jspf" %>
 person:
-<c:out default="none" value="${person.name}"/>
+<article>
+    <table border="solid 1px #000">
+        <thead>
+        <td>Id</td>
+        <td>name</td>
+        <td>surname</td>
+        <td>birth_date</td>
+<c:if test="val.death_date!=null">
+        <td>birth_death</td>
+</c:if>
+        <td>country</td>
+        <td>image_ID</td>
+        </thead>
+        <tr>
+            <td>${person.id}</td>
+            <td>${person.name}</td>
+            <td>${person.surname}</td>
+            <td>${person.birth_date}</td>
+            <c:if test="val.death_date!=null">
+                <td>${person.death_date}</td>
+            </c:if>
+            <td>${person.country}</td>
+            <td>${person.imageId}</td>
+        </tr>
 
+    </table>
+</article>
+<p>
+    сыграл в :<c:out value="${countMovie}" default="0"/> фильмах
+</p>
 
 
 </body>

@@ -13,6 +13,9 @@
   <body>
     Start page<br>
   <a href="do?action=registration_page">Регистрация</a>
-  <a href="do?action=person&person_id=100">go</a>
+  <a href="do?action=person&person_id=100">Person id=100</a>
+  <a href="do?action=movie&movie_id=23">Movie id=23</a>
+
+
   </body>
 </html>

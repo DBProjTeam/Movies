@@ -3,10 +3,7 @@ package dao;
 import entities.Comment;
 import util.Connector;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +47,7 @@ public class CommentDAO {
             statement.setInt(1, comment.getUser_ID());
             statement.setInt(2, comment.getMovie_ID());
             statement.setString(3, comment.getText());
-            statement.setDate(4, comment.getDate());
+            statement.setDate(4, (Date) comment.getDate());
 
             statement.executeQuery();
         } finally {
