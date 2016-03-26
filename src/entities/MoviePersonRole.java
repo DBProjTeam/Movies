@@ -6,24 +6,24 @@ import java.io.Serializable;
  * Created by Едик  Лисогуб on 07.03.2016.
  */
 public class MoviePersonRole implements Serializable {
-    private int id;
-    private int Movie_Person_Id;
+    private int movie_person_role_ID;
+    private int movie_person_ID;
     private String role;
 
     public int getId() {
-        return id;
+        return movie_person_role_ID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int movie_person_role_ID) {
+        this.movie_person_role_ID = movie_person_role_ID;
     }
 
     public int getMovie_Person_Id() {
-        return Movie_Person_Id;
+        return movie_person_ID;
     }
 
-    public void setMovie_Person_Id(int movie_Person_Id) {
-        Movie_Person_Id = movie_Person_Id;
+    public void setMovie_Person_Id(int movie_person_ID) {
+        this.movie_person_ID = movie_person_ID;
     }
 
     public String getRole() {

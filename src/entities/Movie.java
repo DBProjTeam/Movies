@@ -7,20 +7,20 @@ import java.util.Date;
  * Created by Станислав on 08.03.16.
  */
 public class Movie implements Serializable {
-    private int movie_id;
+    private int movie_ID;
     private int runtime;
     private int year;
     private Date releaseDate;
     private String description;
-    private int image_id;
+    private int image_ID;
 
 
     public int getMovie_id() {
-        return movie_id;
+        return movie_ID;
     }
 
     public void setMovie_id(int movie_id) {
-        this.movie_id = movie_id;
+        this.movie_ID = movie_id;
     }
 
     public int getRuntime() {
@@ -58,11 +58,11 @@ public class Movie implements Serializable {
 
 
     public int getImage_id() {
-        return image_id;
+        return image_ID;
     }
 
     public void setImage_id(int image_id) {
-        this.image_id = image_id;
+        this.image_ID = image_id;
     }
 
 }
