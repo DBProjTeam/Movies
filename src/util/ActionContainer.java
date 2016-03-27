@@ -30,14 +30,18 @@ public class ActionContainer {
         actionMap.put("favorite_movies", new ViewFavoriteMovies());
 
 
-
-        actionMap.put("person",new PersonAction());
+        /*===============Movie=======================*/
         actionMap.put("movie", new MovieActions());
+
+        /*=================Person====================*/
+        actionMap.put("person",new PersonAction());
 
         actionMap.put("search", new Search());
 
 
 
+
+        /*===============Other============================*/
         actionMap.put("index",new PageForward(PagePath.INDEX));
         actionMap.put("error", null); //TODO: error action
     }

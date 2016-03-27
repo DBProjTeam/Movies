@@ -82,6 +82,7 @@ public class UserDAO {
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
+
             statement = connection.prepareStatement(UPDATE_USER);
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());

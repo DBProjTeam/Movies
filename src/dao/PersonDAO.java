@@ -25,7 +25,6 @@ public class PersonDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(GET_PESON_BY_ID);
-
             statement.setInt(1, pk);
             res = statement.executeQuery();
             if (res.next()) {

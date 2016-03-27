@@ -14,16 +14,23 @@
 <body>
 <table border="solid 1px #000">
     <tr>
-        <td>${user.id}</td>
-        <td>${user.login}</td>
-        <td>${user.password}</td>
-        <td>${user.name}</td>
-        <td>${user.surname}</td>
-        <td>${user.role}</td>
-        <td>${user.imageId}</td>
+    <td contenteditable="true">${user.id}</td>
+    <td contenteditable="true">${user.login}</td>
+    <td contenteditable="true">${user.password}</td>
+    <td contenteditable="true">${user.name}</td>
+    <td contenteditable="true">${user.surname}</td>
+    <td contenteditable="true">${user.role}</td>
+    <td contenteditable="true">${user.imageId}</td>
+</tr>
+    <a href="do?action=favorite_movies">favorite</a>
 
-    </tr>
-
+<%--
+    <form action="do?action=profile_change" method="post">
+        <input type="text" name = "name" value="${user.name}">
+        <input type="text" name = "surname" value="${user.surname}">
+        <input type="text" name = "password" value="${user.password}">
+        <input type="submit">
+    </form>--%>
 </table>
 </body>
 </html>

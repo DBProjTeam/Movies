@@ -18,10 +18,10 @@ import java.sql.SQLException;
 public class ChangeProfile extends Action {
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String password = request.getParameter("password");
-
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
@@ -31,6 +31,6 @@ public class ChangeProfile extends Action {
 
         UserDAO userDAO = new UserDAO();
         userDAO.update(user);
-        return new PageAction("do?action=user_profile", false);
+        return new PageAction("do?action=profile_page", false);
     }
 }

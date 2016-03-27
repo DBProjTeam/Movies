@@ -11,7 +11,7 @@ public class PagePath {
     public static final String PROFILE = "/jsp/user_profile.jsp";
     public static final String INDEX = "/index.jsp";
 
-    public static final String FAVORITE_MOVIES = "";
+    public static final String FAVORITE_MOVIES = "/jsp/favorite_movies.jsp";
 
     public static final String SEARCH_RESULT = "/jsp/search_result.jsp";
 
