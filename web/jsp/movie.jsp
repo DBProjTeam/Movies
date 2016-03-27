@@ -68,8 +68,8 @@
                 <td>${pers.person.surname}</td>
                 <td>${pers.person.birth_date}</td>
                 <c:if test="val.death_date!=null">
-                <td>${person.death_date}</td>
-            </c:if>
+                    <td>${person.death_date}</td>
+                </c:if>
                 <td>${pers.person.country}</td>
                 <td>${pers.person.imageId}</td>
             </tr>

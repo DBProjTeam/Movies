@@ -18,7 +18,7 @@
 <%
     if (request.getAttribute("error") != null) {
 %>
-    <%=request.getAttribute("error") %>
+<%=request.getAttribute("error") %>
 <%
 
     }

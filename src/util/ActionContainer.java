@@ -27,7 +27,6 @@ public class ActionContainer {
         /*===============Profile==================== */
         actionMap.put("profile_page", new PageForward(PagePath.PROFILE));
         actionMap.put("profile_change", new ChangeProfile());
-        actionMap.put("profile_change", new ChangeProfile());
         actionMap.put("favorite_movies", new ViewFavoriteMovies());
 
 
@@ -39,7 +38,7 @@ public class ActionContainer {
 
 
 
-
+        actionMap.put("index",new PageForward(PagePath.INDEX));
         actionMap.put("error", null); //TODO: error action
     }
 

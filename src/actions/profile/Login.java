@@ -18,11 +18,13 @@ import java.sql.SQLException;
 public class Login extends Action {
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+
         String login = request.getParameter("login");
-        String password = request.getParameter("password");
+       String password = request.getParameter("password");
 
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getByLogin(login);
+
         if (user == null || !user.getPassword().equals(password)) {
             request.setAttribute("error", "Неправильный логин или пароль");
         } else {

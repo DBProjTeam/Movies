@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -5,17 +6,25 @@
   Time: 11:16
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>s</title>
-  </head>
-  <body>
-    Start page<br>
-  <a href="do?action=registration_page">Регистрация</a>
-  <a href="do?action=person&person_id=100">Person id=100</a>
-  <a href="do?action=movie&movie_id=23">Movie id=23</a>
+</head>
+<body>
+Start page<br>
+<a href="do?action=registration_page">Регистрация</a>
+<a href="do?action=person&person_id=100">Person id=100</a>
+<a href="do?action=movie&movie_id=23">Movie id=23</a>
+      <%if (session.getAttribute("user") == null) {%>
+      <a href="do?action=login">login</a>
+            <%} else {%>
+            Hello,
+            <a href="do?action=profile_page">
+              <c:out value="${user.name}"/></a>
 
+<%}%>
 
-  </body>
+</body>
 </html>

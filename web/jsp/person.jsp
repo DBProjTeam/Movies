@@ -21,9 +21,9 @@ person:
         <td>name</td>
         <td>surname</td>
         <td>birth_date</td>
-<c:if test="val.death_date!=null">
-        <td>birth_death</td>
-</c:if>
+        <c:if test="val.death_date!=null">
+            <td>birth_death</td>
+        </c:if>
         <td>country</td>
         <td>image_ID</td>
         </thead>
