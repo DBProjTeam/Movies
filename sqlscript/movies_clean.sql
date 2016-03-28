@@ -26,17 +26,17 @@ DROP TABLE IF EXISTS `comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comment` (
-  `comment_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `user_ID` int(11) NOT NULL,
-  `movie_ID` int(11) NOT NULL,
-  `text` text NOT NULL,
-  `date` datetime NOT NULL,
+  `comment_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_ID` INT(11) NOT NULL,
+  `movie_ID` INT(11) NOT NULL,
+  `text` TEXT NOT NULL,
+  `date` DATETIME NOT NULL,
   PRIMARY KEY (`comment_ID`),
   KEY `user_to_comment_fk_idx` (`user_ID`),
   KEY `movie_to_comment_fk_idx` (`movie_ID`),
   CONSTRAINT `movie_to_comment_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `user_to_comment_fk` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,9 +56,9 @@ DROP TABLE IF EXISTS `country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `country` (
-  `country` varchar(30) NOT NULL,
+  `country` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`country`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,9 +78,9 @@ DROP TABLE IF EXISTS `genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genre` (
-  `genre` varchar(30) NOT NULL,
+  `genre` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`genre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,9 +100,9 @@ DROP TABLE IF EXISTS `image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `image` (
-  `image_ID` int(11) NOT NULL,
+  `image_ID` INT(11) NOT NULL,
   PRIMARY KEY (`image_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,16 +122,17 @@ DROP TABLE IF EXISTS `movie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie` (
-  `movie_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `runtime` time DEFAULT NULL,
-  `releaseDate` date DEFAULT NULL,
-  `year` int(11) NOT NULL,
-  `description` text,
-  `image_ID` int(11) DEFAULT NULL,
+  `movie_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `runtime` TIME DEFAULT NULL,
+  `releaseDate` DATE DEFAULT NULL,
+  `year` INT(11) NOT NULL,
+  `description` TEXT,
+  `image_ID` INT(11) DEFAULT NULL,
+  `title` VARCHAR(200) DEFAULT NULL, -- Add field `title`
   PRIMARY KEY (`movie_ID`),
   KEY `image_to_movie_fk_idx` (`image_ID`),
   CONSTRAINT `image_to_movie_fk` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,15 +152,15 @@ DROP TABLE IF EXISTS `movie_country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_country` (
-  `movie_country_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_ID` int(11) NOT NULL,
-  `country` varchar(30) NOT NULL,
+  `movie_country_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_ID` INT(11) NOT NULL,
+  `country` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`movie_country_ID`),
   KEY `country_to_movie_country_fk_idx` (`country`),
   KEY `movie_to_movie_country_fk_idx` (`movie_ID`),
   CONSTRAINT `country_to_movie_country_fk` FOREIGN KEY (`country`) REFERENCES `country` (`country`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `movie_to_movie_country_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,15 +180,15 @@ DROP TABLE IF EXISTS `movie_genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_genre` (
-  `movie_genre_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_ID` int(11) NOT NULL,
-  `genre` varchar(30) NOT NULL,
+  `movie_genre_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_ID` INT(11) NOT NULL,
+  `genre` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`movie_genre_ID`),
   KEY `genre_to_movie_genre_fk_idx` (`genre`),
   KEY `movie_to_movie_genre_fk_idx` (`movie_ID`),
   CONSTRAINT `genre_to_movie_genre_fk` FOREIGN KEY (`genre`) REFERENCES `genre` (`genre`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `movie_to_movie_genre_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,15 +208,15 @@ DROP TABLE IF EXISTS `movie_image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_image` (
-  `movie_image_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_ID` int(11) NOT NULL,
-  `image_ID` int(11) NOT NULL,
+  `movie_image_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_ID` INT(11) NOT NULL,
+  `image_ID` INT(11) NOT NULL,
   PRIMARY KEY (`movie_image_ID`),
   KEY `image_to_movie_image_fk_idx` (`image_ID`),
   KEY `movie_to_movie_image_fk_idx` (`movie_ID`),
   CONSTRAINT `image_to_movie_image_fk` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `movie_to_movie_image_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,15 +236,15 @@ DROP TABLE IF EXISTS `movie_person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_person` (
-  `movie_person_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_ID` int(11) NOT NULL,
-  `person_ID` int(11) NOT NULL,
+  `movie_person_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_ID` INT(11) NOT NULL,
+  `person_ID` INT(11) NOT NULL,
   PRIMARY KEY (`movie_person_ID`),
   KEY `movie_to_movie_person_idx` (`movie_ID`),
   KEY `person_to_movie_person_idx` (`person_ID`),
   CONSTRAINT `movie_to_movie_person` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `person_to_movie_person` FOREIGN KEY (`person_ID`) REFERENCES `person` (`person_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,15 +264,15 @@ DROP TABLE IF EXISTS `movie_person_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_person_role` (
-  `movie_person_role_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_person_ID` int(11) NOT NULL,
-  `role` varchar(30) NOT NULL,
+  `movie_person_role_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_person_ID` INT(11) NOT NULL,
+  `role` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`movie_person_role_ID`),
   KEY `movie_person_to_movie_person_role_fk_idx` (`movie_person_ID`),
   KEY `role_to_movie_person_role_fk_idx` (`role`),
   CONSTRAINT `movie_person_to_movie_person_role_fk` FOREIGN KEY (`movie_person_ID`) REFERENCES `movie_person` (`movie_person_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_to_movie_person_role_fk` FOREIGN KEY (`role`) REFERENCES `role` (`role`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,15 +292,15 @@ DROP TABLE IF EXISTS `movie_studio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie_studio` (
-  `movie_studio_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_ID` int(11) NOT NULL,
-  `studio_ID` int(11) NOT NULL,
+  `movie_studio_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `movie_ID` INT(11) NOT NULL,
+  `studio_ID` INT(11) NOT NULL,
   PRIMARY KEY (`movie_studio_ID`),
   KEY `studio_to_movie_studio_fk_idx` (`studio_ID`),
   KEY `movie_to_movie_studio_fk_idx` (`movie_ID`),
   CONSTRAINT `movie_to_movie_studio_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `studio_to_movie_studio_fk` FOREIGN KEY (`studio_ID`) REFERENCES `studio` (`studio_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -319,19 +320,19 @@ DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person` (
-  `person_ID` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `surname` varchar(25) NOT NULL,
-  `birth_date` date NOT NULL,
-  `death_date` date DEFAULT NULL,
-  `country` varchar(30) NOT NULL,
-  `image_ID` int(11) DEFAULT NULL,
+  `person_ID` INT(11) NOT NULL,
+  `name` VARCHAR(25) NOT NULL,
+  `surname` VARCHAR(25) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `death_date` DATE DEFAULT NULL,
+  `country` VARCHAR(30) NOT NULL,
+  `image_ID` INT(11) DEFAULT NULL,
   PRIMARY KEY (`person_ID`),
   KEY `image_to_person_ID_idx` (`image_ID`),
   KEY `country_to_person_ID_idx` (`country`),
   CONSTRAINT `country_to_person_ID` FOREIGN KEY (`country`) REFERENCES `country` (`country`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `image_to_person_ID` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -351,15 +352,15 @@ DROP TABLE IF EXISTS `person_image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person_image` (
-  `person_image_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `person_ID` int(11) NOT NULL,
-  `image_ID` int(11) NOT NULL,
+  `person_image_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `person_ID` INT(11) NOT NULL,
+  `image_ID` INT(11) NOT NULL,
   PRIMARY KEY (`person_image_ID`),
   KEY `image_to_person_image_fk_idx` (`image_ID`),
   KEY `person_to_person_image_fk_idx` (`person_ID`),
   CONSTRAINT `image_to_person_image_fk` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `person_to_person_image_fk` FOREIGN KEY (`person_ID`) REFERENCES `person` (`person_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -379,16 +380,16 @@ DROP TABLE IF EXISTS `rating`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rating` (
-  `rating_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `user_ID` int(11) NOT NULL,
-  `movie_ID` int(11) NOT NULL,
-  `score` int(11) NOT NULL,
+  `rating_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_ID` INT(11) NOT NULL,
+  `movie_ID` INT(11) NOT NULL,
+  `score` INT(11) NOT NULL,
   PRIMARY KEY (`rating_ID`),
   KEY `movie_to_rating_fk_idx` (`movie_ID`),
   KEY `user_to_rating_fk_idx` (`user_ID`),
   CONSTRAINT `movie_to_rating_fk` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `user_to_rating_fk` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -408,9 +409,9 @@ DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role` (
-  `role` varchar(30) NOT NULL,
+  `role` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -430,10 +431,10 @@ DROP TABLE IF EXISTS `studio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `studio` (
-  `studio_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `studio_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`studio_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -453,17 +454,17 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `user_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `surname` varchar(25) NOT NULL,
-  `user_role_ID` int(11) NOT NULL,
-  `image_ID` int(11) DEFAULT NULL,
+  `user_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(20) NOT NULL,
+  `password` VARCHAR(20) NOT NULL,
+  `name` VARCHAR(25) NOT NULL,
+  `surname` VARCHAR(25) NOT NULL,
+  `user_role_ID` INT(11) NOT NULL,
+  `image_ID` INT(11) DEFAULT NULL,
   PRIMARY KEY (`user_ID`),
   KEY `image_to_user_fk_idx` (`image_ID`),
   CONSTRAINT `image_to_user_fk` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,15 +484,15 @@ DROP TABLE IF EXISTS `user_movie_favorite`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_movie_favorite` (
-  `user_movie_favorite_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `user_ID` int(11) NOT NULL,
-  `movie_ID` int(11) NOT NULL,
+  `user_movie_favorite_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_ID` INT(11) NOT NULL,
+  `movie_ID` INT(11) NOT NULL,
   PRIMARY KEY (`user_movie_favorite_ID`),
   KEY `user_to_user_movie_favorite_fk_idx` (`user_ID`),
   KEY `movie_to_user_movie_favorite_idx` (`movie_ID`),
   CONSTRAINT `movie_to_user_movie_favorite` FOREIGN KEY (`movie_ID`) REFERENCES `movie` (`movie_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `user_to_user_movie_favorite_fk` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
