@@ -1,4 +1,19 @@
-public  class  SortMovie {
+package util;
+
+import dao.RatingDAO;
+import entities.Movie;
+import entities.Rating;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.ListIterator;
+
+/**
+ * Created by Станислав on 28.03.16.
+ */
+public class Sort {
 
     private static List<MovieRating> movieRatingList = new ArrayList<MovieRating>();
 
@@ -98,4 +113,5 @@ public  class  SortMovie {
             return ((sum * 1.0) / (count * 1.0));
         }
     }
+
 }
