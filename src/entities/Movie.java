@@ -1,5 +1,6 @@
 package entities;
 
+
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
@@ -14,7 +15,15 @@ public class Movie implements Serializable {
     private Date releaseDate;
     private String description;
     private int image_ID;
+    private String title;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public int getMovie_id() {
         return movie_ID;
