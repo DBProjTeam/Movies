@@ -1,13 +1,31 @@
 <html>
 <head>
+    <script src=""> </script>
     <meta charset="utf-8">
     <link href="lib/css/bootstrap.css" rel="stylesheet">
     <link href="lib/css/MyStyle.css" rel="stylesheet">
+
 </head>
     <body>
     <div class="wepper_main" >
         <div class=" wepper_Head"> <!--Начало шапки страницы--->
-            <div class="logo_Head"><img class="logo" src="img/logo.JPG"/><div class="sorch"><form method="get"><input type="text" ></form></div></div>
+            <div class="logo_Head"><img class="logo" src="img/logo.JPG"/>
+                <div class="sorch">
+                    <table>
+                        <tr>
+                            <td><strong>Всё о любом фильме</strong></td>
+                            <td>
+                                <a href="#"><strong>Вход/Регистрация</strong></a>    
+                            <form method="get">
+                                <input type="text" name="search">
+                                <input type="image" src="img/buttonSearch.PNG" width="30px" height="30px;">
+                            </form>
+                                <a href="#"><strong>Расширенный поиск</strong></a>
+                            <td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             <div class="wepper_Head_Carousel">
                 <div class="container-fluid" >
                     <div class="row" >
@@ -20,7 +38,7 @@
                                 </ol>
                                 <div class="carousel-inner" >
                                     <div class="item active" >
-                                        <img alt="Carousel Bootstrap First" style="height: 300px;" src="img/slide_1.jpg" />
+                                        <img alt="Carousel Bootstrap First" style="height: 300px;" src="img/cader_from_firlm/cadr_from_film_03.jpg" />
                                         <div class="carousel-caption">
                                             <h4>
                                                 First Thumbnail label
@@ -34,6 +52,19 @@
                             </div>
                         </div>
                         <div class="col-md-6" id="desc">
+                            <div class="description">
+                                <table>
+                                    <tr><td><strong style="font-size: 24px; display: block;">Name</strong><br></td></tr>
+                                    <tr><td><strong>DATA</strong></td></tr>
+                                    <tr><td><strong>Режиссер:</strong><strong>Name</strong></td></tr>
+                                    <tr><td><strong>Оператор:</strong><strong>Name</strong></td></tr>
+                                    <tr><td><strong>Редактор:</strong><strong>Name</strong></td></tr>
+                                    <tr><td><br><strong>Description</strong></td></tr>
+                                </table>
+                            </div>
+                            <div>
+                                <a><label>Читать подробнее...</label></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,7 +74,7 @@
                         <div class="list_cader_film">
                             <table>
                                 <tr>
-                                    <td><img id="cadr_fiml" src="img/cader_from_firlm/cadr_from_film_03.png"></td>
+                                    <td><img id="cadr_fiml" src="img/cader_from_firlm/cadr_from_film_03.jpg"></td>
                                     <td><img id="cadr_fiml" src="img/cader_from_firlm/cadr_from_film_06.png"></td>
                                     <td><img id="cadr_fiml" src="img/cader_from_firlm/cadr_from_film_09.png"></td>
                                     <td><img id="cadr_fiml" src="img/cader_from_firlm/cadr_from_film_12.png"></td>
@@ -56,10 +87,88 @@
                 <div class="seperator_head"></div>
             <div class="bottom_seperator_head"><label >МАТЕРИАЛЫ</label></div>
             </div>
-        <div class="wepper_body"><!--Начало тела страницы---> 
+        <div class="wepper_body"><!--Начало тела страницы--->
+            
             <div class="wepper_body_firlm">
-                
+                <div class="left_bloc_film">
+                    <a href="#"><label>ТОП 40 фильмов</label></a><br>
+                    <a href="#"><label>ТОП 20 знаменитых актеров</label></a>
+                    <a href="#"></a>
+                </div>  
+                <div class="bloc_film" >
+                    <table>
+                        <tr><td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_31.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_33.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания тект </div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_36.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_42.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_44.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_46.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_51.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_53.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="film">
+                                    <img class="img_film_size" src="img/center_bloc_firm/center_article_55.jpg"><br><a href="#"><label>name</label></a><br>
+                                    <div>опесания</div>
+                                    <div>краткое описания события</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+        
+        
+            
             <div class="seperator_premer">
                 <label>Премьеры</label> 
             </div>
