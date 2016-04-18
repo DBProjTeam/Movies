@@ -5,6 +5,7 @@ import constants.PagePath;
 import dao.MovieDAO;
 import dao.view.MoviePersonRoleDAO;
 import entities.Movie;
+import entities.MovieCountry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,12 +20,14 @@ public class IndexActions extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         MovieDAO movieDAO = new MovieDAO();
         MoviePersonRoleDAO personMRDAO = new MoviePersonRoleDAO();
+
         Movie movie = movieDAO.getRecent();
         MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR");
-        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "operator");
+        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator");
         MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer");
+        MovieCountry country = movieDAO.getCountry(movie.getMovie_id());
 
-
+        request.setAttribute("country", country);
         request.setAttribute("movie", movie);
         request.setAttribute("director", director.getPerson().getName() + " " + director.getPerson().getSurname());
         request.setAttribute("oper", oper);

@@ -3,7 +3,13 @@
  */
 
 $(document).ready(function () {
-
+    (function ($) {
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("a[target='_blank']").removeAttr('href');
+            }, 1000);
+        });
+    })(jQuery);
 
     var now = new Date();
     switch (now.getHours()) {

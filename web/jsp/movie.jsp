@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%@ include file="/jsp/jspf/head.jspf" %>
+<%@ include file="/jsp/jspf/head/logo.jspf" %>
 
 <article align="center">
     Movie:

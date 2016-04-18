@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: Алексей
@@ -17,16 +18,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>DATA</strong></td>
+                    <td><strong>Релиз:</strong><strong>${movie.releaseDate}</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Страна:</strong><strong>${country.country.country}</strong></td>
                 </tr>
                 <tr>
                     <td><strong>Режиссер:</strong><strong>${director}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Оператор:</strong><strong>${oper.name}</strong></td>
+                    <td><strong>Оператор:</strong><strong>${oper.person.name}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Редактор:</strong><strong>${composer.name}</strong></td>
+                    <td><strong>Редактор:</strong><strong>${composer.person.name}</strong></td>
                 </tr>
                 <tr>
                     <td><br><strong>${movie.description}</strong></td>
@@ -34,7 +38,7 @@
             </table>
         </div>
         <div>
-            <a><label>Читать подробнее...</label></a>
+            <a href="do?action=movie&movie_id=${movie.movie_id}"><label>Читать подробнее...</label></a>
         </div>
     </div>
     <div class="Big_poster">

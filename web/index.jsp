@@ -10,6 +10,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="/img/ico.png">
     <link href="lib/css/bootstrap.min.css" rel="stylesheet">
     <script src="lib/js/jquery-2.2.3.min.js"></script>
     <link href="lib/css/MyStyle.css" rel="stylesheet">
@@ -37,14 +38,11 @@
 
 </head>
 <body>
-
-Start page<br>
-<a href="do?action=person&person_id=100">Person id=100</a>
-<a href="do?action=movie&movie_id=23">Movie id=23</a>
-
-
 <div class="wepper_main">
     <%@ include file="/jsp/jspf/head.jspf" %>
+    <%@ include file="/jsp/jspf/main.jspf" %>
+    >
+
 </div>
 
 

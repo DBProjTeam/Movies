@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Едик  Лисогуб on 06.03.2016.
  */
 public class PersonDAO {
-    private static final String GET_PESON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
+    private static final String GET_PERSON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
     private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME="SELECT * FROM person WHERE(person.name LIKE ?'%') OR (person.surname LIKE ?'%')";
     Connection connection;
 
@@ -24,7 +24,7 @@ public class PersonDAO {
         ResultSet res = null;
         try {
             connection = Connector.getConnection();
-            statement = connection.prepareStatement(GET_PESON_BY_ID);
+            statement = connection.prepareStatement(GET_PERSON_BY_ID);
             statement.setInt(1, pk);
             res = statement.executeQuery();
             if (res.next()) {

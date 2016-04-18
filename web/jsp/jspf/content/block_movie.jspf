@@ -1,0 +1,100 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Алексей
+  Date: 18.04.2016
+  Time: 23:46
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="bloc_film">
+    <table>
+        <tr class="row_film">
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_33.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания тект</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_36.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+        </tr>
+        <tr class="row_film">
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_42.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_44.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_46.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+        </tr>
+        <tr class="row_film">
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_51.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_53.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+            <td>
+                <div class="film">
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_55.jpg"><br><a
+                        href="#"><label>name</label></a><br>
+
+                    <div>опесания</div>
+                    <div>краткое описания события</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>

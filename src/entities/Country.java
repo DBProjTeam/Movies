@@ -8,6 +8,9 @@ import java.io.Serializable;
 public class Country implements Serializable {
     private String country;
 
+    public Country(String country) {
+        this.country = country;
+    }
     public String getCountry() {
         return country;
     }

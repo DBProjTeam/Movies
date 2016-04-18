@@ -1,7 +1,9 @@
 package dao;
 
 
+import entities.Country;
 import entities.Movie;
+import entities.MovieCountry;
 import util.Connector;
 
 import java.sql.*;
@@ -10,6 +12,7 @@ import java.util.List;
 
 public class MovieDAO {
     private static final String GET_RECENT_MOVIE = "select * FROM movie where movie.year=Year(now()) order by movie.releaseDate  desc limit 1 ; ";
+    private static final String GET_COUNTRY_MOVIE = "SELECT * FROM movie_country where movie_ID=?;";
     private static String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
     private static String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
     private static String GET_MOVIE_ALL = "SELECT * FROM movie;";
@@ -32,6 +35,25 @@ public class MovieDAO {
             Connector.close(resultSet);
         }
         return movie;
+    }
+
+    public MovieCountry getCountry(int movie_id) throws SQLException {
+        MovieCountry movieCountry = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(GET_COUNTRY_MOVIE);
+            statement.setInt(1, movie_id);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                movieCountry = obtainCountry(resultSet);
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return movieCountry;
     }
 
     public Movie getByPK(int pk) throws SQLException {
@@ -120,4 +142,11 @@ public class MovieDAO {
         return movie;
     }
 
+    private MovieCountry obtainCountry(ResultSet resultSet) throws SQLException {
+        MovieCountry movieCountry = new MovieCountry();
+        movieCountry.setMovieId(resultSet.getInt("movie_ID"));
+        movieCountry.setCountry(new Country(resultSet.getString("country")));
+        movieCountry.setId(resultSet.getInt("movie_country_ID"));
+        return movieCountry;
+    }
 }
