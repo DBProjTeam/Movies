@@ -1,10 +1,10 @@
 package actions;
 
-import bin.PersonRoleView;
+import bean.MoviePersonRoleView;
 import constants.PagePath;
 import dao.MovieDAO;
 import dao.PersonDAO;
-import dao.view.PersonRoleDAO;
+import dao.view.MoviePersonRoleDAO;
 import entities.Movie;
 import entities.Person;
 import entities.Role;
@@ -27,7 +27,7 @@ public class PersonAction extends Action {
         int person_id = Integer.parseInt(request.getParameter("person_id"));
         PersonDAO personDAO = new PersonDAO();
         Person person = personDAO.getByPK(person_id);
-        PersonRoleDAO personRoleDAO = new PersonRoleDAO();
+        MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         //СЮДА нужно movie_ID но где его взять!!
         //List<PersonRoleView> personRoleViews = personRoleDAO.getPersonRoleByPersonId(person_id);
         //todo используется запрос  GET_PERSON_ROLE_BY_MOVIE_ID  а мы ему кормим person_id - не думаю что это верно!!
@@ -41,21 +41,21 @@ public class PersonAction extends Action {
         //request.setAttribute("roles", rolesWherePersonAttended);
         request.setAttribute("countMovie", COUNT_MOVIE_WherePersonAttended);
         request.setAttribute("person", person);
-        return new PageAction(PagePath.PERSON, true);// здесь вставить ссылку на страницу поиска!!!!!
+        return new PageAction(PagePath.PERSON, true);//
     }
 
-    private List<Movie> getMovieWherePersonAttended(List<PersonRoleView> personRoleViews) throws SQLException {
+    private List<Movie> getMovieWherePersonAttended(List<MoviePersonRoleView> moviePersonRoleViews) throws SQLException {
         int count = 0;
         MovieDAO movieDAO = new MovieDAO();
         List<Movie> movies = new ArrayList<Movie>();
-        ListIterator<PersonRoleView> iterator = personRoleViews.listIterator();
+        ListIterator<MoviePersonRoleView> iterator = moviePersonRoleViews.listIterator();
         while (iterator.hasNext()) {
-            PersonRoleView personRoleViewGetMovie = iterator.next();
+            MoviePersonRoleView moviePersonRoleViewGetMovie = iterator.next();
             if (movies.isEmpty()) {
                 count++;
-                movies.add(movieDAO.getByPK(personRoleViewGetMovie.getMovie_ID()));
+                movies.add(movieDAO.getByPK(moviePersonRoleViewGetMovie.getMovie_ID()));
             } else {
-                Movie movie = movieDAO.getByPK(personRoleViewGetMovie.getMovie_ID());
+                Movie movie = movieDAO.getByPK(moviePersonRoleViewGetMovie.getMovie_ID());
                 if (movies.indexOf(movie) >= 0) {
                 } else {
                     count++;
@@ -67,17 +67,17 @@ public class PersonAction extends Action {
         return movies;
     }
 
-    private List<Role> getRoleWherePersonAttended(List<PersonRoleView> personRoleViews) throws SQLException {
+    private List<Role> getRoleWherePersonAttended(List<MoviePersonRoleView> moviePersonRoleViews) throws SQLException {
         List<Role> roles = new ArrayList<Role>();
-        ListIterator<PersonRoleView> iterator = personRoleViews.listIterator();
+        ListIterator<MoviePersonRoleView> iterator = moviePersonRoleViews.listIterator();
         while (iterator.hasNext()) {
-            PersonRoleView personRoleViewGetRole = iterator.next();
+            MoviePersonRoleView moviePersonRoleViewGetRole = iterator.next();
             if (roles.isEmpty()) {
                 Role role = new Role();
-                role.setRole(personRoleViewGetRole.getRole());
+                role.setRole(moviePersonRoleViewGetRole.getRole());
             } else {
                 Role role = new Role();
-                role.setRole(personRoleViewGetRole.getRole());
+                role.setRole(moviePersonRoleViewGetRole.getRole());
                 if (roles.indexOf(role) >= 0) {
                 } else {
                     roles.add(role);

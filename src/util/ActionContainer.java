@@ -33,6 +33,7 @@ public class ActionContainer {
         /*===============Movie=======================*/
         actionMap.put("movie", new MovieActions());
 
+
         /*=================Person====================*/
         actionMap.put("person",new PersonAction());
 
@@ -42,7 +43,7 @@ public class ActionContainer {
 
 
         /*===============Other============================*/
-        actionMap.put("index",new PageForward(PagePath.INDEX));
+        actionMap.put("index", new IndexActions());
         actionMap.put("error", null); //TODO: error action
     }
 

@@ -1,15 +1,14 @@
-package bin;
+package bean;
 
 import entities.Person;
-import entities.Role;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by Станислав on 09.03.16.
+ * Можно также сюда добавить не movie_id, а entitie movie
  */
-public class PersonRoleView implements Serializable{
+public class MoviePersonRoleView implements Serializable {
     private  Person person;
     private String role;
     private int movie_ID;

@@ -1,12 +1,12 @@
 package actions;
 //Проверен 
 
-import bin.PersonRoleView;
+import bean.MoviePersonRoleView;
 import constants.PagePath;
 import dao.CommentDAO;
 import dao.MovieDAO;
 import dao.RatingDAO;
-import dao.view.PersonRoleDAO;
+import dao.view.MoviePersonRoleDAO;
 import entities.Comment;
 import entities.Movie;
 import entities.Rating;
@@ -23,11 +23,7 @@ import java.util.ListIterator;
  */
 public class MovieActions extends Action {
 
-/*    private static String ROLE_PRODUCER = "продюсер";
-    private static String ROLE_ACTOR = "актор";
-    private static String ROLE_DIRECTOR = "режиссер";*/
 
-    //todo зачем это нужно если есть таблица person_role надо переделать !!
 
     private static int count_max_role = 10;
 
@@ -35,15 +31,16 @@ public class MovieActions extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         int movie_id = Integer.parseInt(request.getParameter("movie_id"));
+
         MovieDAO movieDAO = new MovieDAO();
         CommentDAO commentDAO = new CommentDAO();
-        PersonRoleDAO personRoleDAO = new PersonRoleDAO();
+        MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         RatingDAO ratingDAO = new RatingDAO();
 
 
         Movie movie = movieDAO.getByPK(movie_id);
         List<Rating> ratingList = ratingDAO.getRatingAllByIdMovie(movie_id);
-        List<PersonRoleView> persons = personRoleDAO.getPersonRoleByMovieId(movie_id);
+        List<MoviePersonRoleView> persons = moviePersonRoleDAO.getPersonRoleByMovieId(movie_id);
         List<Comment> comments = commentDAO.getAllCommentByIdMovie(movie_id);
         double rating = getRatingAverage(ratingList);
 
@@ -77,16 +74,16 @@ public class MovieActions extends Action {
     }
 
 
-    private List<PersonRoleView> getRole(List<PersonRoleView> list, String role) {
-        ListIterator<PersonRoleView> iterator = list.listIterator();
-        List<PersonRoleView> personsRole = new ArrayList<PersonRoleView>();
+    private List<MoviePersonRoleView> getRole(List<MoviePersonRoleView> list, String role) {
+        ListIterator<MoviePersonRoleView> iterator = list.listIterator();
+        List<MoviePersonRoleView> personsRole = new ArrayList<MoviePersonRoleView>();
         int count = 0;
         while (iterator.hasNext() && count < count_max_role) {
-            PersonRoleView personRoleView = iterator.next();
-            if (role.equals(personRoleView.getRole())) {
-                personsRole.add(personRoleView);
+            MoviePersonRoleView moviePersonRoleView = iterator.next();
+            if (role.equals(moviePersonRoleView.getRole())) {
+                personsRole.add(moviePersonRoleView);
                 count++;
-                list.remove(personRoleView);
+                list.remove(moviePersonRoleView);
             }
         }
         return personsRole;

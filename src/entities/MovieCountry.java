@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class MovieCountry implements Serializable {
     private int id;
-    private int Movie_Id;
+    private int movieId;
     private Country country;
 
     public int getId() {
@@ -18,12 +18,12 @@ public class MovieCountry implements Serializable {
         this.id = id;
     }
 
-    public int getMovie_Id() {
-        return Movie_Id;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_Id(int movie_Id) {
-        Movie_Id = movie_Id;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
     public Country getCountry() {

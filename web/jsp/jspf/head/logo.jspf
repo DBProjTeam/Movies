@@ -1,0 +1,30 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="logo_Head">
+    <i><big>F</big>ILMS<big>S</big>EARCH.UA</i>
+
+    <div class="sorch">
+        <table>
+            <tr>
+                <td><strong>Всё о любимом фильме</strong></td>
+                <td> <%if (session.getAttribute("user") == null) {%>
+                    <a href="do?action=login">Логин</a>
+                    <a href="do?action=registration_page"><strong>Регистрация</strong></a>
+
+                        <%} else {%>
+          <span id="greating">
+          Привет
+          </span>,
+                    <a href="do?action=profile_page">
+                        <c:out value="${user.name}"/></a>
+                        <%}%>
+
+                    <form method="get">
+                        <input type="text" name="search">
+                        <input type="image" src="img/buttonSearch.PNG" width="30px" height="30px;">
+                    </form>
+                    <a href="#"><strong>Расширенный поиск</strong></a>
+                <td>
+            </tr>
+        </table>
+    </div>
+</div>

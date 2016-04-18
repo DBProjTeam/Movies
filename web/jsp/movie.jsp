@@ -20,13 +20,14 @@
     <table border="solid 1px #000">
         <thead>
         <td>Id</td>
-        <td>runtime</td>
+        <td>runtmie</td>
         <td>releaseDate</td>
         <td>year</td>
         <td>description</td>
         <td>image_ID</td>
         </thead>
         <tr>
+
             <td>${movie.movie_id}</td>
             <td>${movie.runtime}</td>
             <td>${movie.releaseDate}</td>
@@ -38,6 +39,7 @@
 </article>
 <article align="center">
     Coments:
+    ${param.id}
     <table border="solid 1px #000">
         <c:forEach var="coment" items="${comments}">
             <tr>
