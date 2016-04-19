@@ -1,0 +1,160 @@
+/*
+    для всех  
+*/
+
+body{
+    background-color: #090722;
+    font-family: ThimeNewRoma;
+}
+
+.wepper_main{
+    width: 78%;
+    margin: 0 auto;
+}
+
+.wepper_Head{
+    padding-top: 40px; 
+}
+.wepper_footer{
+    padding-top: 95px;
+    padding-right: 50px;
+    padding-left: 30px;
+    min-height: 150px;
+    margin-top: 5px;
+    background-color: #0b0921;
+    color: #fff;
+}
+
+
+.footer_link{
+    margin-top: 13px;
+}
+.footer_link a , .footer_logo a{
+    color: #fff;
+    text-decoration: inherit;
+}
+.footer_logo{
+    display: block;
+    float: right;
+    font-size: 1.5em;
+}
+
+.logo_Head i {
+    color: #fff;
+    margin-top: 50px;
+    margin-left: 45px;
+    font-size: 26px;
+    display: block;
+    float: left;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.sorch strong{
+    color: #fff;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+.sorch strong:nth-child(1n){
+    padding-right: 25px;
+}
+
+.sorch{
+    float: right;
+}
+
+.logo_Head{
+    height: 16%;
+    
+}
+/*
+    end  для всех  
+*/
+
+.seperator{
+    width: 100%;
+    background: #f4f0cd;
+    min-height: 1%;
+}
+.seperator h3{
+    padding: 0.75em;
+    padding-left: 1.8em; 
+}
+.wepper_body{
+    background-color:#96acc3; 
+    min-height: 1%;
+}
+.detal_movie{
+    width: 100%;
+    display: table-row;
+}
+.desc_movie_treuler,
+.img_movie,
+.desc_movie_img,
+.desc_movie{
+    padding: 0.75em;
+    padding-left: 1.65em;
+    padding-bottom: 0.30em;
+    }
+.img_movie{
+    width: 31%;
+    display: table-cell;
+}
+.img_movie img{
+    width: 100%;
+    display: table-cell;
+}
+.desc_movie_info{
+    float: left;
+    padding-top: 1.3em;
+    padding-right:50%; 
+}
+.desc_movie{
+
+}
+.desc_movie_img{
+    display: table;  
+}
+.desc_img{
+    float: left;
+    min-height: 2%;
+    width: 95%;
+    margin-right:1em;
+    background-color:#fff; 
+    display: table-row;
+}
+.desc_img img{
+    width: 100%;
+    display: table-cell;
+    min-height: 150px;
+}
+.desc_movie strong{
+    font-size:1.7em; 
+    color: #000; 
+}
+.desc_movie_info h4{
+    padding-bottom: 1em;
+    margin: 0.001em;
+    display: table-row;
+}
+.desc_static , 
+.desc_dinamic{
+    float: left;
+}
+.desc_static ul, .desc_dinamic ul{
+    list-style: none; 
+    display: table-cell;
+}
+.desc_static ul li,.desc_dinamic ul li{
+    padding-bottom:0.7em;
+    font-size:1.4em; 
+}
+.desc_dinamic ul li{
+    padding-left: 50px;
+}
+.desc_treuler{
+    height: 450px;
+    padding-bottom:25px;
+    padding-right:20px;   
+
+}
