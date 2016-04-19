@@ -1,416 +1,38 @@
-body {
+
+body{
     background-color: #090722;
-    font-family: ThimeNewRoman;
+    font: 100%/1.5em, ThimeNewRoman;
 }
 
-.wepper_main {
-    width: 1000px;
+.wepper_main{
+    width: 78%;
     margin: 0 auto;
 }
 
-.wepper_Head_Carousel {
-    height: 300px;
-    width: 100%;
-}
-
-.sorch strong {
-    color: #fff;
-    font-family: TimeNewRoman;
-    padding-left: 25px;
-    padding-bottom: 5px;
-}
-
-.sorch strong:nth-child(1n) {
-    padding-right: 25px;
-}
-
-#desc {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 50%;
-    float: right;
-    background-color: #96aec3;
-}
-
-.wepper_Head {
+.wepper_Head{
     padding-top: 40px;
 }
-
-.logo_Head {
-    height: 100px;
-
-}
-
-.logo {
-    padding-left: 20px;
-}
-
-.sorch {
-    float: right;
-}
-
-.like_filme {
-    float: right;
-    text-decoration-color: #fff;
-}
-
-.wepper_body_firlm {
-    min-height: 700px;
-    width: 100%;
-    background-color: #f4f0cd;
-}
-
-.seperator_head {
-    height: 20px;
-    width: 100%;
-    background-color: #96acc3;
-}
-
-.seperator_head_black {
-    height: 20px;
-    width: 100%;
-    background-color: #0c0a22;
-}
-
-.top_seperator_head {
-    min-height: 250px;
-    background-color: #0c0a22;
-}
-
-.bottom_seperator_head {
-    min-height: 20px;
-    background-color: #0c0a22;
-}
-
-.name_film {
-    padding-bottom: 20px;
-}
-
-.bottom_seperator_head label {
-    color: #FFF;
-    font-size: 21px;
-    font-family: ThimeNewRoman;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.seperator_premer {
-    background-color: #0b0921;
-    color: #fff;
-    font-size: 22pt;
-    font-family: ThimeNewRoman;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.wepper_body label {
-    font-size: 25px;
-}
-
-.film_sepereter {
-    background-color: #96acc3;
-    min-height: 100px;
-
-}
-
-.populiar_film_sepetaret {
-    background-color: #0c0a22;
-    color: #fff;
-    font-size: 22pt;
-    font-family: ThimeNewRoman;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.populiar_film_sepetaret label {
-    font-size: 25px;
-
-}
-
-.small_baner_film {
-    padding-top: 30px;
-    margin-left: 25px;
-    min-height: 250px;
-    width: 171px;
-
-}
-
-#small_imag_baner {
-    height: 250px;
-    width: 171px;
-}
-
-#neme_film_smal_baner {
-    padding-top: 25px;
-    padding-bottom: 15px;
-    font-size: 21px;
-    color: #000;
-}
-
-.list_cader_film {
-    min-height: 130px;
-    background-color: #96acc3;
-}
-
-#cadr_fiml {
-    height: 120px;
-    width: 164px;
-    padding-left: 25px;
-    padding-top: 10px;
-}
-
-.treuler {
-    min-height: 500px;
-    background-color: #96acc3;
-}
-
-.main_treuler {
-    padding-top: 20px;
-    height: 500px;
-    background-color: #050;
-}
-
-.treuler_sepetaret {
-    height: 10px;
-    background-color: #96acc3;
-}
-
-.list_terler {
-    padding-left: 35px;
-    min-height: 100px;
-}
-
-#neme_film_smal_baner a {
-    color: #000;
-    text-decoration: inherit;
-}
-
-#neme_film_smal_baner a:hover {
-    color: #fff;
-    text-decoration: inherit;
-    text-decoration-style: dashed;
-}
-
-.treuler label {
-    color: #000;
-    font-size: 18px;
-}
-
-#img_treuler {
-    height: 150px;
-    width: 150px;
-    padding-bottom: 25px;
-}
-
-.dec_treuler {
-    float: right;
-    height: 140px;
-    width: 82%;
-}
-
-.recen {
-    min-height: 300px;
-    background-color: #f4f0cd;
-}
-
-.recen_img {
-    height: 200px;
-    width: 270px;
-    padding-top: 30px;
-    padding-left: 40px;
-}
-
-.dec_rec {
-    height: 170px;
-    width: 650px;
-    float: right;
-    margin-top: 30px;
-    margin-right: 40px;
-    background-color: #95a2b9;
-}
-
-.button_detali {
-    height: 25px;
-    width: 125px;
-    background-color: #65728a;
-    float: right;
-    margin-right: 20px;
-}
-
-.pading_recen {
-    padding-bottom: 10px;
-}
-
-.dec_rec a, .coment a {
-    color: #000;
-    text-decoration: inherit;
-}
-
-.dec_rec a label, .coment a label {
-    padding: 5px;
-    font-size: 13px;
-    font-family: ThimeNewRoman;
-}
-
-.dec_rec a label:hover, .coment a label:hover {
-    cursor: pointer;
-    padding-left: 10px;
-}
-
-.dec_rec a:hover, .coment a label:hover {
-    color: #fff;
-    text-decoration: inherit;
-}
-
-.description_fild, .coment_fild {
-    height: 80%;
-    width: 100%;
-}
-
-.coments_and_mark_bloc {
-    background-color: #96acc3;
-    min-height: 300px;
-}
-
-.coments_and_mark {
-    padding: 15px;
-    padding-left: 30px;
-}
-
-.coment_film_img {
-    height: 150px;
-    width: 100px;
-}
-
-.coment {
-    height: 150px;
-    width: 780px;
-    float: right;
-    margin-right: 40px;
-    background-color: #f3f3c5;
-}
-
-.avatar_coment {
-    margin-top: 7px;
-    margin-left: 27px;
-    height: 45px;
-    width: 45px;
-    position: absolute;
-}
-
-.wepper_footer {
+.wepper_footer{
     padding-top: 95px;
     padding-right: 50px;
     padding-left: 30px;
     min-height: 150px;
     background-color: #0b0921;
-    font-family: ThimeNewRoman;
     color: #fff;
 }
 
-.footer_link {
+
+.footer_link{
     margin-top: 13px;
 }
-
-.footer_link a, .footer_logo a {
+.footer_link a , .footer_logo a{
     color: #fff;
     text-decoration: inherit;
 }
-
-.footer_logo {
+.footer_logo{
     display: block;
     float: right;
     font-size: 24px;
-}
-
-/*  
-    блоки для центр фильм
-*/
-.left_bloc_film {
-    display: block;
-    width: 200px;
-    height: 100%;
-    float: left;
-}
-
-.left_bloc_film a label {
-    color: #000;
-    text-decoration: none;
-    font-size: 13px;
-    padding: 5px;
-}
-
-.film a label {
-    color: #000;
-}
-
-.left_bloc_film a label:hover, .film a label:hover {
-    cursor: pointer;
-    text-decoration: inherit;
-    padding-left: 7px;
-}
-
-.bloc_film {
-    display: block;
-    margin-left: 210px;
-}
-
-.img_film_size {
-    width: 220px;
-    height: 150px;
-}
-
-.film {
-    min-width: 220px;
-    max-width: 220px;
-    min-height: 170px;
-    margin-left: 5px;
-    margin-right: 35px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.film div {
-    max-width: 220px;
-}
-
-.film a label {
-    padding: 10px;
-}
-
-.description {
-    padding-left: 20px;
-    padding-top: 15px;
-    width: 100%;
-    height: 90%;
-}
-
-.description td {
-    padding-bottom: 1px;
-    color: #000;
-}
-
-.description strong {
-    padding-left: 5px;
-    font-size: 14px;
-    font-style: normal;
-    text-decoration: inherit;
-}
-
-#desc label {
-    color: #000;
-    padding-left: 15px;
-}
-
-#desc label:hover {
-    cursor: pointer;
-    padding-left: 17px;
-    text-decoration: inherit;
 }
 
 .logo_Head i {
@@ -420,17 +42,365 @@ body {
     font-size: 26px;
     display: block;
     float: left;
-    font-family: TimeNewRoman;
     font-style: normal;
     text-decoration: none;
 }
 
-.Big_poster {
-    width: 50%;
+.sorch strong{
+    color: #fff;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+.sorch strong:nth-child(1n){
+    padding-right: 25px;
+}
+
+.sorch{
+    float: right;
+}
+
+.logo_Head{
+    height: 100px;
 
 }
 
-.Big_poster img {
+.wepper_Head_Carousel{
+    height: 300px;
+    width: 100%;
+}
+#desc{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 40%;
+    float: right;
+    background-color: #96aec3;
+}
+
+.logo{
+    padding-left: 20px;
+}
+
+.like_filme{
+    float: right;
+    text-decoration-color: #fff;
+}
+.wepper_body_firlm{
+    min-height: 700px;
+    width: 100%;
+    background-color: #f4f0cd;
+}
+.seperator_head{
+    height: 20px;
+    width: 100%;
+    background-color:  #96acc3;
+}
+
+.seperator_head_black{
+    height: 20px;
+    width: 100%;
+    background-color:  #0c0a22;
+}
+.head_my{
+    min-height: 150px;
+}
+.head_my img{
+    height: 120px;
+    width: 150px;
+}
+.head_my a{
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.bottom_seperator_head{
+    min-height: 20px;
+    background-color: #0c0a22;
+}
+
+.name_film{
+    padding-bottom: 20px;
+}
+
+.bottom_seperator_head label{
+    color: #FFF;
+    font-size: 21px;
+    font-family: ThimeNewRoma;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.seperator_premer{
+    background-color: #0b0921;
+    color:  #fff;
+    font-size: 22pt;
+    font-family: ThimeNewRoma;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.wepper_body label {
+    font-size:  25px;
+}
+.film_sepereter {
+    background-color: #96acc3;
+    min-height: 100px;
+
+}
+.populiar_film_sepetaret{
+    background-color: #0c0a22;
+    color:  #fff;
+    font-size: 22pt;
+    font-family: ThimeNewRoma;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.populiar_film_sepetaret label{
+    font-size: 25px;
+
+}
+
+.small_baner_film{
+    padding-top: 30px;
+    margin-left: 25px;
+    min-height: 250px;
+    width: 171px;
+
+}
+#small_imag_baner{
+    height: 250px;
+    width:  171px;
+}
+#neme_film_smal_baner{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 21px;
+    color: #000;
+}
+.list_cader_film{
+    min-height: 130px;
+    background-color: #96acc3;
+}
+
+
+#cadr_fiml{
+    height: 120px;
+    width: 164px;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.treuler{
+    min-height: 500px;
+    background-color: #96acc3;
+}
+
+.main_treuler{
+    padding-top: 20px;
+    height: 500px;
+    background-color: #050;
+}
+.treuler_sepetaret{
+    height: 10px;
+    background-color: #96acc3;
+}
+
+.list_terler{
+    padding-left: 35px;
+    min-height: 100px;
+}
+
+#neme_film_smal_baner a{
+    color: #000;
+    text-decoration: inherit;
+}
+#neme_film_smal_baner a:hover{
+    color: #fff;
+    text-decoration: inherit;
+    text-decoration-style: dashed;
+}
+.treuler label {
+    color: #000;
+    font-size: 18px;
+}
+
+#img_treuler{
+    height: 150px;
+    width: 150px;
+    padding-bottom: 25px;
+}
+.dec_treuler{
+    float: right;
+    height: 140px;
+    width: 82%;
+}
+.recen{
+    min-height: 300px;
+    background-color: #f4f0cd;
+}
+.recen_img{
+    height: 200px;
+    width: 270px;
+    padding-top: 30px;
+    padding-left: 40px;
+}
+.dec_rec{
+    height: 170px;
+    width: 650px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 40px;
+    background-color: #95a2b9;
+}
+.button_detali{
+    height: 25px;
+    width: 125px;
+    background-color: #65728a;
+    float: right;
+    margin-right: 20px;
+}
+
+.pading_recen{
+    padding-bottom: 10px;
+}
+
+.dec_rec a , .coment a{
+    color: #000;
+    text-decoration: inherit;
+}
+.dec_rec a label , .coment a label{
+    padding: 5px;
+    font-size: 13px;
+    font-family: ThimeNewRoman;
+}
+.dec_rec a label:hover,.coment a label:hover{
+    cursor: pointer;
+    padding-left: 10px;
+}
+.dec_rec a:hover, .coment a label:hover {
+    color:#fff;
+    text-decoration: inherit;
+}
+.description_fild , .coment_fild{
+    height: 80%;
+    width: 100%;
+}
+
+.coments_and_mark_bloc{
+    background-color:  #96acc3;
+    min-height: 300px;
+}
+.coments_and_mark{
+    padding: 15px;
+    padding-left: 30px;
+}
+.coment_film_img{
+    height: 150px;
+    width: 100px;
+}
+.coment{
+    height: 150px;
+    width: 780px;
+    float: right;
+    margin-right: 40px;
+    background-color: #f3f3c5;
+}
+
+.avatar_coment{
+    margin-top:7px;
+    margin-left: 27px;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+}
+
+
+/*  
+    Блоки для центр фильм
+*/
+.left_bloc_film{
+    display: block;
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+
+.left_bloc_film a label{
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px;
+}
+.film  a label{
+    color: #000;
+}
+.left_bloc_film a label:hover, .film  a label:hover{
+    cursor: pointer;
+    text-decoration: inherit;
+    padding-left: 7px;
+}
+
+.bloc_film{
+    display: block;
+    margin-left: 210px;
+}
+.img_film_size{
+    width: 220px;
+    height: 150px;
+}
+.film{
+    min-width:220px;
+    max-width: 220px;
+    min-height: 170px;
+    margin-left: 5px;
+    margin-right: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.film div {
+    max-width: 220px;
+}
+.film a label {
+    padding: 10px;
+}
+.description{
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 100%;
+    height: 90%;
+}
+.description td{
+    padding-bottom: 1px;
+    color: #000;
+}
+.description strong{
+    padding-left: 5px;
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: inherit;
+}
+
+#desc label{
+    color: #000;
+    padding-left: 15px;
+}
+#desc label:hover{
+    cursor: pointer;
+    padding-left: 17px;
+    text-decoration: inherit;
+}
+
+.Big_poster{
+    width: 60%;
+
+}
+.Big_poster img{
     width: 100%;
     height: 100%;
 }
+
