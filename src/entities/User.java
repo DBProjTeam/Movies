@@ -77,9 +77,9 @@ public class User implements Serializable {
 
         public static UserRole getRole(int role) {
             switch (role) {
-                case 1:
-                    return ADMIN;
                 case 2:
+                    return ADMIN;
+                case 1:
                     return USER;
             }
             return null;

@@ -3,6 +3,7 @@ package util;
 import actions.*;
 import actions.profile.ChangeProfile;
 import actions.profile.Login;
+import actions.profile.Logout;
 import actions.profile.Registration;
 import actions.user.ViewFavoriteMovies;
 import constants.PagePath;
@@ -28,6 +29,8 @@ public class ActionContainer {
         actionMap.put("profile_page", new PageForward(PagePath.PROFILE));
         actionMap.put("profile_change", new ChangeProfile());
         actionMap.put("favorite_movies", new ViewFavoriteMovies());
+        actionMap.put("logout", new Logout());
+
 
 
         /*===============Movie=======================*/

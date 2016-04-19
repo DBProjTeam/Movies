@@ -1,6 +1,6 @@
 body {
     background-color: #090722;
-    font-family: ThimeNewRoma;
+    font-family: ThimeNewRoman;
 }
 
 .wepper_main {
@@ -15,7 +15,7 @@ body {
 
 .sorch strong {
     color: #fff;
-    font-family: TimeNewRoma;
+    font-family: TimeNewRoman;
     padding-left: 25px;
     padding-bottom: 5px;
 }
@@ -90,7 +90,7 @@ body {
 .bottom_seperator_head label {
     color: #FFF;
     font-size: 21px;
-    font-family: ThimeNewRoma;
+    font-family: ThimeNewRoman;
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -99,8 +99,8 @@ body {
 .seperator_premer {
     background-color: #0b0921;
     color: #fff;
-    font-size: 22;
-    font-family: ThimeNewRoma;
+    font-size: 22pt;
+    font-family: ThimeNewRoman;
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -119,14 +119,14 @@ body {
 .populiar_film_sepetaret {
     background-color: #0c0a22;
     color: #fff;
-    font-size: 22;
-    font-family: ThimeNewRoma;
+    font-size: 22pt;
+    font-family: ThimeNewRoman;
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.populiar_film_sepetaret labal {
+.populiar_film_sepetaret label {
     font-size: 25px;
 
 }
@@ -253,7 +253,7 @@ body {
 .dec_rec a label, .coment a label {
     padding: 5px;
     font-size: 13px;
-    font-family: ThimeNewRoma;
+    font-family: ThimeNewRoman;
 }
 
 .dec_rec a label:hover, .coment a label:hover {
@@ -308,7 +308,7 @@ body {
     padding-left: 30px;
     min-height: 150px;
     background-color: #0b0921;
-    font-family: ThimeNewRoma;
+    font-family: ThimeNewRoman;
     color: #fff;
 }
 
@@ -420,7 +420,7 @@ body {
     font-size: 26px;
     display: block;
     float: left;
-    font-family: TimeNewRoma;
+    font-family: TimeNewRoman;
     font-style: normal;
     text-decoration: none;
 }

@@ -1,6 +1,6 @@
 body{
     background-color: #090722;
-    font-family: ThimeNewRoma;
+    font-family: ThimeNewRoman;
 }
 .wepper_main{
     width: 1000px;
@@ -83,11 +83,11 @@ body{
     padding-bottom: 10px;
 }
 
-
+/*noinspection CssInvalidPropertyValue*/
 .seperator_premer{
     background-color: #0b0921;
     color:  #fff;
-    font-size: 22;
+    font-size: 22pt;
     font-family: ThimeNewRoma;
     padding-left: 30px;
     padding-top: 10px;
@@ -104,14 +104,14 @@ body{
 .populiar_film_sepetaret{
     background-color: #0c0a22;
     color:  #fff;
-    font-size: 22;
+    font-size: 22pt;
     font-family: ThimeNewRoma;
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.populiar_film_sepetaret labal{
+.populiar_film_sepetaret label {
         font-size: 25px;
         
 } 

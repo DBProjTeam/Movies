@@ -9,92 +9,23 @@
 <div class="bloc_film">
     <table>
         <tr class="row_film">
+            <c:forEach var="popular" items="${popular_movies}" varStatus="stat">
             <td>
                 <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg"><br><a
-                        href="#"><label>name</label></a><br>
+                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg">
+                    <br>
 
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
+                    <a href="do?action=movie&movie_id=${stat.current.movie_id}"><label><c:out value="${popular.title}"
+                                                                                              default="Name"/></label></a><br>
+
+                    <div>${popular.description}</div>
                 </div>
             </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_33.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания тект</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_36.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
+            <c:if test="${stat.count%3==0}">
         </tr>
         <tr class="row_film">
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_42.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_44.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_46.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-        </tr>
-        <tr class="row_film">
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_51.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_53.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
-            <td>
-                <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_55.jpg"><br><a
-                        href="#"><label>name</label></a><br>
-
-                    <div>опесания</div>
-                    <div>краткое описания события</div>
-                </div>
-            </td>
+            </c:if>
+            </c:forEach>
         </tr>
     </table>
-</div>
 </div>

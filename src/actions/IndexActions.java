@@ -5,7 +5,6 @@ import constants.PagePath;
 import dao.MovieDAO;
 import dao.view.MoviePersonRoleDAO;
 import entities.Movie;
-import entities.MovieCountry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,14 +21,15 @@ public class IndexActions extends Action {
         MoviePersonRoleDAO personMRDAO = new MoviePersonRoleDAO();
 
         Movie movie = movieDAO.getRecent();
+
         MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR");
         MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator");
         MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer");
-        MovieCountry country = movieDAO.getCountry(movie.getMovie_id());
 
-        request.setAttribute("country", country);
+        request.setAttribute("popular_movies", movieDAO.getPopularMovies());
+        request.setAttribute("country", movieDAO.getCountry(movie.getMovie_id()));
         request.setAttribute("movie", movie);
-        request.setAttribute("director", director.getPerson().getName() + " " + director.getPerson().getSurname());
+        request.setAttribute("director", director);
         request.setAttribute("oper", oper);
         request.setAttribute("composer", composer);
         return new PageAction(PagePath.INDEX, true);

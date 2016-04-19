@@ -7,20 +7,21 @@
             <tr>
                 <td><strong>Всё о любимом фильме</strong></td>
                 <td> <%if (session.getAttribute("user") == null) {%>
-                    <a href="do?action=login">Логин</a>
+                    <a href="do?action=login">Вход</a>
                     <a href="do?action=registration_page"><strong>Регистрация</strong></a>
 
                         <%} else {%>
-          <span id="greating">
-          Привет
-          </span>,
+                          <span id="greating">
+                          Привет
+                          </span>,
                     <a href="do?action=profile_page">
                         <c:out value="${user.name}"/></a>
+                    <a href="do?action=logout"><strong>Выход</strong></a>
                         <%}%>
 
                     <form method="get">
                         <input type="text" name="search">
-                        <input type="image" src="img/buttonSearch.PNG" width="30px" height="30px;">
+                        <input type="image" src="/img/buttonSearch.PNG" width="30px" height="30px;">
                     </form>
                     <a href="#"><strong>Расширенный поиск</strong></a>
                 <td>

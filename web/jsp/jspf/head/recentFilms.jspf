@@ -24,7 +24,7 @@
                     <td><strong>Страна:</strong><strong>${country.country.country}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Режиссер:</strong><strong>${director}</strong></td>
+                    <td><strong>Режиссер:</strong><strong>${director.person.name}</strong></td>
                 </tr>
                 <tr>
                     <td><strong>Оператор:</strong><strong>${oper.person.name}</strong></td>

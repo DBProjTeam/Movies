@@ -16,7 +16,7 @@ public class UserDAO {
 
     private static final String GET_USER_BY_ID = "SELECT * FROM user WHERE user_ID=?";
     private static final String GET_USER_BY_LOGIN = "SELECT * FROM user WHERE login=?";
-    private static final String INSERT_USER = "INSERT I1NTO user(login, password, name, surname, user_role_ID, image_ID) VALUES(?,?,?,?,?,?)";
+    private static final String INSERT_USER = "INSERT INTO user(login, password, name, surname, user_role_ID, image_ID) VALUES(?,?,?,?,?,?)";
     private static final String UPDATE_USER = "UPDATE user SET login=?, password=?, name=?, surname=?, user_role_ID=?, image_ID=? WHERE user_ID=?";
 
     Connection connection;

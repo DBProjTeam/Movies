@@ -11,14 +11,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieDAO {
+    public static final String GET_POPULAR_MOVIES = "select * from movie \n" +
+            "\twhere movie_ID in\n" +
+            "\t\t(select id from \n" +
+            "\t\t\t(select sum(score) as 'avarage', movie_ID as 'id' from rating \n" +
+            "\t\t\t\t\t group by movie_ID order by avarage desc ) \n" +
+            "\t\t\t as t2 where avarage > 22)  ";
     private static final String GET_RECENT_MOVIE = "select * FROM movie where movie.year=Year(now()) order by movie.releaseDate  desc limit 1 ; ";
     private static final String GET_COUNTRY_MOVIE = "SELECT * FROM movie_country where movie_ID=?;";
     private static String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
     private static String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
     private static String GET_MOVIE_ALL = "SELECT * FROM movie;";
     private static String SEARCH_BY_TITLE = "SELECT * FROM movie WHERE movie.title LIKE  ?'%';"; // В таблице movie нет title!?
+
     Connection connection;
 
+    public List<Movie> getPopularMovies() throws SQLException {
+        Statement statement = null;
+        ResultSet resultSet = null;
+        List<Movie> movies = new ArrayList<Movie>();
+        try {
+            connection = Connector.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_POPULAR_MOVIES);
+            while (resultSet.next()) {
+                movies.add(obtain(resultSet));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return movies;
+    }
     public Movie getRecent() throws SQLException {
         Movie movie = null;
         Statement statement = null;
