@@ -1,11 +1,14 @@
-var mas_url_img_head = ["img/cader_from_firlm/cadr_from_film_03.jpg", "img/cader_from_firlm/cadr_from_film_09.png", "img/cader_from_firlm/cadr_from_film_12.png"];
+var mas_url_img_head =
+    ["img/cader_from_firlm/cadr_from_film_03.png",
+        "img/cader_from_firlm/cadr_from_film_09.png",
+        "img/cader_from_firlm/cadr_from_film_12.png"];
 var mas_url_img_prem = {
     'Name_Film': 'img/small_baner_film/small-baner-film_02.png',
     'Name_Film_3': 'img/small_baner_film/small-baner-film_03.png',
     'Name_Film_4': 'img/small_baner_film/small-baner-film_04.png',
     'Name_Film_5': 'img/small_baner_film/small-baner-film_05.png',
     'Name_Film_6': 'img/small_baner_film/small-baner-film_06.png',
-    'Name_Film_7': 'img/small_baner_film/small-baner-film_07.jpg',
+    'Name_Film_7': 'img/small_baner_film/small-baner-film_07.jpg'
 };
 function bild_My() {
     if (jQuery) {
