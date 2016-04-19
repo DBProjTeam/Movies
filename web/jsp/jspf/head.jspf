@@ -3,6 +3,7 @@
 <div class=" wepper_Head">
     <%@ include file="/jsp/jspf/head/logo.jspf" %>
     <%@ include file="/jsp/jspf/head/recentFilms.jspf" %>
+    <%@include file="/jsp/jspf/head/separator.jspf"%><!-- Подключил-->
 
 </div>
 
