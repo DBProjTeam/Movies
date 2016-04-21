@@ -1,9 +1,9 @@
 body{
     background-color: #090722;
-    font-family: ThimeNewRoma;
+    font: 100%/1.5em, ThimeNewRoma;
 }
 .wepper_main{
-    width: 1000px;
+    width: 78%;
     margin: 0 auto;
 }
 .wepper_Head_Carousel{
