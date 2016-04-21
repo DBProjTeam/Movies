@@ -1,7 +1,7 @@
 
 body{
     background-color: #090722;
-    font: 100%/1.5em, ThimeNewRoman;
+    font: 100%/1.5em, ThimeNewRoma;
 }
 
 .wepper_main{
@@ -275,7 +275,7 @@ body{
 .dec_rec a label , .coment a label{
     padding: 5px;
     font-size: 13px;
-    font-family: ThimeNewRoman;
+    font-family: ThimeNewRoma;
 }
 .dec_rec a label:hover,.coment a label:hover{
     cursor: pointer;
