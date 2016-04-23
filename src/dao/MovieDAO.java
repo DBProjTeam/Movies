@@ -173,25 +173,6 @@ public class MovieDAO {
         return isOk;
     }
 
-    public boolean insert(Time runtTime, Date releaseDate,int year,String description,int imge_id,String title)throws SQLException{
-        boolean isOk = false;
-        PreparedStatement statement = null;
-        try {
-            connection = Connector.getConnection();
-            statement = connection.prepareStatement(INSERT_MOVIE);
-            statement.setTime(1, runtTime);
-            statement.setDate(2, releaseDate);
-            statement.setInt(3, year);
-            statement.setString(4,description);
-            statement.setInt(5,imge_id);
-            statement.setString(6,title);
-            isOk = statement.execute();
-        }finally {
-            Connector.close(statement);
-        }
-        return isOk;
-    }
-
     public boolean update(Movie movie)throws SQLException{
         boolean isOk = false;
         PreparedStatement statement = null;
@@ -212,25 +193,6 @@ public class MovieDAO {
         return isOk;
     }
 
-    public boolean update(Time runtTime, Date releaseDate,int year,String description,int imge_id,String title,int id_movie)throws SQLException{
-        boolean isOk= false;
-        PreparedStatement statement = null;
-        try {
-            connection = Connector.getConnection();
-            statement = connection.prepareStatement(UPDATE_MOVIE);
-            statement.setTime(1, runtTime);
-            statement.setDate(2, releaseDate);
-            statement.setInt(3, year);
-            statement.setString(4,description);
-            statement.setInt(5,imge_id);
-            statement.setString(6,title);
-            statement.setInt(7,id_movie);
-            isOk = statement.execute();
-        }finally {
-            Connector.close(statement);
-        }
-        return isOk;
-    }
 
     public boolean delete(Movie movie)throws SQLException{
         boolean isOk= false;
@@ -239,20 +201,6 @@ public class MovieDAO {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(DELETE_MOVIE);
             statement.setInt(1,movie.getMovie_id());
-            isOk = statement.execute();
-        }finally {
-            Connector.close(statement);
-        }
-        return isOk;
-    }
-
-    public boolean delete(int movie_id)throws SQLException{
-        boolean isOk= false;
-        PreparedStatement statement = null;
-        try {
-            connection = Connector.getConnection();
-            statement = connection.prepareStatement(DELETE_MOVIE);
-            statement.setInt(1,movie_id);
             isOk = statement.execute();
         }finally {
             Connector.close(statement);
