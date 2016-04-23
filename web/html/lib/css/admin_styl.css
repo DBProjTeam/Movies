@@ -90,8 +90,8 @@ body{
 
 .menu li a:hover{
     color: #f00;
-    animation:  1.5s animtext;
-    -webkit-animation:1.5s animtext;
+    animation:  1.5s animtext infinite;
+    -webkit-animation:1.5s animtext infinite;
     text-decoration: underline;
 }
 
@@ -158,4 +158,21 @@ hr{
     position: relative;
     padding-top:10px; 
     padding-left:3px; 
+}
+.link a{
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    background-color:#fff;
+    border-radius: 20px;
+    color:#000;
+}
+.link a:hover{
+    color: #222;
+    text-shadow: 1px 1px #333;
+}
+.link a:last-child{
+    float: right;
+    margin-right:15px; 
 }
