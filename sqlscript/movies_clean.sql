@@ -320,7 +320,7 @@ DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person` (
-  `person_ID` INT(11) NOT NULL,
+  `person_ID` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(25) NOT NULL,
   `surname` VARCHAR(25) NOT NULL,
   `birth_date` DATE NOT NULL,
