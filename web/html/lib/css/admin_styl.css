@@ -1,0 +1,161 @@
+body{
+    background-color: #090722;
+    font: 100%/1.5em, ThimeNewRoma;
+}
+
+.wepper_main{
+    width: 78%;
+    margin: 0 auto;
+}
+
+.wepper_Head{
+    padding-top: 40px; 
+}
+.wepper_footer{
+    width: 100%;
+    padding-top: 75px;
+    padding-right: 50px;
+    padding-left: 30px;
+    min-height: 150px;
+    background-color: #090722;
+    color: #fff;
+    position:relative;
+}
+
+
+.footer_link{
+    margin-top: 13px;
+}
+.footer_link a , .footer_logo a{
+    color: #fff;
+    text-decoration: inherit;
+}
+.footer_logo{
+    display: block;
+    float: right;
+    font-size: 24px;
+}
+
+.logo_Head i {
+    color: #fff;
+    margin-top: 50px;
+    margin-left: 45px;
+    font-size: 26px;
+    display: block;
+    float: left;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.sorch strong{
+    color: #fff;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+.sorch strong:nth-child(1n){
+    padding-right: 25px;
+}
+
+.sorch{
+    float: right;
+}
+
+.logo_Head{
+    height: 100px;
+    
+}
+
+.content_main{
+    position: relative;
+    background-color: #fff;
+    border: solid 5px #f77;
+    width: 78%;
+    min-height: 350px;
+    display: inline-block;
+
+}
+.left_nav{
+    float: left;
+    width: 20%;
+    display: inline-block;
+    position: relative; 
+    color: #fff;
+    border:solid 5px #090722;
+    box-shadow: 0px 1px 70px -4px #090734 insert;  
+}
+.left_nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li a:hover{
+    color: #f00;
+    animation:  1.5s animtext;
+    -webkit-animation:1.5s animtext;
+    text-decoration: underline;
+}
+
+.in_menu{
+    display: none;
+    list-style: none;
+}
+.menu li:hover > .in_menu {
+    display: block;
+}
+.in_menu li a:hover{
+    color: #f00;
+}
+.wepper{
+
+}
+@keyframes animtext{
+    0% { color: #f00; }
+    100% {color: #fff;}
+} 
+@-webkit-keyframes animtext{
+    0% { color: #f00; }
+    100% {color: #fff;}
+}
+.in_context{
+    padding:50px; 
+    padding-top:20px; 
+    background-color:#fff; 
+}
+.strings{
+    margin-top:5px;
+    position: relative; 
+}
+hr{
+    width: 90%;
+}
+.items_movie{
+    background-color:#4d4d4d;
+}
+.movies table{
+    background-color:#6495ED; 
+}
+.movies th{
+   background-color:#7697ED;
+}
+.edit_img{
+    width: 20px;
+    height: 20px;
+}
+.movies table td{
+    border-top:solid 1px #fff;
+    border-left:solid 1px #fff;
+}
+.movies table td:nth-child(1){
+    border-left: none;
+}
+.pagination{
+    position: relative;
+    text-align: center;
+}
+.pagination a{
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding-top:10px; 
+    padding-left:3px; 
+}
