@@ -1,8 +1,10 @@
 package dao;
 
+import entities.Person;
 import entities.User;
 import util.Connector;
 
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,6 +20,7 @@ public class UserDAO {
     private static final String GET_USER_BY_LOGIN = "SELECT * FROM user WHERE login=?";
     private static final String INSERT_USER = "INSERT INTO user(login, password, name, surname, user_role_ID, image_ID) VALUES(?,?,?,?,?,?)";
     private static final String UPDATE_USER = "UPDATE user SET login=?, password=?, name=?, surname=?, user_role_ID=?, image_ID=? WHERE user_ID=?";
+    private static final String DELETE_USER = "DELETE FROM `user` WHERE `user_ID`=?;";
 
     Connection connection;
 
@@ -77,7 +80,6 @@ public class UserDAO {
         }
     }
 
-
     public void update(User user) throws SQLException {
         PreparedStatement statement = null;
         try {
@@ -99,6 +101,19 @@ public class UserDAO {
         }
     }
 
+    public boolean delete(User user)throws SQLException{
+        boolean isOk= false;
+        PreparedStatement statement= null;
+        try {
+            connection= Connector.getConnection();
+            statement= connection.prepareStatement(DELETE_USER);
+            statement.setInt(1,user.getId());
+            isOk=statement.execute();
+        }finally {
+            Connector.close(statement);
+        }
+        return isOk = false;
+    }
 
     private User obtain(ResultSet resultSet) throws SQLException {
         User user = new User();
@@ -112,5 +127,4 @@ public class UserDAO {
         return user;
 
     }
-
 }
