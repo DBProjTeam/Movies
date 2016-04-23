@@ -122,17 +122,20 @@ DROP TABLE IF EXISTS `movie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie` (
-  `movie_ID` INT(11) NOT NULL AUTO_INCREMENT,
-  `runtime` TIME DEFAULT NULL,
-  `releaseDate` DATE DEFAULT NULL,
-  `year` INT(11) NOT NULL,
-  `description` TEXT,
-  `image_ID` INT(11) DEFAULT NULL,
-  `title` VARCHAR(200) DEFAULT NULL, -- Add field `title`
+  `movie_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `runtime` time DEFAULT NULL,
+  `releaseDate` date DEFAULT NULL,
+  `year` int(11) NOT NULL,
+  `description` text,
+  `image_ID` int(11) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `country` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`movie_ID`),
   KEY `image_to_movie_fk_idx` (`image_ID`),
+  KEY `FK_movie` (`country`),
+  CONSTRAINT `FK_movie` FOREIGN KEY (`country`) REFERENCES `country` (`country`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `image_to_movie_fk` FOREIGN KEY (`image_ID`) REFERENCES `image` (`image_ID`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
