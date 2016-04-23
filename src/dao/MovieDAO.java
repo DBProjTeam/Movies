@@ -21,8 +21,8 @@ public class MovieDAO {
     private static String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
     private static String GET_MOVIE_ALL = "SELECT * FROM movie;";
     private static String SEARCH_BY_TITLE = "SELECT * FROM movie WHERE movie.title LIKE  ?'%';"; // В таблице movie нет title!?
-    private static String INSERT_MOVIE="INSERT INTO `movie` (`runtime`,`releaseDate`,`year`,`description`,`image_ID`,`title`) VALUES( ?, ?, ?, ?, ?, ? );";
-    private static String UPDATE_MOVIE="UPDATE `movie` SET `runtime`=?, `releaseDate`=?,`year`=?,`description`=?, `image_ID`=?, `title`=? WHERE `movie_ID`=?;";
+    private static String INSERT_MOVIE="INSERT INTO `movie` (`runtime`,`releaseDate`,`year`,`description`,`image_ID`,`title`,`country`) VALUES( ?, ?, ?, ?, ?, ?,?);";
+    private static String UPDATE_MOVIE="UPDATE `movie` SET `runtime`=?, `releaseDate`=?,`year`=?,`description`=?, `image_ID`=?, `title`=?, `country`=? WHERE `movie_ID`=?;";
     private static String DELETE_MOVIE="DELETE FROM `movie` WHERE `movie_ID`=?;";
     Connection connection;
 
@@ -166,6 +166,7 @@ public class MovieDAO {
             statement.setString(4,movie.getDescription());
             statement.setInt(5,movie.getImage_id());
             statement.setString(6,movie.getTitle());
+            statement.setString(7,movie.getCountry().getCountry());
             isOk = statement.execute();
         }finally {
             Connector.close(statement);
@@ -185,14 +186,14 @@ public class MovieDAO {
             statement.setString(4,movie.getDescription());
             statement.setInt(5,movie.getImage_id());
             statement.setString(6,movie.getTitle());
-            statement.setInt(7,movie.getMovie_id());
+            statement.setString(7,movie.getCountry().getCountry());
+            statement.setInt(8,movie.getMovie_id());
             isOk = statement.execute();
         }finally {
             Connector.close(statement);
         }
         return isOk;
     }
-
 
     public boolean delete(Movie movie)throws SQLException{
         boolean isOk= false;
