@@ -1,0 +1,113 @@
+/*
+    для всех  
+*/
+
+body {
+    background-color: #090722;
+    font-family: ThimeNewRoma;
+}
+
+.wepper_main {
+    width: 78%;
+    margin: 0 auto;
+}
+
+.wepper_Head {
+    padding-top: 40px;
+}
+
+.wepper_footer {
+    padding-top: 95px;
+    padding-right: 50px;
+    padding-left: 30px;
+    min-height: 150px;
+    margin-top: 5px;
+    background-color: #0b0921;
+    color: #fff;
+}
+
+.footer_link {
+    margin-top: 13px;
+}
+
+.footer_link a, .footer_logo a {
+    color: #fff;
+    text-decoration: inherit;
+}
+
+.footer_logo {
+    display: block;
+    float: right;
+    font-size: 1.5em;
+}
+
+.logo_Head i {
+    color: #fff;
+    margin-top: 50px;
+    margin-left: 45px;
+    font-size: 26px;
+    display: block;
+    float: left;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.sorch strong {
+    color: #fff;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+
+.sorch strong:nth-child(1n) {
+    padding-right: 25px;
+}
+
+.sorch {
+    float: right;
+}
+
+.logo_Head {
+    height: 16%;
+
+}
+
+.wepper_body {
+    background-color: #090722;
+    min-height: 1%;
+}
+
+.seperator {
+    width: 100%;
+    background: #f4f0cd;
+    min-height: 1%;
+}
+
+.seperator h3 {
+    color: #000;
+    padding: 0.65em;
+    padding-left: 1.8em;
+}
+
+.seperator div {
+    display: inline;
+}
+
+.person_bloc_img {
+    background-color: #96acc3;
+    width: 100%;
+    min-height: 1%;
+    padding-bottom: 2em;
+}
+
+.foto {
+    width: 20%;
+    margin-left: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    display: inline-block;
+    position: relative;
+}
+
+.foto img {
+    width: 100%;
+}

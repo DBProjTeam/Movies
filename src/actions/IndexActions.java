@@ -19,13 +19,17 @@ public class IndexActions extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         MovieDAO movieDAO = new MovieDAO();
         MoviePersonRoleDAO personMRDAO = new MoviePersonRoleDAO();
-
         Movie movie = movieDAO.getRecent();
+//        Map <String,MoviePersonRoleView>map= new HashMap<String, MoviePersonRoleView>();
 
-        MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR");
-        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator");
-        MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer");
+        MoviePersonRoleView director = null, oper = null, composer = null;
+        try {
+            director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR").get(0);
+            oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator").get(0);
+            composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer").get(0);
+        } catch (Exception e) {
 
+        }
         request.setAttribute("popular_movies", movieDAO.getPopularMovies());
         request.setAttribute("country", movieDAO.getCountry(movie.getMovie_id()));
         request.setAttribute("movie", movie);

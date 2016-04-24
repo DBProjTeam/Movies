@@ -24,7 +24,6 @@ import java.util.ListIterator;
 public class MovieActions extends Action {
 
 
-
     private static int count_max_role = 10;
 
     @Override
@@ -43,19 +42,26 @@ public class MovieActions extends Action {
         List<MoviePersonRoleView> persons = moviePersonRoleDAO.getPersonRoleByMovieId(movie_id);
         List<Comment> comments = commentDAO.getAllCommentByIdMovie(movie_id);
         double rating = getRatingAverage(ratingList);
+        MoviePersonRoleDAO personMRDAO = new MoviePersonRoleDAO();
+        List<MoviePersonRoleView> director = null, oper = null, composer = null, producer = null;
 
-       /* List<PersonRoleView> personRoleProducer = getRole(personRoleViewList, ROLE_PRODUCER);
-        List<PersonRoleView> personRoleActor = getRole(personRoleViewList, ROLE_ACTOR);
-        List<PersonRoleView> personRoleDirector = getRole(personRoleViewList, ROLE_DIRECTOR);*/
-        //бред!!
+        try {
+            director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR");
+            oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator");
+            composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer");
+            producer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "producer");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        request.setAttribute("director", director);
+        request.setAttribute("oper", oper);
+        request.setAttribute("composer", composer);
+        request.setAttribute("producer", producer);
+        request.setAttribute("country", movieDAO.getCountry(movie.getMovie_id()));
         request.setAttribute("movie", movie);
         request.setAttribute("comments", comments);
-        request.setAttribute("persons",persons);
-      //  request.setAttribute("persons",personRoleViewList);
-       /* request.setAttribute("roleProducer", personRoleProducer);
-        request.setAttribute("roleActor", personRoleActor);
-        request.setAttribute("roleDirector", personRoleDirector);
-*/
+        request.setAttribute("persons", persons);
         request.setAttribute("rating", rating);
         PageAction pageAction = new PageAction(PagePath.MOVIE, true);
         return pageAction;
@@ -73,7 +79,7 @@ public class MovieActions extends Action {
         return (sum * 1.0) / (count * 1.0);
     }
 
-
+    //deprecated method
     private List<MoviePersonRoleView> getRole(List<MoviePersonRoleView> list, String role) {
         ListIterator<MoviePersonRoleView> iterator = list.listIterator();
         List<MoviePersonRoleView> personsRole = new ArrayList<MoviePersonRoleView>();
@@ -88,7 +94,6 @@ public class MovieActions extends Action {
         }
         return personsRole;
     }
-
 
 
 }

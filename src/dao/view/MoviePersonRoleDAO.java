@@ -16,7 +16,7 @@ import java.util.List;
  * {Очень содержательный класс в нем все связывающие  Person Movie и Role}
  */
 public class MoviePersonRoleDAO {
-    private static final String GET_PERSON_BY_MOVIE_ID = "SELECT * FROM movies.movie_person_role_view where movie_ID=? and  role=?;";
+    private static final String GET_PERSON_BY_MOVIE_ID = "SELECT * FROM movies.movie_person_role_view where movie_ID=? and  role=?;";//запрос на выборку определенной роли в фильме
     private static String GET_PERSON_ROLE_BY_MOVIE_ID = "SELECT * FROM movie_person_role_view WHERE movie_ID=?";//запрос на выборку всех персон кто играл в фильме
     private static String GET_PERSON_ROLE_BY_PERSON_ID = "SELECT * FROM movie_person_role_view WHERE person_ID=?";//запрос на выборку всех ролей персоны
     Connection connection;
@@ -59,8 +59,8 @@ public class MoviePersonRoleDAO {
         return moviePersonRoleViews;
     }
 
-    public MoviePersonRoleView getPersonByMovieId(int movie_id, String role) throws SQLException {
-        MoviePersonRoleView personW = null;
+    public List<MoviePersonRoleView> getPersonByMovieId(int movie_id, String role) throws SQLException {
+        List<MoviePersonRoleView> moviePersonRoleViews = new ArrayList<MoviePersonRoleView>();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -70,14 +70,14 @@ public class MoviePersonRoleDAO {
             statement.setString(2, role);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                personW = (obtain(resultSet));
+                moviePersonRoleViews.add(obtain(resultSet));
             }
         } finally {
             Connector.close(statement);
             Connector.close(resultSet);
         }
 
-        return personW;
+        return moviePersonRoleViews;
     }
 
     private MoviePersonRoleView obtain(ResultSet resultSet) throws SQLException {

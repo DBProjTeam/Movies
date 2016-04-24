@@ -10,10 +10,118 @@
 <html>
 <head>
     <title>Movie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="/lib/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src=/"lib/js/jquery.fitvids.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/styl_detail_movei.css">
+    <link href="lib/css/jquery.bxslider.css" rel="stylesheet"/>
+    <script src="lib/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $('.bxslider').bxSlider({
+            video: true,
+            useCSS: false
+        });
+    </script>
 </head>
 <body>
+<div class="wepper_main">
+    <%@ include file="/jsp/jspf/head/logo.jspf" %>
+    <div class="wepper_body">
+        <div class="detal_movie">
 
-<%@ include file="/jsp/jspf/head/logo.jspf" %>
+            <div class="img_movie">
+                <img src="img/detal_movie/detal_movie_main.jpg">
+            </div>
+
+            <div class="desc_movie_info">
+                <div class="desc_static">
+                    <ul>
+                        <li>Год</li>
+                        <li>Страна</li>
+                        <li>Режессер</li>
+                        <li>Сценарий</li>
+                        <li>Продюсер</li>
+                        <li>Оператор</li>
+                        <li>Жанр</li>
+                        <li>Премьера</li>
+                        <li>Возраст</li>
+                        <li>Время</li>
+                    </ul>
+                </div>
+                <div class="desc_dinamic">
+                    <ul>
+                        <li><c:out value="${movie.year}" default=" "/></li>
+                        <li><c:out value="${country.country.country}" default=" "/></li>
+                        <c:if test="${director.size()!=0}">
+                            <li><c:out value="${director.get(0).person.name}" default=" "/></li>
+                        </c:if>
+                        <c:if test="${composer.size()!=0}">
+                            <li><c:out value="${composer.get(0).person.name}" default=" "/></li>
+                        </c:if>
+                        <c:if test="${producer.size()!=0}">
+                            <li><c:out value="${producer.get(0).person.name}" default=" "/></li>
+
+                        </c:if>
+                        <c:if test="${oper.size()!=0}">
+                            <li><c:out value="${oper.get(0).person.name}" default=" "/></li>
+                            <li>asd</li>
+                        </c:if>
+                        <li><c:out value="${movie.releaseDate}" default=" "/></li>
+                        <li>asd</li>
+                        <li><c:out value="${movie.runtime}" default=" "/></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="seperator">
+            <h3>В кратце о фильме</h3>
+        </div>
+        <div class="desc_movie">
+            <strong>
+                ${movie.description}
+            </strong>
+        </div>
+        <div class="seperator">
+            <h3>Изображения</h3>
+        </div>
+        <div class="desc_movie_img">
+            <table>
+                <tr>
+                    <td>
+                        <div class="desc_img">
+                            <img src="img/detal_movie/detal_movie_02.jpg">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="desc_img">
+                            <img src="img/detal_movie/detal_movie_01.jpg">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="desc_img">
+                            <img src="img/detal_movie/detal_movie_03.jpg">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="desc_img">
+                            <img src="img/detal_movie/detal_movie_04.jpg">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="seperator">
+            <h3>Трейлер</h3>
+        </div>
+        <div class="desc_movie_treuler">
+
+        </div>
+
+    </div>
+</div>
 
 <article align="center">
     Movie:
@@ -81,5 +189,6 @@
     Rating:
     <c:out value="${rating}" default="0"/>
 </article>
+
 </body>
 </html>

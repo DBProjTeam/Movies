@@ -26,6 +26,7 @@ public class PersonAction extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         int person_id = Integer.parseInt(request.getParameter("person_id"));
         PersonDAO personDAO = new PersonDAO();
+        System.out.println(person_id);
         Person person = personDAO.getByPK(person_id);
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         //СЮДА нужно movie_ID но где его взять!!
