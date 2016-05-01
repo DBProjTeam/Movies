@@ -34,7 +34,7 @@ public class ActionContainer {
 
 
         /*===============Movie=======================*/
-        actionMap.put("movie", new MovieActions());
+        actionMap.put("movie", new MovieAction());
 
 
         /*=================Person====================*/

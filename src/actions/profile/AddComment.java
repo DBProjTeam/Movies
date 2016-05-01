@@ -28,8 +28,8 @@ public class AddComment extends Action {
         User user = (User) session.getAttribute("user");
 
         Comment comment = new Comment();
-        comment.setUser_ID(user.getId());
-        comment.setMovie_ID(movieID);
+        comment.setUserID(user.getId());
+        comment.setMovieId(movieID);
         comment.setText(text);
         comment.setDate(new Date(new GregorianCalendar().getTimeInMillis())); //Дата на текущий момент
 

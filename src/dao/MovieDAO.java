@@ -4,11 +4,13 @@ import entities.Country;
 import entities.Movie;
 import entities.MovieCountry;
 import util.Connector;
+
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
 public class MovieDAO {
+
     public static final String GET_POPULAR_MOVIES = "select * from movie \n" +
             "\twhere movie_ID in\n" +
             "\t\t(select id from \n" +
@@ -17,13 +19,13 @@ public class MovieDAO {
             "\t\t\t as t2 where avarage > 22)  ";
     private static final String GET_RECENT_MOVIE = "select * FROM movie where movie.year=Year(now()) order by movie.releaseDate  desc limit 1 ; ";
     private static final String GET_COUNTRY_MOVIE = "SELECT * FROM movie_country where movie_ID=?;";
-    private static String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
-    private static String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
-    private static String GET_MOVIE_ALL = "SELECT * FROM movie;";
-    private static String SEARCH_BY_TITLE = "SELECT * FROM movie WHERE movie.title LIKE  ?'%';"; // В таблице movie нет title!?
-    private static String INSERT_MOVIE="INSERT INTO `movie` (`runtime`,`releaseDate`,`year`,`description`,`image_ID`,`title`,`country`) VALUES( ?, ?, ?, ?, ?, ?,?);";
-    private static String UPDATE_MOVIE="UPDATE `movie` SET `runtime`=?, `releaseDate`=?,`year`=?,`description`=?, `image_ID`=?, `title`=?, `country`=? WHERE `movie_ID`=?;";
-    private static String DELETE_MOVIE="DELETE FROM `movie` WHERE `movie_ID`=?;";
+    private static final String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
+    private static final String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
+    private static final String GET_MOVIE_ALL = "SELECT * FROM movie;";
+    private static final String SEARCH_BY_TITLE = "SELECT * FROM movie WHERE movie.title LIKE  ?'%';"; // В таблице movie нет title!?
+    private static final String INSERT_MOVIE = "INSERT INTO movie (runtime,releaseDate,year,description,image_ID,title,country) VALUES( ?, ?, ?, ?, ?, ?,?);";
+    private static final String UPDATE_MOVIE = "UPDATE movie SET runtime=?, releaseDate=?,year=?,description=?, image_ID=?, title=?, country=? WHERE movie_ID=?;";
+    private static final String DELETE_MOVIE = "DELETE FROM movie WHERE movie_ID =?;";
     Connection connection;
 
     public List<Movie> getPopularMovies() throws SQLException {
@@ -43,6 +45,7 @@ public class MovieDAO {
         }
         return movies;
     }
+
     public Movie getRecent() throws SQLException {
         Movie movie = null;
         Statement statement = null;
@@ -154,56 +157,56 @@ public class MovieDAO {
         return movies;
     }
 
-    public boolean insert(Movie movie)throws SQLException{
+    public boolean insert(Movie movie) throws SQLException {
         boolean isOk = false;
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(INSERT_MOVIE);
-            statement.setTime(1, (Time) movie.getRuntime());
-            statement.setDate(2, (Date) movie.getReleaseDate());
+            statement.setInt(1, movie.getRuntime());
+            statement.setDate(2, movie.getReleaseDate());
             statement.setInt(3, movie.getYear());
-            statement.setString(4,movie.getDescription());
-            statement.setInt(5,movie.getImage_id());
-            statement.setString(6,movie.getTitle());
-            statement.setString(7,movie.getCountry().getCountry());
+            statement.setString(4, movie.getDescription());
+            statement.setInt(5, movie.getImageId());
+            statement.setString(6, movie.getTitle());
+           // statement.setString(7, movie.getCountry().getCountry());
             isOk = statement.execute();
-        }finally {
+        } finally {
             Connector.close(statement);
         }
         return isOk;
     }
 
-    public boolean update(Movie movie)throws SQLException{
+    public boolean update(Movie movie) throws SQLException {
         boolean isOk = false;
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(UPDATE_MOVIE);
-            statement.setTime(1, (Time) movie.getRuntime());
-            statement.setDate(2, (Date) movie.getReleaseDate());
+            statement.setInt(1, movie.getRuntime());
+            statement.setDate(2, movie.getReleaseDate());
             statement.setInt(3, movie.getYear());
-            statement.setString(4,movie.getDescription());
-            statement.setInt(5,movie.getImage_id());
-            statement.setString(6,movie.getTitle());
-            statement.setString(7,movie.getCountry().getCountry());
-            statement.setInt(8,movie.getMovie_id());
+            statement.setString(4, movie.getDescription());
+            statement.setInt(5, movie.getImageId());
+            statement.setString(6, movie.getTitle());
+            //statement.setString(7, movie.getCountry());
+            statement.setInt(7, movie.getMovieId());
             isOk = statement.execute();
-        }finally {
+        } finally {
             Connector.close(statement);
         }
         return isOk;
     }
 
-    public boolean delete(Movie movie)throws SQLException{
-        boolean isOk= false;
+    public boolean delete(Movie movie) throws SQLException {
+        boolean isOk = false;
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(DELETE_MOVIE);
-            statement.setInt(1,movie.getMovie_id());
+            statement.setInt(1, movie.getMovieId());
             isOk = statement.execute();
-        }finally {
+        } finally {
             Connector.close(statement);
         }
         return isOk;
@@ -211,13 +214,13 @@ public class MovieDAO {
 
     public Movie obtain(ResultSet resultSet) throws SQLException {
         Movie movie = new Movie();
-        movie.setMovie_id(resultSet.getInt("movie_ID"));
-        movie.setRuntime(resultSet.getTime("runtime"));
+        movie.setMovieId(resultSet.getInt("movie_ID"));
+        movie.setRuntime(resultSet.getInt("runtime"));
         movie.setDescription(resultSet.getString("description"));
-        //todo поввнимательней кто писал !!!   movie.setImage_id(resultSet.getInt("year"));
+        //todo поввнимательней кто писал !!!   movie.setImageId(resultSet.getInt("year"));
         movie.setYear(resultSet.getInt("year"));
         movie.setReleaseDate(resultSet.getDate("releaseDate"));
-        movie.setImage_id(resultSet.getInt("image_ID"));
+        movie.setImageId(resultSet.getInt("image_ID"));
         return movie;
     }
 

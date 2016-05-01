@@ -38,8 +38,8 @@ public class MoviePersonDAO {
     private MoviePerson obtain(ResultSet resultSet)throws SQLException {
         MoviePerson moviePerson = new MoviePerson();
         moviePerson.setId(resultSet.getInt("movie_person_ID"));
-        moviePerson.setMovie_Id(resultSet.getInt("movie_ID"));
-        moviePerson.setPerson_Id(resultSet.getInt("person_ID"));
+        moviePerson.setMovieId(resultSet.getInt("movie_ID"));
+        moviePerson.setPersonId(resultSet.getInt("person_ID"));
         return moviePerson;
     }
 }

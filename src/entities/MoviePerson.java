@@ -6,31 +6,31 @@ import java.io.Serializable;
  * Created by Едик  Лисогуб on 07.03.2016.
  */
 public class MoviePerson implements Serializable {
-    private int movie_person_ID;
-    private int movie_ID;
-    private int person_ID;
+    private int id;
+    private int movieId;
+    private int personId;
 
     public int getId() {
-        return movie_person_ID;
+        return id;
     }
 
-    public void setId(int movie_person_ID) {
-        this.movie_person_ID = movie_person_ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getMovie_Id() {
-        return movie_ID;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_Id(int movie_Id) {
-        movie_ID = movie_Id;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
-    public int getPerson_Id() {
-        return person_ID;
+    public int getPersonId() {
+        return personId;
     }
 
-    public void setPerson_Id(int person_Id) {
-        person_ID = person_Id;
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
 }

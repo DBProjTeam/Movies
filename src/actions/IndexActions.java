@@ -22,12 +22,12 @@ public class IndexActions extends Action {
 
         Movie movie = movieDAO.getRecent();
 
-        MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "DIRECTOR");
-        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovie_id(), " operator");
-        MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovie_id(), "composer");
+        MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovieId(), "DIRECTOR");
+        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovieId(), " operator");
+        MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovieId(), "composer");
 
         request.setAttribute("popular_movies", movieDAO.getPopularMovies());
-        request.setAttribute("country", movieDAO.getCountry(movie.getMovie_id()));
+        request.setAttribute("country", movieDAO.getCountry(movie.getMovieId()));
         request.setAttribute("movie", movie);
         request.setAttribute("director", director);
         request.setAttribute("oper", oper);

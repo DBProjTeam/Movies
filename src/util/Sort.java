@@ -83,7 +83,7 @@ public class Sort {
 
         public MovieRating(Movie movie) {
             this.movie = movie;
-            this.rating = calculationRatingMovie(movie.getMovie_id());
+            this.rating = calculationRatingMovie(movie.getMovieId());
         }
 
         public double getRating() {

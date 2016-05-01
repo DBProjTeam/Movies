@@ -1,7 +1,5 @@
 package actions;
 
-import actions.Action;
-import actions.PageAction;
 import dao.UserMovieFavoriteDAO;
 import entities.User;
 import entities.UserMovieFavorite;
@@ -23,8 +21,8 @@ public class DeleteMovieFromFavoriteUser extends Action {
         if (user!=null){
             UserMovieFavoriteDAO userMovieFavoriteDAO = new UserMovieFavoriteDAO();
             UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
-            userMovieFavorite.setUserID(user.getId());
-            userMovieFavorite.setMovieID(Integer.parseInt( request.getParameter("movieFavoriteId")));
+            userMovieFavorite.setUserId(user.getId());
+            userMovieFavorite.setMovieId(Integer.parseInt(request.getParameter("movieFavoriteId")));
             userMovieFavoriteDAO.deleteMovieIdFavoriteUser(userMovieFavorite);
         }
         return new PageAction("",false);// здесь вставить ссылку обрат.
