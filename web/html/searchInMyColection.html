@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="lib/css/style_search.css">
+</head>
+<body>
+<div class="wepper_main">
+	<div class="wepper_head">
+			<div class="seperator">
+				<h3><big>F</big>ilms<big>S</big>earch.ua</h3>
+			</div>
+			<div class="discription">
+				<span class="titel">Поиск по своей коллекции</span><br>
+				<span>Поиск фильмов</span>
+			</div>
+	</div>
+	<div class="wepper_body">
+		<div class="bloc_search_2">
+			<text class="pos">1.Названия фильма</text>
+			<div>
+			  <form method="">	
+				<div style="width: 50%; display: inline-block; position: relative;">
+					<input type="text">
+					<text>Полное или частичное названия фильма</text>
+				</div>
+				<div style=" display: inline-block; margin-left: 30%; position: relative; vertical-align: top;">
+					<button class="mybuton">Найти</button>
+				</div>
+			  </form>
+			</div>
+			<text class="pos">2.Жанры и страны</text>
+			<div>
+				<form>
+					<div style="width: 60%; position: relative; display: inline-block;">
+						<div>
+							<span style="padding-right: 25px;">Страна: </span>
+							<select>
+								<option>get Country in DB</option>
+							</select>
+						</div>
+						<div style="padding-top: 20px;">
+							<span style="padding-right: 35px;">Жанр:</span>
+							<select>
+								<option>get in DB</option>
+							</select>
+						</div>
+					</div>
+					<div style="position: relative;margin-left:20%; vertical-align: top;  display: inline-block;">
+						<button class="mybuton">Найти</button>
+					</div>	
+				</form>
+			</div>
+
+			<text class="pos">3.Год создания</text>
+			<div>
+				<form>
+					<div style="width: 60%; display: inline-block;position: relative;">
+						<text style="font-size: 1.3em;">Год c </text>
+						<div  style=" width: 35%; display: inline-block; position: relative;">
+							<input style="width: 100%; height: 35px;" min="2000" max="2017" type="number">
+						</div> 
+						<text style="font-size: 1.3em; display: inline-block; position: relative; padding-right:5px; "> по</text> 
+						<div style="width: 35%; display: inline-block; position: relative;">
+							<input style="width: 100%; height: 35px;" min="2000" max="2017" type="number">
+						</div>
+					</div>
+					<div style="display: inline-block; margin-left: 20%; position: relative;">
+						<button class="mybuton">Найти</button>
+					</div>	
+				</form>
+			</div>
+
+			<text class="pos">4.Рейтинг</text>
+			<div>
+				<form>
+					<div style="width: 60%; display: inline-block;position: relative;">
+						<text style="font-size: 1.3em;">Рейтинг фильма : от</text>
+						<div  style=" width: 24%; display: inline-block; position: relative;">
+							<input style="width: 100%; height: 35px;" min="0" max="10" type="number">
+						</div> 
+						<text style="font-size: 1.3em; display: inline-block; position: relative; padding-right:5px; "> до</text> 
+						<div style="width: 24%; display: inline-block; position: relative;">
+							<input style="width: 100%; height: 35px;" min="0" max="10" type="number">
+						</div>
+
+						<text style="font-size: 1.3em; padding-top: 0.5em; display: block;">Минимальное количество оценок:</text>
+						
+						<div  style=" width: 25%; margin-left: 27.5%; display: inline-block; position: relative;">
+							<text style="display: inline-block;  font-size: 1.3em; position: relative;">от</text> 
+							<input style="width: 75%; display: inline-block; position: relative; height: 35px;" min="0" type="number">
+						</div> 
+						<text style="font-size: 1.3em;margin-left:3%; display: inline-block; position: relative; padding-right:5px; "> до</text> 
+
+						<div style="width: 25%;  display: inline-block; position: relative;">
+							<input style="width: 95%; height: 35px;" min="0"  type="number">
+						</div>
+
+					</div>
+					<div style="display: inline-block; margin-left: 20%; position: relative;">
+						<button class="mybuton">Найти</button>
+					</div>	
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="wepper_footer">
+		
+	</div>
+</div>		
+</body>
+</html>
