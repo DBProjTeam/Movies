@@ -180,3 +180,40 @@ body{
     vertical-align: top;  
     margin-left:50%; 
 }
+.coments_and_mark_bloc{
+    background-color:  #96acc3;
+}
+.coments_and_mark{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.coment{
+    position: relative;
+    display: inline-block;
+    min-height: 150px;
+    width: 98%;
+    margin-left:1%;
+    margin-bottom:15px;
+    background-color: #f4f0cd;
+}
+.avatar_coment{
+    width: 8%;
+    vertical-align: top;
+    padding: 15px; 
+    position: relative;
+    display: inline-block;
+}
+.coment_fild{
+    padding: 15px;
+    vertical-align: top;
+    width: 15%;
+    position: relative;
+    display: inline-block;
+}
+.coment_text{
+    width: 65%;
+    padding: 15px;
+    position: relative;
+    display: inline-block;
+}
