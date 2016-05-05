@@ -77,6 +77,7 @@ body{
     min-height: 1%;
 }
 .seperator h3{
+    color: #000;
     padding: 0.75em;
     padding-left: 1.8em; 
 }
@@ -95,19 +96,24 @@ body{
     padding: 0.75em;
     padding-left: 1.65em;
     padding-bottom: 0.30em;
+    position: relative;
+    display: inline-block;
     }
 .img_movie{
     width: 31%;
-    display: table-cell;
+    display: inline-block;
+    float: left;
 }
 .img_movie img{
     width: 100%;
-    display: table-cell;
+    display:  inline-block;
 }
 .desc_movie_info{
     float: left;
-    padding-top: 1.3em;
-    padding-right:50%; 
+    padding-top: 1.3em; 
+    width: 50%;
+    position: relative;
+    display: inline-block;
 }
 .desc_movie{
 
@@ -140,6 +146,8 @@ body{
 .desc_static , 
 .desc_dinamic{
     float: left;
+    position: relative;
+    display: inline-block;
 }
 .desc_static ul, .desc_dinamic ul{
     list-style: none; 
@@ -157,4 +165,18 @@ body{
     padding-bottom:25px;
     padding-right:20px;   
 
+}
+.rating input[type="image"]{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+.bloc_rating{
+    width: 450px; 
+    position: absolute; 
+    vertical-align: top;  
+    margin-left:50%; 
 }
