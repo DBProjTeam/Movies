@@ -11,6 +11,12 @@ body{
     height: 300px; 
     width: 100%;
 }
+.Mybaner{
+    height:195px;
+    width:250px;
+    margin-left:25px;
+    margin-bottom:20px;
+}
 .sorch strong{
     color: #fff;
     font-family: TimeNewRoma;
