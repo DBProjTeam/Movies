@@ -9,22 +9,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Movie</title>
+    <title>Movie-<c:out value="${movie.title}"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <script src="/lib/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="/lib/js/jquery.fitvids.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/styl_detail_movei.css">
-    <link href="lib/css/jquery.bxslider.css" rel="stylesheet"/>
-    <script src="lib/js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript">
-        $('.bxslider').bxSlider({
-            video: true,
-            useCSS: false
-        });
-    </script>
-    <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
+    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/css/styl_detail_movei.css">
+    <link rel="shortcut icon" href="../../img/logo.JPG" type="image/jpg">
 
 </head>
 <body>
@@ -39,7 +29,7 @@
         <div class="detal_movie">
 
             <div class="img_movie">
-                <img src="/img_temp/${images.get(0).name}">
+                <img src="img_temp/${images.get(0).name}">
             </div>
             <%@ include file="jspf/movie/desc_movie_info.jspf" %>
             <%@ include file="jspf/movie/bloc_rating.jspf" %>
