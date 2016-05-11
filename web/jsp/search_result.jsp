@@ -58,7 +58,14 @@
                                 <img src="img/person_img/Person_07.jpg">
                                 <div>
                                     <span>Дата рождения:</span><span>${person.birth_date}</span><br>
-                                    <span>Дата смерти:</span><span>${person.death_date}</span><br>
+                                    <span>Дата смерти:</span><span>   
+                                      <c:if test="${person.death_date!=null}">
+                                            ${person.death_date}
+                                        </c:if>
+                                        <c:if test="${person.death_date==null}">
+                                            -
+                                        </c:if>
+                                      </span><br>
                                     <span>Страна:</span><span>${person.country}</span><br>
                                     <span>Роль:</span><span>role</span>
                                 </div>
