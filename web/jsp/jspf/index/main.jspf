@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="wepper_body"><!--Начало тела страницы-->
 
-    <div class=" wepper_Head">
+    <div class="wepper_Head">
         <%@ include file="/jsp/jspf/index/head/recentFilms.jspf" %>
         <%@ include file="/jsp/jspf/index/head/separator.jspf" %>
     </div>
