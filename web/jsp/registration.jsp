@@ -6,21 +6,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="lib/css/styl_login.css">
-    <link href="lib/css/MyStyle.css" rel="stylesheet">
-    <link href="lib/css/jquery.bxslider.css" rel="stylesheet"/>
-    <script src="lib/js/jquery.bxslider.min.js"></script>
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/styl_login.css">
+    <title>Регистрация</title>
 </head>
 
 <body>
 
 <div class="wepper_main">
-    <%@ include file="/jsp/jspf/head/logo.jspf" %>
-
     <div class="wepper_body">
         <div class="form_in">
-            <form method="post" action="registration" enctype="multipart/form-data">
+            <form method="post" action="/do?action=registration">
+
                 <table>
                     <tr>
                         <td colspan="2"><strong><big>Регистрация</big></strong></td>
@@ -30,7 +26,7 @@
                             <strong>Логин:</strong>
                         </td>
                         <td>
-                            <input type="email"/>
+                            <input type="email" name="login"/>
                         </td>
                     </tr>
                     <tr>
@@ -38,7 +34,7 @@
                             <strong>Имя:</strong>
                         </td>
                         <td>
-                            <input type="text"></input>
+                            <input type="text" name="name"></input>
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +42,7 @@
                             <strong>Фамилия:</strong>
                         </td>
                         <td>
-                            <input type="text"></input>
+                            <input type="text" name="surname"></input>
                         </td>
                     </tr>
                     <tr>
@@ -54,7 +50,7 @@
                             <strong>Пароль:</strong>
                         </td>
                         <td>
-                            <input type="password"/>
+                            <input type="password" name="password"/>
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +58,7 @@
                             <strong>Изображения:</strong>
                         </td>
                         <td>
-                            <input type="file" accept="image/jpeg,image/png,image/gif"/>
+                            <input type="file" name="imgFile" accept="image/jpeg,image/png,image/gif"/>
                         </td>
                     </tr>
                     <tr>
