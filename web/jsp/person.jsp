@@ -27,13 +27,63 @@
 <div class="wepper_main">
 
     <div class="wepper_body">
-        <%@ include file="/jsp/jspf/person/descrip.jspf" %>
-
-        <div class="seperator"><h3>Фото:</h3></div>
-        <%@ include file="/jsp/jspf/person/images.jspf" %>
-        <div class="seperator"><h3>Все фильмы:</h3></div>
-        <%@ include file="/jsp/jspf/person/films.jspf" %>
-
+        <div class="desc_person">
+            <div class="name_person"><h3>${person.name}</h3></div>
+            <table width="100%">
+                <tr>
+                    <td style=" width:  28%;">
+                        <div class="desc_person_img">
+                            <img src="/img/person_img/Person_03.jpg">
+                        </div>
+                    </td>
+                    <td style=" width: 60%; display: block;">
+                        <div class="desc_person_inf">
+                            <ul>
+                                <li>${person.surname} ${person.name}</li>
+                                <li>Родился: ${person.birth_date}</li>
+                                <c:if test="val.death_date!=null">
+                                    <li>Умер: ${person.death_date}</li>
+                                </c:if>
+                                <li>Страна: ${person.country}</li>
+                                <li>Всего фильмов: <c:out value="${countMovie}" default="0"/></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="desc_img_person">
+            <div class="seperator"><h3>Фото:</h3></div>
+            <table>
+                <tr>
+                    <td>
+                        <div class="img_person"><img src="/img/person_img/Person_07.jpg"></div>
+                    </td>
+                    <td>
+                        <div class="img_person"><img src="../../img/person_img/Person_09.jpg"></div>
+                    </td>
+                    <td>
+                        <div class="img_person"><img src="../../img/person_img/Person_12.jpg"></div>
+                    </td>
+                    <td>
+                        <div class="img_person"><img src="../../img/person_img/Person_14.jpg"></div>
+                    </td>
+                    <td>
+                        <div class="img_person"><img src="../../img/person_img/Person_17.jpg"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="best_fiml">
+            <div class="seperator"><h3>Лучшие фильмы:</h3></div>
+            <ol>
+                <li><a href="">Name Film</a></li>
+                <li><a href="">Name Film</a></li>
+                <li><a href="">Name Film</a></li>
+                <li><a href="">Name Film</a></li>
+                <li><a href="">Name Film</a></li>
+            </ol>
+        </div>
     </div>
 
     <%@ include file="/jsp/jspf/footer.jspf" %>
