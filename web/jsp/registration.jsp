@@ -54,14 +54,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <strong>Изображения:</strong>
-                        </td>
-                        <td>
-                            <input type="file" name="imgFile" accept="image/jpeg,image/png,image/gif"/>
-                        </td>
-                    </tr>
-                    <tr>
                         <td colspan="2" style="text-align: center;">
                             <button class="button_reg" type="submit" name="register">Зарегистрироваться</button>
                         </td>
