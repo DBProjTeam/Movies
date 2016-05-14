@@ -27,7 +27,14 @@
     </div>
     <div class="wepper_body">
         <%@ include file="/jsp/jspf/movie/desc.jspf" %>
+        <c:if test="${not empty user}">
+            <form action="do?action=add_favorite_movie" method="post">
+                <input type="hidden" name="movieId" value="${movie.movieId}"/>
+                <input type="submit" value="Добавить фильм в коллекцию">
+            </form>
+        </c:if>
         <a href="do?action=all_persons_on_film">...</a>
+
         <div class="seperator">
             <h3>В кратце о фильме</h3>
         </div>

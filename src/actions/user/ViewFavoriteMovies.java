@@ -20,7 +20,7 @@ public class ViewFavoriteMovies extends Action {
 
         UserMovieFavoriteDAO favoriteDAO = new UserMovieFavoriteDAO();
         User user = (User) request.getSession().getAttribute("user");
-        request.setAttribute("movies", favoriteDAO.getFavoriteMovies(user.getId()));
+        request.setAttribute("favoriteMovies", favoriteDAO.getFavoriteMovies(user.getId()));
         return new PageAction(PagePath.FAVORITE_MOVIES, true);
     }
 }

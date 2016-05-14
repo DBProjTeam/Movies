@@ -18,17 +18,21 @@ public class AddMovieFavoriteUser extends Action {
 
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        HttpSession session=request.getSession();
+        HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        String referer = request.getHeader("Referer");
+        System.out.println("AddMovieFavoriteUser.execute: movieId=" + request.getParameter("movieId"));
+        if (user != null) {
 
-        if (user!=null){
             UserMovieFavoriteDAO userMovieFavoriteDAO = new UserMovieFavoriteDAO();
-            UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
-            userMovieFavorite.setUserId(user.getId());
-            userMovieFavorite.setMovieId(Integer.parseInt(request.getParameter("movieId")));
-            userMovieFavoriteDAO.AddMovieIdFavoriteUser(userMovieFavorite);
+            if (!userMovieFavoriteDAO.existsMovieUser(user.getId(), Integer.parseInt(request.getParameter("movieId")))) {
+                UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
+                userMovieFavorite.setUserId(user.getId());
+                userMovieFavorite.setMovieId(Integer.parseInt(request.getParameter("movieId")));
+                userMovieFavoriteDAO.AddMovieIdFavoriteUser(userMovieFavorite);
+            }
         }
 
-        return new PageAction("",false);
+        return new PageAction(referer, false);
     }
 }
