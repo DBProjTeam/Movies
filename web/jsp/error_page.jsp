@@ -14,7 +14,7 @@
     <title></title>
 </head>
 <body>
-Error!
+Доступ запрещен
 <br>
 <c:if test="${not empty error}">
     ${error}

@@ -25,4 +25,65 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+    <filter>
+        <filter-name>ActionAccessFilter</filter-name>
+        <filter-class>servlets.ActionAccessFilter</filter-class>
+        <init-param>
+            <param-name>admin</param-name>
+            <!-- Это доступно только для админа -->
+            <param-value>
+                none
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>editor</param-name>
+            <!-- Это доступно только для редактора и админа -->
+            <param-value>
+                none
+            </param-value>
+        </init-param>
+        <init-param>
+            <!-- Это доступно только для простых пользователей -->
+            <param-name>user</param-name>
+            <param-value>
+                none
+            </param-value>
+        </init-param>
+        <init-param>
+            <!-- Это доступно только для зарегистрированных людей -->
+            <param-name>common</param-name>
+            <param-value>
+                profile_page
+                change_profile
+                favorite_movies
+                logout
+                rating
+                add_favorite_movie
+                delete_favorite_movie
+            </param-value>
+        </init-param>
+        <init-param>
+            <!-- Это доступно вообще для всех -->
+            <param-name>outOfControl</param-name>
+            <param-value>
+                registration_page
+                registration
+                registration_done
+                login
+                search_page
+                full_search
+                search
+                movie
+                person
+                all_persons_on_film
+                index
+            </param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ActionAccessFilter</filter-name>
+        <url-pattern>/do</url-pattern>
+    </filter-mapping>
 </web-app>

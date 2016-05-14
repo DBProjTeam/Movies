@@ -73,10 +73,12 @@ public class User implements Serializable {
     }
 
     public static enum UserRole {
-        ADMIN, USER;
+        ADMIN, USER, EDITOR;
 
         public static UserRole getRole(int role) {
             switch (role) {
+                case 3:
+                    return EDITOR;
                 case 2:
                     return ADMIN;
                 case 1:
