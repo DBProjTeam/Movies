@@ -22,21 +22,22 @@
                 <div class="avat">
                     <%--сылка на изображения как сделать?--%>
                     <img src="img/person_img/${user.imageId}.jpg">
-                    <div><input class="button" type="button" value="Выбрать файл"></input></div>
+                    <div><input class="button" type="button" value="Выбрать файл"/></div>
                 </div>
-                <div class="desc">
-                    <form method="post">
+                <div class="desc" >
+                    <form method="post" action="do">
+                        <input hidden="hidden" name="action" value="change_profile" >
                         <div class="text_field">
                             <text>Имя:</text>
                             <text>Фамилия:</text>
-                            <text>Emal:</text>
+
                             <text>Роль:</text>
                         </div>
                         <div class="fields">
-                            <div class="field"><input type="text" value="${user.name}"></input></div>
-                            <div class="field"><input type="text" value="${user.surname}"></input></div><!-- Даные достаем из БД -->
-                            <div class="field"><input type="text" value="${user.login}"></input></div>
-                            <div class="field"><text>get in DB ${user.role}</text></div>
+                            <div class="field"><input type="text" name="name" value="${user.name}"/></div>
+                            <div class="field"><input type="text" name="surname" value="${user.surname}"/></div>
+
+                            <div class="field"><text>${user.role}</text></div>
                         </div>
                         <div>
                             <div class="cliks">

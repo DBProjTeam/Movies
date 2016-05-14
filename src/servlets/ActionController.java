@@ -16,6 +16,7 @@ import java.sql.SQLException;
  */
 
 public class ActionController extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
             process(request, response);
@@ -42,6 +43,7 @@ public class ActionController extends HttpServlet {
 
     private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         String actionName = request.getParameter("action");
+        System.out.println("ActionController.process : request received '" + actionName + "'");
         Action action = ActionContainer.getAction(actionName);
         PageAction pageAction = action.execute(request, response);
         response.setContentType("text/html;charset=UTF-8");

@@ -22,7 +22,7 @@
                             <strong>Логин:</strong>
                         </td>
                         <td>
-                            <input type="email" name="login"/>
+                            <input type="text" name="login"/>
                         </td>
                     </tr>
                     <tr>

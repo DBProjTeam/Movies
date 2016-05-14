@@ -30,12 +30,13 @@ public class ActionContainer {
 
         /*===============Profile==================== */
         actionMap.put("profile_page", new PageForward(PagePath.PROFILE));
-        actionMap.put("profile_change", new ChangeProfile());
+        actionMap.put("change_profile", new ChangeProfile());
         actionMap.put("favorite_movies", new ViewFavoriteMovies());
         actionMap.put("logout", new Logout());
 
 
         /*===============Search=======================*/
+        actionMap.put("search_page", new PageForward(PagePath.FULL_SEARCH));
         actionMap.put("full_search", new FullSearch());
         actionMap.put("search", new Search());
 

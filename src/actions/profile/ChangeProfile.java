@@ -20,13 +20,11 @@ public class ChangeProfile extends Action {
 
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
-        String password = request.getParameter("password");
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         user.setName(name);
         user.setSurname(surname);
-        user.setPassword(password);
 
         UserDAO userDAO = new UserDAO();
         userDAO.update(user);

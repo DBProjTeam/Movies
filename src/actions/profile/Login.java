@@ -13,15 +13,17 @@ import java.sql.SQLException;
 
 /**
  * Created by Vyacheslav.
+ *
  * @author Vyacheslav
  */
 public class Login extends Action {
+
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         String login = request.getParameter("login");
-       String password = request.getParameter("password");
-
+        String password = request.getParameter("password");
+        System.out.println("Login.execute: login=" + login + ", password=" + password);
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getByLogin(login);
 
@@ -30,6 +32,7 @@ public class Login extends Action {
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            System.out.println("Login.execute: user login=" + login + " logged");
             return new PageAction("do?action=index", false);
         }
         return new PageAction(PagePath.LOGIN, true);

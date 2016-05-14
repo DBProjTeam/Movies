@@ -76,7 +76,7 @@ public class UserDAO {
             statement.executeUpdate();
         } finally {
             Connector.close(statement);
-            Connector.close(connection);
+
         }
     }
 
@@ -97,7 +97,7 @@ public class UserDAO {
             statement.executeUpdate();
         } finally {
             Connector.close(statement);
-            Connector.close(connection);
+
         }
     }
 
