@@ -55,6 +55,7 @@
             <!-- Это доступно только для зарегистрированных людей -->
             <param-name>common</param-name>
             <param-value>
+                add_comment
                 profile_page
                 change_profile
                 favorite_movies

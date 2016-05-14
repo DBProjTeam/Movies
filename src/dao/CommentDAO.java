@@ -51,7 +51,7 @@ public class CommentDAO {
             statement.setString(3, comment.getText());
             statement.setDate(4, (Date) comment.getDate());
 
-            statement.executeQuery();
+            statement.executeUpdate();
         } finally {
             Connector.close(statement);
         }

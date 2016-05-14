@@ -26,7 +26,7 @@ public class AddComment extends Action {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        System.out.println("AddComment.execute: user " + user.getLogin()+ " is trying to add comment");
         Comment comment = new Comment();
         comment.setUserID(user.getId());
         comment.setMovieId(movieID);
@@ -36,6 +36,6 @@ public class AddComment extends Action {
         CommentDAO commentDAO = new CommentDAO();
         commentDAO.insert(comment);
 
-        return new PageAction("do?action=movie_page&movie_id=" + movieID, false);
+        return new PageAction(request.getHeader("Referer"), false);
     }
 }

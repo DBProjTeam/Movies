@@ -18,5 +18,13 @@
                 </div>
             </div>
         </c:forEach>
+        <c:if test="${not empty user}">
+            <div class="coment">
+                <form action="do?action=add_comment&movie_id=${movie.movieId}" method="post">
+                    <textarea name="text" rows="10" cols="45"></textarea>
+                    <input type="submit" value="Добавить комментарий">
+                </form>
+            </div>
+        </c:if>
     </div>
 </div>
