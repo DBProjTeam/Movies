@@ -58,6 +58,7 @@ public class ActionContainer {
         actionMap.put("person",new PersonAction());
         //actionMap.put("all_persons_on_film", new PageForward(PagePath.ALL_PERSONS_ON_FILM));
         actionMap.put("all_persons_on_film",new PageAllPersonFilm());
+
         /*=================Editor====================*/
 
         //country
