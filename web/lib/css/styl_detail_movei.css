@@ -109,14 +109,14 @@ body {
 }
 
 .img_movie {
-    width: 35%;
+    width: 30%;
     display: inline-block;
     float: left;
 }
 
 .img_movie img {
-    width: 100%;
-    height: 220px;
+    width: 80%;
+    height: 270px;
     display: inline-block;
 }
 
@@ -128,9 +128,6 @@ body {
     display: inline-block;
 }
 
-.desc_movie {
-
-}
 
 .desc_movie_img {
     display: table;  
@@ -152,9 +149,12 @@ body {
 }
 
 .desc_movie strong {
-    font-size: 1.7em;
+    font-size: 1em;
+    text-decoration: none;
+    font-style:normal;
     color: #000; 
 }
+
 
 .desc_movie_info h4 {
     padding-bottom: 1em;
