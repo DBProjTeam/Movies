@@ -22,4 +22,16 @@ public class PagePath {
 
     public static final String ERROR_PAGE = "/jsp/error_page.jsp";
 
+
+    /*=====================Editor actions==============================*/
+
+    //country
+    public static final String EDITOR_SHOW_COUNTRIES = "/jsp/editor/country/show_countries.jsp";
+    public static final String EDITOR_ADD_COUNTRY = "/jsp/editor/country/add_country.jsp";
+
+    //person
+    public static final String EDITOR_SHOW_PERSONS = "/jsp/editor/person/show_persons.jsp";
+    public static final String EDITOR_ADD_PERSON = "/jsp/editor/person/add_person.jsp";
+    public static final String EDITOR_UPDATE_PERSON = "/jsp/editor/person/update_person.jsp";
+
 }

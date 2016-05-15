@@ -9,12 +9,33 @@ import java.util.List;
 
 
 public class PersonDAO {
+
     private static final String GET_PERSON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
-    private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME="SELECT * FROM person WHERE(person.name LIKE ?'%') OR (person.surname LIKE ?'%')";
-    private static final String INSERT_PERSON ="INSERT INTO person (name,surname,birth_date,death_date,country,image_ID) VALUES (?,?,?,?,?,?);";
-    private static final String UPDATE_PERSON="UPDATE person SET name=?, surname=?, birth_date=?, death_date=?, country=?,image_ID=? WHERE person_ID=?;";
-    private static final String DELETE_PERSON="DELETE FROM person WHERE person_ID=?;";
+    private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME = "SELECT * FROM person WHERE(person.name LIKE ?'%') OR (person.surname LIKE ?'%')";
+    private static final String INSERT_PERSON = "INSERT INTO person (name,surname,birth_date,death_date,country,image_ID) VALUES (?,?,?,?,?,?);";
+    private static final String UPDATE_PERSON = "UPDATE person SET name=?, surname=?, birth_date=?, death_date=?, country=?,image_ID=? WHERE person_ID=?;";
+    private static final String DELETE_PERSON = "DELETE FROM person WHERE person_ID=?;";
+    private static final String GET_ALL = "SELECT * FROM person";
     Connection connection;
+
+    public List<Person> getAll() throws SQLException {
+        List<Person> person = new ArrayList<Person>();
+        PreparedStatement statement = null;
+        ResultSet res = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(GET_ALL);
+            res = statement.executeQuery();
+            while (res.next()) {
+                person.add(obtain(res));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(res);
+        }
+        return person;
+
+    }
 
     public Person getByPK(int pk) throws SQLException {
         Person person = null;
@@ -57,54 +78,54 @@ public class PersonDAO {
 
     }
 
-    public boolean insert(Person person)throws SQLException{
+    public boolean insert(Person person) throws SQLException {
         boolean isOk = false;
-        PreparedStatement  statement = null;
-        try {
-            connection=Connector.getConnection();
-            statement=connection.prepareStatement(INSERT_PERSON);
-            statement.setString(1,person.getName());
-            statement.setString(2,person.getSurname());
-            statement.setDate(3, (Date) person.getBirth_date());
-            statement.setDate(4,(Date) person.getDeath_date());
-            statement.setString(5, person.getCountry());
-            statement.setInt(6,person.getImageId());
-            isOk = statement.execute();
-        }finally {
-            Connector.close(statement);
-        }
-        return isOk;
-    }
-
-    public boolean update(Person person)throws SQLException{
-        boolean isOk= false;
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
-            statement= connection.prepareStatement(UPDATE_PERSON);
-            statement.setString(1,person.getName());
-            statement.setString(2,person.getSurname());
-            statement.setDate(3,(Date)person.getBirth_date());
-            statement.setDate(4,(Date)person.getDeath_date());
-            statement.setString(5,person.getCountry());
-            statement.setInt(6,person.getImageId());
-            statement.setInt(7,person.getId());
-            isOk= statement.execute();
-        }finally {
+            statement = connection.prepareStatement(INSERT_PERSON);
+            statement.setString(1, person.getName());
+            statement.setString(2, person.getSurname());
+            statement.setDate(3, (Date) person.getBirth_date());
+            statement.setDate(4, (Date) person.getDeath_date());
+            statement.setString(5, person.getCountry());
+            statement.setInt(6, person.getImageId());
+            isOk = statement.execute();
+        } finally {
             Connector.close(statement);
         }
         return isOk;
     }
 
-    public boolean delete(Person person)throws SQLException{
-        boolean isOk= false;
+    public boolean update(Person person) throws SQLException {
+        boolean isOk = false;
         PreparedStatement statement = null;
-        try{
-            connection= Connector.getConnection();
-            statement= connection.prepareStatement(DELETE_PERSON);
-            statement.setInt(1,person.getId());
-            isOk= statement.execute();
-        }finally {
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(UPDATE_PERSON);
+            statement.setString(1, person.getName());
+            statement.setString(2, person.getSurname());
+            statement.setDate(3, (Date) person.getBirth_date());
+            statement.setDate(4, (Date) person.getDeath_date());
+            statement.setString(5, person.getCountry());
+            statement.setInt(6, person.getImageId());
+            statement.setInt(7, person.getId());
+            isOk = statement.execute();
+        } finally {
+            Connector.close(statement);
+        }
+        return isOk;
+    }
+
+    public boolean delete(int id) throws SQLException {
+        boolean isOk = false;
+        PreparedStatement statement = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(DELETE_PERSON);
+            statement.setInt(1, id);
+            isOk = statement.execute();
+        } finally {
             Connector.close(statement);
         }
         return isOk;

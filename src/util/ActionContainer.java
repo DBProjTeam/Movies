@@ -1,6 +1,12 @@
 package util;
 
 import actions.*;
+import actions.editor.country.AddCountry;
+import actions.editor.country.ShowCountries;
+import actions.editor.person.AddPerson;
+import actions.editor.person.DeletePerson;
+import actions.editor.person.ShowPersons;
+import actions.editor.person.UpdatePerson;
 import actions.profile.*;
 import actions.search.FullSearch;
 import actions.search.Search;
@@ -52,9 +58,19 @@ public class ActionContainer {
         actionMap.put("person",new PersonAction());
         actionMap.put("all_persons_on_film", new PageForward(PagePath.ALL_PERSONS_ON_FILM));
 
+        /*=================Editor====================*/
 
-
-
+        //country
+        actionMap.put("show_countries", new ShowCountries());
+        actionMap.put("add_country_page", new PageForward(PagePath.EDITOR_ADD_COUNTRY));
+        actionMap.put("add_country", new AddCountry());
+        //person
+        actionMap.put("show_persons", new ShowPersons());
+        actionMap.put("add_person_page", new PageForward(PagePath.EDITOR_ADD_PERSON));
+        actionMap.put("add_person", new AddPerson());
+        actionMap.put("update_person_page", new PageForward(PagePath.EDITOR_UPDATE_PERSON));
+        actionMap.put("update_person", new UpdatePerson());
+        actionMap.put("delete_person", new DeletePerson());
 
         /*===============Other============================*/
         actionMap.put("index", new IndexActions());

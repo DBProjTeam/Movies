@@ -41,7 +41,15 @@
             <param-name>editor</param-name>
             <!-- Это доступно только для редактора и админа -->
             <param-value>
-                none
+                show_countries
+                add_country_page
+                add_country
+                show_persons
+                add_person_page
+                add_person
+                update_person_page
+                update_person
+                delete_person
             </param-value>
         </init-param>
         <init-param>
