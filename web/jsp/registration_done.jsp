@@ -14,7 +14,7 @@
 <body>
 <div class="wepper_main">
   <%@ include file="/jsp/jspf/head.jspf" %>
-  <div class="wepper_body">
+  <div class="wepper_bodys">
     <p>Вы зарегистрированы!</p>
   </div>
   <%@ include file="/jsp/jspf/footer.jspf" %>
