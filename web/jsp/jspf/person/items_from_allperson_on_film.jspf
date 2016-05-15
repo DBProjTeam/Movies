@@ -1,0 +1,21 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Станислав
+  Date: 15.05.16
+  Time: 22:37
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<meta charset="UTF-8"/>
+<c:if test="${listPerson!=null}">
+  <c:forEach var="person" items="listPerson">
+    <div class="items">
+      <%--путь к изображению--%>
+      <img src="../img/person_img/Person_03.jpg">
+      <a href="#">${person.name} ${person.surname}</a><br>
+      <a>Birth date: <span>${person.birth_date}</span></a><br>
+      <a>Role: <span>Roel</span></a>
+    </div>
+  </c:forEach>
+</c:if>
