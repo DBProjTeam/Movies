@@ -41,13 +41,15 @@
                     <div>
                         <text style="font-size: 1.3em;">Год c</text>
                         <div style=" width: 35%; display: inline-block; position: relative;">
-                            <input style="width: 100%; height: 35px;" id="to_year" min="${min_year}" max="${max_year}"
-                                   type="number">
+                            <input style="width: 100%; height: 35px;" id="to_year" name="to" min="${min_year}"
+                                   max="${max_year}"
+                                   type="number" value="${max_year}">
                         </div>
                         <text style="font-size: 1.3em; float: right; padding-right:5px; "> по</text>
                         <div style="width: 35%; display: inline-block; position: relative; float: right;">
-                            <input style="width: 100%; height: 35px;" id="from_year" min="${min_year}" max="${max_year}"
-                                   type="number">
+                            <input style="width: 100%; height: 35px;" id="from_year" name="from" min="${min_year}"
+                                   max="${max_year}"
+                                   type="number" value="${min_year}">
                         </div>
                         <script src="/lib/js/scripts_change_year.js" type="application/javascript"></script>
                     </div>
