@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+  <meta charset="utf-8">
+  <link href="../lib/css/MyStyle.css" rel="stylesheet">
 </head>
 <body>
-<p>Вы зарегистрированы!</p>
+<div class="wepper_main">
+  <%@ include file="/jsp/jspf/head.jspf" %>
+  <div class="wepper_body">
+    <p>Вы зарегистрированы!</p>
+  </div>
+  <%@ include file="/jsp/jspf/footer.jspf" %>
+  </div>
 </body>
 </html>
