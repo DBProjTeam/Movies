@@ -6,7 +6,9 @@ body{
     width: 78%;
     margin: 0 auto;
 }
-
+.row_film{
+    vertical-align: top;
+}
 .wepper_Head_Carousel {
     height: 300px; 
     width: 100%;
