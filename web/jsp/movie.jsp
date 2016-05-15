@@ -40,7 +40,7 @@
                 </script>
             </form>
         </c:if>
-        <a href="do?action=all_persons_on_film">...</a>
+        <a href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
 
         <div class="seperator">
             <h3>В кратце о фильме</h3>
@@ -55,12 +55,6 @@
         </div>
         <%@ include file="/jsp/jspf/movie/images.jspf" %>
 
-        <div class="seperator">
-            <h3>Трейлер</h3>
-        </div>
-        <div class="desc_movie_treuler">
-
-        </div>
         <div class="seperator">
             <h3>Отзывы</h3>
         </div>
