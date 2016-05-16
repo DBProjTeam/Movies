@@ -21,9 +21,10 @@
         <c:if test="${not empty user}">
             <div class="coment">
                 <form action="do?action=add_comment&movie_id=${movie.movieId}" method="post">
-                    <textarea name="text" rows="10" cols="45"></textarea>
-
-                    <input type="submit" value="Добавить комментарий">
+                   <div class="divComent">
+                    <textarea class="fialdComent"  name="text" rows="10" cols="50"></textarea><br>
+                    <input class="coment_button" type="submit" value="Добавить комментарий">
+                   </div>
                 </form>
             </div>
         </c:if>

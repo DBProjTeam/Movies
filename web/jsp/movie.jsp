@@ -35,12 +35,12 @@
                     if (!${is_in_celection}) {
                         $("#inCollaction").append(' <input class="button_style" type="submit" value="Добавить фильм в коллекцию">');
                     } else {
-                        $("#inCollaction").append("<p>Фильм уже в колекции</p>");
+                        $("#inCollaction").append("<p class='infa'>Фильм уже в колекции</p>");
                     }
                 </script>
             </form>
         </c:if>
-        <a href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
+        <a class='infa' href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
 
         <div class="seperator">
             <h3>В кратце о фильме</h3>

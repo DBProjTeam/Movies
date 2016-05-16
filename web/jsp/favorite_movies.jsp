@@ -4,6 +4,7 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../lib/css/style_search.css">
+    <link type="text/css" rel="stylesheet" href="../lib/css/MyStyle.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
 
     <title>Коллекция фильмов</title>
@@ -11,11 +12,9 @@
 <body>
 <div class="wepper_main">
         <%@include file="/jsp/jspf/head.jspf" %>
-        <div class="discription">
-            <span class="titel">Коллекция фильмов</span>
-        </div>
-
-
+    <div class="wepper_Head">
+        <div class="seperator"><h3>Коллекция фильмов</h3></div>
+    </div>
     <div class="wepper_body">
         <div class="bloc_search_2">
 
@@ -34,7 +33,7 @@
                                     href="do?action=person&person_id=${movie.director.person.id}"></c:if> ${movie.director.person.name}</a></span><br>
 
                             </div>
-                                    <a href="do?action=delete_favorite_movie&movieId=${movie.movieId}">Удалить из коллекции</a>
+                                    <a class="button_detali_from_faborite" href="do?action=delete_favorite_movie&movieId=${movie.movieId}">Удалить из коллекции</a>
                             <div class="name">
                                 <span>Название:</span><span><a href="do?action=movie&movie_id=${movie.movieId}"><c:out
                                     value="${movie.title}" default="Без названия"/></a></span><br>

@@ -21,10 +21,8 @@
 
 </head>
 <body>
-<%@ include file="/jsp/jspf/head.jspf" %>
-
-
 <div class="wepper_main">
+    <%@ include file="/jsp/jspf/head.jspf" %>
     <%@ include file="/jsp/jspf/person/descrip.jspf" %>
     <div class="seperator"><h3>Фото:</h3></div>
     <%@ include file="/jsp/jspf/person/images.jspf" %>

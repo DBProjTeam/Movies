@@ -7,7 +7,11 @@ body{
     width: 78%;
     margin: 0 auto;
 }
-
+.sorch a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
 .wepper_Head{
     padding-top: 40px; 
 }

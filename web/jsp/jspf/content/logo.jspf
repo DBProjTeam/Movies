@@ -20,14 +20,13 @@
                         <%}%>
 
                     <form method="get" action="do?">
+                        <input type="text" name="title">
+                        <input type="submit" name="ok" value=""
+                               style="background-image: url('/lib/css/images/buttonSearch.PNG');width:30px ;height:30px; border: 0px;padding: 0px;margin: 0px"/>
                         <input hidden="hidden" name="action" value="search">
                         <input hidden="hidden" name="studio" value="Пусто">
                         <input hidden="hidden" name="country" value="Пусто">
                         <input hidden="hidden" name="genre" value="Пусто">
-                        <input type="text" name="title">
-                        <input type="submit" name="ok" value=""
-                               style="background-image: url('/lib/css/images/buttonSearch.PNG');width:30px ;height:30px; border: 0px;padding: 0px;margin: 0px"/>
-
                         <%--<input type="submit" src="/lib/css/images/buttonSearch.PNG">
                        --%><%-- <input type="image" src="/lib/css/images/buttonSearch.PNG" width="30px" height="30px;">
 --%>

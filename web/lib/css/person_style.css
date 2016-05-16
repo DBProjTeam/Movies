@@ -2,7 +2,9 @@ body {
     background-color: #090722;
     font-family: ThimeNewRoma;
 }
-
+.sorch{
+    color: #ffffff;
+}
 .wepper_main {
     width: 78%;
     margin: 0 auto;

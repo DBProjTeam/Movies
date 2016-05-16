@@ -1,7 +1,11 @@
 /*
     для всех  
 */
-
+.sorch a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
 body {
     background-color: #090722;
     font-family: ThimeNewRoma;
