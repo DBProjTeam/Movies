@@ -9,6 +9,7 @@ import actions.editor.person.ShowPersons;
 import actions.editor.person.UpdatePerson;
 import actions.profile.*;
 import actions.search.FullSearch;
+import actions.search.PSearch;
 import actions.search.Search;
 import actions.user.AddMovieFavoriteUser;
 import actions.user.DeleteMovieFromFavoriteUser;
@@ -44,6 +45,7 @@ public class ActionContainer {
         actionMap.put("search_page", new PageForward(PagePath.FULL_SEARCH));
         actionMap.put("full_search", new FullSearch());
         actionMap.put("search", new Search());
+        actionMap.put("psearch", new PSearch());
 
 
         /*===============Movie=======================*/

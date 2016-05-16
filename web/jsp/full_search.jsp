@@ -11,9 +11,9 @@
 <html>
 <head>
     <title>Расширеный поиск</title>
-    <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/css/style_search.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
+    <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
@@ -93,18 +93,20 @@
                 <h2>Искать фильмы по участникам:</h2>
             </span><br>
 
-            <form>
+            <form action="do?" method="get">
+                <input name="action" hidden="hidden" value="psearch">
                 <div style="width: 100%;">
                     <div style="width: 29%;display: inline-block; position: relative;">
-                        <select style="width: 95%;">
+                        <select style="width: 95%;" name="role">
                             <c:forEach var="rol" items="${roles}">
+                                <option selected>Пусто</option>
                                 <option>${rol.role}</option>
                             </c:forEach>
                         </select>
                         <span>Роль</span>
                     </div>
                     <div style="width: 49%;display: inline-block; position: relative;">
-                        <input type="text">
+                        <input type="text" name="name">
                         <span>Имя или фамилия  участника</span>
                     </div>
                     <div style="width: 18%;padding-left:1.3em; padding-bottom: 1em; vertical-align: bottom;  display: inline-block; position: relative;">

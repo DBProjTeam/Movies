@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
@@ -41,6 +41,7 @@
             <param-name>editor</param-name>
             <!-- Это доступно только для редактора и админа -->
             <param-value>
+                psearch
                 show_countries
                 add_country_page
                 add_country
@@ -71,12 +72,14 @@
                 rating
                 add_favorite_movie
                 delete_favorite_movie
+                psearch
             </param-value>
         </init-param>
         <init-param>
             <!-- Это доступно вообще для всех -->
             <param-name>outOfControl</param-name>
             <param-value>
+                psearch
                 registration_page
                 registration
                 registration_done
