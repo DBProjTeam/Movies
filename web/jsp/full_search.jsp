@@ -11,7 +11,8 @@
 <html>
 <head>
     <title>Расширеный поиск</title>
-    <link rel="stylesheet" type="text/css" href="lib/css/style_search.css">
+    <link rel="stylesheet" type="text/css" href="../lib/css/style_search.css">
+    <link type="text/css" rel="stylesheet" href="../lib/css/MyStyle.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
     <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
