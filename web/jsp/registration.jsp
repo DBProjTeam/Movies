@@ -21,8 +21,8 @@
                     <tr>
                         <td colspan="2"><strong><big>Регистрация</big></strong></td>
                     </tr>
-                    <tr>
-                        <td>
+                    <tr >
+                        <td  style="text-align: left">
                             <strong>Логин:</strong>
                         </td>
                         <td>
@@ -30,7 +30,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="text-align: left">
                             <strong>Имя:</strong>
                         </td>
                         <td>
@@ -38,7 +38,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td  style="text-align: left">
                             <strong>Фамилия:</strong>
                         </td>
                         <td>
@@ -46,7 +46,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td  style="text-align: left">
                             <strong>Пароль:</strong>
                         </td>
                         <td>
