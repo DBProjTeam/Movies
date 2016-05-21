@@ -124,7 +124,8 @@ body{
 }
 .strings{
     margin-top:5px;
-    position: relative; 
+    position: relative;
+    width: 50%;
 }
 hr{
     width: 90%;

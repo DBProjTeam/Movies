@@ -1,54 +1,62 @@
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="../lib/css/admin_styl.css">
-	<title>admin_panel</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/admin_styl.css">
+    <title>admin_panel</title>
 </head>
 <body>
-	<div class="wepper_main">
-		<div class="wepper_Head">
-			<div class="logo_Head">
-                <i><big>F</big>ILMS<big>S</big>EARCH.UA</i>
-                <div class="sorch">
-                    <table>
-                        <tr>
-                            <td><strong>Всё о любом фильме</strong></td>
-                            <td>
-                                <a href="#"><strong>Вход/Регистрация</strong></a>    
+<div class="wepper_main">
+    <div class="wepper_Head">
+        <div class="logo_Head">
+            <i><big>F</big>ILMS<big>S</big>EARCH.UA</i>
+            <div class="sorch">
+                <table>
+                    <tr>
+                        <td><strong>Всё о любом фильме</strong></td>
+                        <td>
+                             <span style="color: #ffFFFF" id="greating">
+                          Привет ,
+                          </span>
+                            <a href="do?action=profile_page" style="color: #fff; text-decoration: none">
+                                Admin</a>
+                            <a href="do?action=logout" style="text-decoration: none"><strong>Выход</strong></a>
                             <form method="get">
                                 <input type="text" name="search">
                                 <input type="image" src="../img/buttonSearch.PNG" width="30px" height="30px;">
                             </form>
-                                <a href="#"><strong>Расширенный поиск</strong></a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-		</div>
-		<div class="wepper_body">
-            <div class="wepper">
-    			<div class="left_nav">
-    				<div>
-    					<ul class="menu">
-    						<li><a href="#">Фильм</a>
-                            </li>
-    						<li><a href="#">Пользователи</a>
-                            </li>
-    						<li><a href="#">Коментарии</a>
-                            </li>
-    					</ul>
-    				</div>	
-			     </div>
-        <div class="content_main">
-            <!--Вставляем фрагменты здесь-->
-		</div>
-		<div class="wepper_footer">
-            <div class="footer">
-                <label class="footer_link">©2016  FilmsSearch • <a href="#">Книга жалоб и предложений</a> • Условия использования сайта • 18+</label>
-                <label class="footer_logo"><a href="#">FilmsSearch.ua</a></label>
+                            <a href="#"><strong>Расширенный поиск</strong></a>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-	</div>
+    </div>
+    <div class="wepper_body">
+        <div class="wepper">
+            <div class="left_nav">
+                <div>
+                    <ul class="menu">
+                        <li><a href="#">Фильм</a>
+                        </li>
+                        <li><a href="#">Персоны</a>
+                        </li>
+                        <li><a href="#">Пользователи</a> </li>
+                        <li><a href="#">Коментарии</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content_main">
+                <!--Здесь вставка фрагментов-->
+            </div>
+            <div class="wepper_footer">
+                <div class="footer">
+                    <label class="footer_link">©2016  FilmsSearch • <a href="#">Книга жалоб и предложений</a> • Условия использования сайта • 18+</label>
+                    <label class="footer_logo"><a href="#">FilmsSearch.ua</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
