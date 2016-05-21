@@ -16,6 +16,7 @@
      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
  --%>
     <link href="/lib/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="../lib/css/styl_detail_movei.css" type="text/css" rel="stylesheet">
     <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <script src="/lib/js/jquery-ui.min.js"></script>
 
@@ -112,7 +113,7 @@
                                 <option value="${stud.id}">${stud.name}</option>
                             </c:forEach>
                         </select>
-                        <button style="margin-left: 36.5%; background-color:  #8dacc2;" class="mybuton" type="submit">
+                        <button style="margin-left: 36.5%; background-color:  #8dacc2;" class="coment_button" type="submit">
                             Найти
                         </button>
                     </div>
@@ -142,7 +143,7 @@
                         <span>Имя или фамилия  участника</span>
                     </div>
                     <div style="width: 18%;padding-left:1.3em; padding-bottom: 1em; vertical-align: bottom;  display: inline-block; position: relative;">
-                        <button type="submit" class="mybuton">Найти</button>
+                        <button type="submit" class="coment_button">Найти</button>
                     </div>
                 </div>
             </form>
