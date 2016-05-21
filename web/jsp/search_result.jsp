@@ -40,6 +40,8 @@
                             <%--Здесь постер фильма--%>
                                 <img src="/img_temp/${movie.mainImage.name}">
                             <div>
+                                <span>Название:</span><span><a href="do?action=movie&movie_id=${movie.movieId}"><c:out
+                                    value="${movie.title}" default="Без названия"/></a></span><br>
                                 <span>Год:</span><span>${movie.year}</span><br>
                                 <span>Время:</span><span>${movie.runtime}</span><br>
                                 <span>Релиз:</span><span>${movie.releaseDate}</span><br>
@@ -48,8 +50,7 @@
                                     href="do?action=person&person_id=${movie.director.person.id}"></c:if> ${movie.director.person.name}</a></span><br>
                             </div>
                             <div class="name">
-                                <span>Название:</span><span><a href="do?action=movie&movie_id=${movie.movieId}"><c:out
-                                    value="${movie.title}" default="Без названия"/></a></span><br>
+
                             </div>
                         </div>
                     </c:forEach>

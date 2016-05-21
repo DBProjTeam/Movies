@@ -2,7 +2,7 @@
 <div class="best_fiml">
     <ol>
         <c:forEach var="mov" items="${movies}">
-            <li><a href="do?action=movie&movie_id=${mov.movieId}">${mov.title}</a></li>
+            <li><a style="display: inline-block; padding-left:15px; font-size: 1.4em;" href="do?action=movie&movie_id=${mov.movieId}">${mov.title}</a></li>
         </c:forEach>
     </ol>
 </div>

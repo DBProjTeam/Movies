@@ -9,15 +9,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
-
+    <link type="text/css" href="../lib/css/MyStyle.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title></title>
 </head>
 <body>
-Доступ запрещен
-<br>
-<c:if test="${not empty error}">
-    ${error}
-</c:if>
+<div class="wepper_main">
+    <%--<c:import url="jspf/head.jspf"/>--%>
+    <div class="wepper_body">
+        <strong style="color: #000; font-size: 1.5em; font-family: 'Open Sans', sans-serif;">Доступ запрещен</strong>
+        <br>
+        <c:if test="${not empty error}">
+            ${error}
+        </c:if>
+    </div>
+    <div class="wepper_footer">
+        <%--<%@include file="jspf/footer.jspf"%>--%>
+    </div>
+</div>
 </body>
 </html>
