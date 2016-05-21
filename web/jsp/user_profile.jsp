@@ -21,7 +21,8 @@
             <div class="profile">
                 <div class="avat">
                     <%--сылка на изображения как сделать?--%>
-                        <img src="img/person_img/${user.imageId}.jpg">
+                        <img src="/img_temp/avatar.png"/>
+                        <%--<img src="img/person_img/${user.imageId}.jpg">--%>
 
                         <%--<div><input class="button" type="button" value="Выбрать файл"/></div>--%>
                 </div>
