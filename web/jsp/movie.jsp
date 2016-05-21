@@ -44,7 +44,7 @@
             <a class='coment_button' style="text-decoration: none; border:outset 2px #d3d3d3;" href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
             </form>
         <div class="seperator">
-            <h3>В кратце о фильме</h3>
+            <h3>О фильме</h3>
         </div>
         <div class="desc_movie">
             <strong>
