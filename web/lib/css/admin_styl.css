@@ -148,8 +148,12 @@ body {
 .strings {
     margin-top: 5px;
     position: relative;
+    width: 100%;
 }
-
+.strings strong{
+    display: inline-block;
+    position:relative;
+}
 hr {
     width: 90%;
 }
@@ -211,4 +215,24 @@ hr {
 .link a:last-child {
     float: right;
     margin-right: 15px;
+}
+.strings input{
+    display: block;
+    padding-left:50px;
+    float: right;
+}
+
+.strings1{
+    width: 100%;
+    padding-top:20px;
+}
+.name_strings1{
+    display: inline-block;
+    position: relative;
+    width: 25%;
+}
+.filde{
+    position: relative;
+    display: inline-block;
+    width: 40%;
 }
