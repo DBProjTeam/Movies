@@ -11,6 +11,7 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../lib/css/style_search.css">
+    <link type="text/css" rel="stylesheet" href="../lib/css/MyStyle.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
     <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <title>Результаты поиска по запросу ${word}</title>
@@ -22,10 +23,11 @@
     <div class="wepper_head">
 
         <%@include file="/jsp/jspf/head.jspf" %>
+        <div class="seperator">  </div>
+            <div class="discription">
+                <span class="titel">Результат поиск по запросу ${word}</span>
+            </div>
 
-        <div class="discription">
-            <span class="titel">Результат поиск по запросу ${word}</span>
-        </div>
 
     </div>
     <div class="wepper_body">
