@@ -51,10 +51,10 @@
                 ${movie.description}
             </strong>
         </div>
-        <div class="seperator">
-            <h3>Изображения</h3>
-        </div>
-        <%@ include file="/jsp/jspf/movie/images.jspf" %>
+        <%--<div class="seperator">--%>
+            <%--<h3>Изображения</h3>--%>
+        <%--</div>--%>
+        <%--<%@ include file="/jsp/jspf/movie/images.jspf" %>--%>
 
         <div class="seperator">
             <h3>Отзывы</h3>
