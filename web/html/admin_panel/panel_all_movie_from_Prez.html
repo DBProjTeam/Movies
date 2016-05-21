@@ -8,13 +8,18 @@
 <div class="wepper_main">
     <div class="wepper_Head">
         <div class="logo_Head">
-            <i><big>F</big>ILMS<big>S</big>EARCH.UA</i>
+            <i><big>F</big>ILMS<big>S</big>EARCH</i>
             <div class="sorch">
                 <table>
                     <tr>
                         <td><strong>Всё о любом фильме</strong></td>
                         <td>
-                            <a href="#"><strong>Вход/Регистрация</strong></a>
+                             <span style="color: #ffFFFF" id="greating">
+                          Привет ,
+                          </span>
+                            <a href="do?action=profile_page" style="color: #fff; text-decoration: none">
+                                 Admin</a>
+                            <a href="do?action=logout" style="text-decoration: none"><strong>Выход</strong></a>
                             <form method="get">
                                 <input type="text" name="search">
                                 <input type="image" src="../img/buttonSearch.PNG" width="30px" height="30px;">
@@ -33,8 +38,9 @@
                     <ul class="menu">
                         <li><a href="#">Фильм</a>
                         </li>
-                        <li><a href="#">Пользователи</a>
+                        <li><a href="#">Персоны</a>
                         </li>
+                        <li><a href="#">Пользователи</a> </li>
                         <li><a href="#">Коментарии</a>
                         </li>
                     </ul>
@@ -46,9 +52,8 @@
                     <hr style="width: 100%;">
                     <div class="movies">
                         <table>
-                            <tr><th width="2%">ID</th><th width="10%">Названия</th><th width="10%">Длительность</th><th width="10%">Страна</th><th width="5%">Год</th><th width="1%"></th><th width="1%"></th></tr>
+                            <tr><th width="10%">Названия</th><th width="10%">Длительность</th><th width="10%">Страна</th><th width="5%">Год</th><th width="1%"></th><th width="1%"></th></tr>
                             <tr>
-                                <td>9</td>
                                 <td><a href="#">Убирайся вон</a></td>
                                 <td>02:47:48</td>
                                 <td>Bangladesh</td>
@@ -57,7 +62,7 @@
                                 <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
                             </tr>
                             <tr>
-                                <td>3</td>
+
                                 <td><a href="#">Нуль Реактор</a></td>
                                 <td>01:53:58</td>
                                 <td>Australia</td>
