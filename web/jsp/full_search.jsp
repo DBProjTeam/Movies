@@ -52,7 +52,7 @@
 <div class="wepper_main">
     <div class="wepper_head">
         <div class="seperator">
-            <h3><big>F</big>ilms<big>S</big>earch.ua</h3>
+            <h3><big>F</big>ilms<big>S</big>earch</h3>
         </div>
         <div class="discription">
             <span class="titel">Расширенный поиск</span><br>
@@ -113,12 +113,12 @@
                                 <option value="${stud.id}">${stud.name}</option>
                             </c:forEach>
                         </select>
-                        <button style="margin-left: 36.5%; background-color:  #8dacc2;" class="coment_button" type="submit">
+                        <button style="margin-left: 41%;" class="coment_button" type="submit">
                             Найти
                         </button>
                     </div>
                 </div>
-
+        </form>
         </div>
         <div class="bloc_search_2">
             <span>
