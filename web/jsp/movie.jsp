@@ -30,18 +30,16 @@
         <c:if test="${not empty user}">
             <form action="do?action=add_favorite_movie" id="inCollaction" method="post">
                 <input type="hidden" name="movieId" value="${movie.movieId}"/>
-
                 <script type="text/javascript">
                     if (!${is_in_celection}) {
-                        $("#inCollaction").append(' <input class="button_style" type="submit" value="Добавить фильм в коллекцию">');
+                        $("#inCollaction").append(' <input class="coment_button" style="margin-bottom: 5px;" type="submit" value="Добавить фильм в коллекцию">');
                     } else {
                         $("#inCollaction").append("<p class='infa'>Фильм уже в колекции</p>");
                     }
                 </script>
+                <a class='coment_button' style="text-decoration: none; border:outset 2px #d3d3d3;" href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
             </form>
         </c:if>
-        <a class='infa' href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
-
         <div class="seperator">
             <h3>В кратце о фильме</h3>
         </div>

@@ -260,9 +260,11 @@ body {
     display: inline-block;
     position: relative;
     margin-top:15px;
+
 }
 .divComent{
     padding-left:2%;
+    text-align: center;
 }
 .coment_button{
     display: inline-block;

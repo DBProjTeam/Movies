@@ -6,6 +6,7 @@ body{
     width: 78%;
     margin: 0 auto;
 }
+
 .row_film{
     vertical-align: top;
 }
@@ -411,4 +412,7 @@ body{
     font-size: 1.5em;
     font-family: 'Love Ya Like A Sister', cursive;
     padding: 5%;
+}
+#greating{
+    color: #ffFFFF;
 }

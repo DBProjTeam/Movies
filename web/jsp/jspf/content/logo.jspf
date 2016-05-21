@@ -11,9 +11,9 @@
                     <a href="do?action=registration_page"><strong>Регистрация</strong></a>
 
                         <%} else {%>
-                          <span id="greating">
-                          Привет
-                          </span>,
+                          <span style="color: #ffFFFF" id="greating">
+                          Привет ,
+                          </span>
                     <a href="do?action=profile_page">
                         <c:out value="${user.name}"/></a>
                     <a href="do?action=logout"><strong>Выход</strong></a>
