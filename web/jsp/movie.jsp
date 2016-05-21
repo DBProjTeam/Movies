@@ -27,8 +27,9 @@
     </div>
     <div class="wepper_body">
         <%@ include file="/jsp/jspf/movie/desc.jspf" %>
+        <form action="do?action=add_favorite_movie" id="inCollaction" method="post">
         <c:if test="${not empty user}">
-            <form action="do?action=add_favorite_movie" id="inCollaction" method="post">
+
                 <input type="hidden" name="movieId" value="${movie.movieId}"/>
                 <script type="text/javascript">
                     if (!${is_in_celection}) {
@@ -37,9 +38,11 @@
                         $("#inCollaction").append("<p class='infa'>Фильм уже в колекции</p>");
                     }
                 </script>
-                <a class='coment_button' style="text-decoration: none; border:outset 2px #d3d3d3;" href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
-            </form>
+
+
         </c:if>
+            <a class='coment_button' style="text-decoration: none; border:outset 2px #d3d3d3;" href="do?action=all_persons_on_film&movie_id=${movie.movieId}">Посмотреть всех персон фильма</a>
+            </form>
         <div class="seperator">
             <h3>В кратце о фильме</h3>
         </div>

@@ -3,6 +3,8 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/sqlscript/create_movie_person_role_view.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sqlscript/movie_all.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sqlscript/movie_last_040616.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sqlscript/movies_clean.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sqlscript/search_rollout.sql" dialect="MySQL" />
   </component>
 </project>
