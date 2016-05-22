@@ -66,7 +66,7 @@ INSERT INTO movie_genre(movie_genre.movie_genre_ID,movie_genre.movie_ID,movie_ge
 (NULL,205,"Фантастика"),
 (NULL,205,"Триллер"),
 (NULL,206,"Фантастика"),
-(NULL,206,"Приключения"),
+(NULL,206,"Приключения")
 ;
 INSERT INTO studio (studio.studio_ID,studio.name) VALUES
 (200,"Gaumont"),
@@ -159,5 +159,5 @@ INSERT INTO movie_person_role(movie_person_role.movie_person_role_ID,movie_perso
 (NULL,411,"producer"),
 (NULL,412,"operator"),
 (NULL,413,"DIRECTOR"),
-(NULL,414,"scenario")
+(NULL,413,"scenario")
 ;
