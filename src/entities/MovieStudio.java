@@ -7,8 +7,8 @@ import java.io.Serializable;
  */
 public class MovieStudio implements Serializable{
     private int id;
-    private int Movie_Id;
-    private int Studio_Id;
+    private int movieId;
+    private int studioId;
 
     public int getId() {
         return id;
@@ -18,19 +18,19 @@ public class MovieStudio implements Serializable{
         this.id = id;
     }
 
-    public int getMovie_Id() {
-        return Movie_Id;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_Id(int movie_Id) {
-        Movie_Id = movie_Id;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
-    public int getStudio_Id() {
-        return Studio_Id;
+    public int getStudioId() {
+        return studioId;
     }
 
-    public void setStudio_Id(int studio_Id) {
-        Studio_Id = studio_Id;
+    public void setStudioId(int studioId) {
+        this.studioId = studioId;
     }
 }

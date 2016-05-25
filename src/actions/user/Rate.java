@@ -32,8 +32,8 @@ public class Rate extends Action {
         Rating rating = null;
         if ((rating = ratingDAO.getRatingByMovieIDAndUserID(movieID, user.getId())) == null) {
             rating = new Rating();
-            rating.setUser_ID(user.getId());
-            rating.setMovie_ID(movieID);
+            rating.setUserId(user.getId());
+            rating.setMovieId(movieID);
             rating.setScore(score);
             ratingDAO.insert(rating);
         } else {

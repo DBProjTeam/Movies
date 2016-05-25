@@ -4,32 +4,32 @@ package entities;
  * Created by Станислав on 16.03.16.
  */
 public class UserMovieFavorite {
-    private int user_movie_favorite_ID;
-    private int user_ID;
-    private int movie_ID;
+    private int id;
+    private int userId;
+    private int movieId;
 
-    public int getUserMovieFavoriteID() {
-        return user_movie_favorite_ID;
+    public int getId() {
+        return id;
     }
 
-    public void setUserMovieFavoriteID(int user_movie_favorite_ID) {
-        this.user_movie_favorite_ID = user_movie_favorite_ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getUserID() {
-        return user_ID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getMovieID() {
-        return movie_ID;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovieID(int movie_ID) {
-        this.movie_ID = movie_ID;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
 

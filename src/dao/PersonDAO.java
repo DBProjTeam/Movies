@@ -7,15 +7,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Едик  Лисогуб on 06.03.2016.
- */
+
 public class PersonDAO {
     private static final String GET_PERSON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
     private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME="SELECT * FROM person WHERE(person.name LIKE ?'%') OR (person.surname LIKE ?'%')";
-    private static final String INSERT_PERSON ="INSERT INTO `person` (`name`,`surname`,`birth_date`,`death_date`,`country`,`image_ID`) VALUES (?,?,?,?,?,?);";
-    private static final String UPDATE_PERSON="UPDATE `person` SET `name`=?, `surname`=?, `birth_date`=?, `death_date`=?, `country`=?,`image_ID`=? WHERE `person_ID`=?;";
-    private static final String DELETE_PERSON="DELETE FROM `person` WHERE `person_ID`=?;";
+    private static final String INSERT_PERSON ="INSERT INTO person (name,surname,birth_date,death_date,country,image_ID) VALUES (?,?,?,?,?,?);";
+    private static final String UPDATE_PERSON="UPDATE person SET name=?, surname=?, birth_date=?, death_date=?, country=?,image_ID=? WHERE person_ID=?;";
+    private static final String DELETE_PERSON="DELETE FROM person WHERE person_ID=?;";
     Connection connection;
 
     public Person getByPK(int pk) throws SQLException {

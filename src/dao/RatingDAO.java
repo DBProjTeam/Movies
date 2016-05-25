@@ -19,7 +19,7 @@ public class RatingDAO {
     private static String GET_RATING_BY_ID_MOVIE="SELECT *  FROM rating WHERE rating.movie_ID=?";
 
     private static String GET_RATING_BY_MOVIE_AND_USER_ID="SELECT *  FROM rating WHERE movie_ID=? AND user_ID=?";
-    private static String INSERT_RATING="INSERT INTO rating (`user_ID`,`movie_ID`,`score`) VALUES (?,?,?)";
+    private static String INSERT_RATING="INSERT INTO rating (user_ID,movie_ID,score) VALUES (?,?,?)";
     private static String UPDATE_RATING="UPDATE rating SET user_ID=?, movie_ID=?, score=? WHERE rating_ID=?";
 
     Connection connection;
@@ -67,8 +67,8 @@ public class RatingDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(INSERT_RATING);
-            statement.setInt(1, rating.getUser_ID());
-            statement.setInt(2, rating.getMovie_ID());
+            statement.setInt(1, rating.getUserId());
+            statement.setInt(2, rating.getMovieId());
             statement.setInt(3, rating.getScore());
 
             statement.executeUpdate();
@@ -81,10 +81,10 @@ public class RatingDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(UPDATE_RATING);
-            statement.setInt(1, rating.getUser_ID());
-            statement.setInt(2, rating.getMovie_ID());
+            statement.setInt(1, rating.getUserId());
+            statement.setInt(2, rating.getMovieId());
             statement.setInt(3, rating.getScore());
-            statement.setInt(4, rating.getRating_ID());
+            statement.setInt(4, rating.getId());
 
             statement.executeUpdate();
         } finally {
@@ -94,9 +94,9 @@ public class RatingDAO {
 
     private Rating obtain(ResultSet resultSet) throws SQLException {
        Rating rating= new Rating();
-        rating.setRating_ID(resultSet.getInt("rating_ID"));
-        rating.setUser_ID(resultSet.getInt("user_ID"));
-        rating.setMovie_ID(resultSet.getInt("movie_ID"));
+        rating.setId(resultSet.getInt("rating_ID"));
+        rating.setUserId(resultSet.getInt("user_ID"));
+        rating.setMovieId(resultSet.getInt("movie_ID"));
         rating.setScore(resultSet.getInt("score"));
         return rating;
     }

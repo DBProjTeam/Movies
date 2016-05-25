@@ -3,18 +3,18 @@ package entities;
 
 import java.io.Serializable;
 import java.sql.Time;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created by Станислав on 08.03.16.
  */
 public class Movie implements Serializable {
-    private int movie_ID;
-    private Time runtime;
+    private int movieId;
+    private int runtime; //будет в минутах, чтоб с форматом времени не возиться
     private int year;
     private Date releaseDate;
     private String description;
-    private int image_ID;
+    private int imageId;
     private String title;
 
     public String getTitle() {
@@ -25,19 +25,19 @@ public class Movie implements Serializable {
         this.title = title;
     }
 
-    public int getMovie_id() {
-        return movie_ID;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_id(int movie_id) {
-        this.movie_ID = movie_id;
+    public void setMovieId(int movie_id) {
+        this.movieId = movie_id;
     }
 
-    public Date getRuntime() {
+    public int getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(Time runtime) {
+    public void setRuntime(int runtime) {
         this.runtime = runtime;
     }
 
@@ -67,12 +67,12 @@ public class Movie implements Serializable {
     }
 
 
-    public int getImage_id() {
-        return image_ID;
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setImage_id(int image_id) {
-        this.image_ID = image_id;
+    public void setImageId(int image_id) {
+        this.imageId = image_id;
     }
 
 }

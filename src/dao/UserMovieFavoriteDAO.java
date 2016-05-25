@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by Станислав on 16.03.16.
@@ -26,8 +25,8 @@ public class UserMovieFavoriteDAO {
     Connection connection;
 
     public void deleteMovieIdFavoriteUser(UserMovieFavorite userMovieFavorite)throws SQLException{
-        int user_ID= userMovieFavorite.getUserID();
-        int movie_ID =userMovieFavorite.getMovieID();
+        int user_ID= userMovieFavorite.getUserId();
+        int movie_ID =userMovieFavorite.getMovieId();
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();
@@ -82,15 +81,15 @@ public class UserMovieFavoriteDAO {
 
     private UserMovieFavorite obtain(ResultSet resultSet) throws SQLException {
         UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
-        userMovieFavorite.setMovieID(resultSet.getInt("movie_ID"));
-        userMovieFavorite.setUserID(resultSet.getInt("user_ID"));
-        userMovieFavorite.setUserMovieFavoriteID(resultSet.getInt("user_movie_favorite_ID"));
+        userMovieFavorite.setMovieId(resultSet.getInt("movie_ID"));
+        userMovieFavorite.setUserId(resultSet.getInt("user_ID"));
+        userMovieFavorite.setId(resultSet.getInt("user_movie_favorite_ID"));
     return userMovieFavorite;
     }
 
     public void AddMovieIdFavoriteUser(UserMovieFavorite userMovieFavorite) throws SQLException{
-        int userId= userMovieFavorite.getUserID();
-        int movieId = userMovieFavorite.getMovieID();
+        int userId= userMovieFavorite.getUserId();
+        int movieId = userMovieFavorite.getMovieId();
         PreparedStatement statement = null;
         try {
             connection = Connector.getConnection();

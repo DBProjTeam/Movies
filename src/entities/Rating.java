@@ -7,33 +7,33 @@ import java.io.Serializable;
  */
 public class Rating implements Serializable {
 
-    private int rating_ID;
-    private int user_ID;
-    private int movie_ID;
+    private int id;
+    private int userId;
+    private int movieId;
     private int score;
 
-    public int getRating_ID() {
-        return rating_ID;
+    public int getId() {
+        return id;
     }
 
-    public void setRating_ID(int rating_ID) {
-        this.rating_ID = rating_ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getUser_ID() {
-        return user_ID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(int user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getMovie_ID() {
-        return movie_ID;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_ID(int movie_ID) {
-        this.movie_ID = movie_ID;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
     public int getScore() {

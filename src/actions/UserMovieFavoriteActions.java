@@ -33,7 +33,7 @@ public class UserMovieFavoriteActions extends Action {
         ListIterator<UserMovieFavorite> iterator = listMovie.listIterator();
         List<Movie> movies = new ArrayList<Movie>();
         while (iterator.hasNext()) {
-            int movie_id = iterator.next().getMovieID();
+            int movie_id = iterator.next().getMovieId();
             movies.add(movieDAO.getByPK(movie_id));
         }
         return movies;

@@ -9,17 +9,19 @@ import java.util.List;
 
 /**
  * Created by Станислав on 08.03.16.
+ *
  * @author Станислав
  * @author Vyacheslav
  */
 
 public class CommentDAO {
-    Connection connection;
-    private static String GET_ALL_COMMENT_BY_ID_MOVIE="SELECT * FROM comment WHERE movie_ID=?";
-    private static String INSERT_COMMENT="INSERT INTO comment(user_ID, movie_ID, text, date) VALUES(?,?,?,?)";
-    private static String DELETE_COMMENT="DELETE FROM comment WHERE comment_ID = ?";
 
-    public List<Comment> getAllCommentByIdMovie(int idMovie) throws SQLException{
+    Connection connection;
+    private static String GET_ALL_COMMENT_BY_ID_MOVIE = "SELECT * FROM comment WHERE movie_ID=?";
+    private static String INSERT_COMMENT = "INSERT INTO comment(user_ID, movie_ID, text, date) VALUES(?,?,?,?)";
+    private static String DELETE_COMMENT = "DELETE FROM comment WHERE comment_ID = ?";
+
+    public List<Comment> getAllCommentByIdMovie(int idMovie) throws SQLException {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List<Comment> comments = new ArrayList<Comment>();
@@ -29,7 +31,7 @@ public class CommentDAO {
             statement.setInt(1, idMovie);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {//Исправлено
-                 comments.add(obtain(resultSet));
+                comments.add(obtain(resultSet));
             }
         } finally {
             Connector.close(statement);
@@ -44,8 +46,8 @@ public class CommentDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(INSERT_COMMENT);
-            statement.setInt(1, comment.getUser_ID());
-            statement.setInt(2, comment.getMovie_ID());
+            statement.setInt(1, comment.getUserId());
+            statement.setInt(2, comment.getMovieId());
             statement.setString(3, comment.getText());
             statement.setDate(4, (Date) comment.getDate());
 
@@ -54,6 +56,7 @@ public class CommentDAO {
             Connector.close(statement);
         }
     }
+
     public void delete(int commentID) throws SQLException {
         PreparedStatement statement = null;
         try {
@@ -68,14 +71,13 @@ public class CommentDAO {
 
     private Comment obtain(ResultSet resultSet) throws SQLException {
         Comment comment = new Comment();
-        comment.setComment_ID(resultSet.getInt("comment_ID"));
+        comment.setCommentId(resultSet.getInt("comment_ID"));
         comment.setText(resultSet.getString("text"));
-        comment.setUser_ID(resultSet.getInt("user_ID"));
+        comment.setUserID(resultSet.getInt("user_ID"));
         comment.setDate(resultSet.getDate("date"));
-        comment.setMovie_ID(resultSet.getInt("movie_ID"));
+        comment.setMovieId(resultSet.getInt("movie_ID"));
         return comment;
     }
-
 
 
 }

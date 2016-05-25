@@ -7,34 +7,34 @@ import java.util.Date;
  * Created by Станислав on 08.03.16.
  */
 public class Comment implements Serializable {
-    private  int comment_ID;
-    private  int user_ID;
-    private  int movie_ID;
+    private  int commentId;
+    private  int userId;
+    private  int movieId;
     private  String text;
     private  Date date;
 
-    public int getComment_ID() {
-        return comment_ID;
+    public int getCommentId() {
+        return commentId;
     }
 
-    public void setComment_ID(int comment_ID) {
-        this.comment_ID = comment_ID;
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
     }
 
-    public int getUser_ID() {
-        return user_ID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(int user_ID) {
-        this.user_ID = user_ID;
+    public void setUserID(int userId) {
+        this.userId = userId;
     }
 
-    public int getMovie_ID() {
-        return movie_ID;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_ID(int movie_ID) {
-        this.movie_ID = movie_ID;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
     public String getText() {
