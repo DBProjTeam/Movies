@@ -40,8 +40,8 @@
 <body>
 <div class="wepper_main">
     <%@ include file="/jsp/jspf/head.jspf" %>
-    <%@ include file="/jsp/jspf/main.jspf" %>
-    <%@ include file="jsp/jspf/footer.jspf" %>
+    <%@ include file="/jsp/jspf/index/main.jspf" %>
+    <%@ include file="/jsp/jspf/footer.jspf" %>
 </div>
 
 

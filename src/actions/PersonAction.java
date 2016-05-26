@@ -29,15 +29,6 @@ public class PersonAction extends Action {
         System.out.println(person_id);
         Person person = personDAO.getByPK(person_id);
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
-        //СЮДА нужно movie_ID но где его взять!!
-        //List<PersonRoleView> personRoleViews = personRoleDAO.getPersonRoleByPersonId(person_id);
-        //todo используется запрос  GET_PERSON_ROLE_BY_MOVIE_ID  а мы ему кормим person_id - не думаю что это верно!!
-        /*List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(personRoleViews);
-        List<Role> rolesWherePersonAttended = getRoleWherePersonAttended(personRoleViews);
-        if (moviesWherePersonAttended.isEmpty() && rolesWherePersonAttended.isEmpty()) {
-            //ошыбка или вроде то во
-            return null;
-        }*/
         //request.setAttribute("movies", moviesWherePersonAttended);
         //request.setAttribute("roles", rolesWherePersonAttended);
         request.setAttribute("countMovie", COUNT_MOVIE_WherePersonAttended);

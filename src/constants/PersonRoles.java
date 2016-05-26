@@ -5,7 +5,7 @@ package constants;
  */
 public enum PersonRoles {
 
-    DIRECTOR("Режиссер"), PRODUCER("Продюсер"), SCENARIO("Сценарий"), OPERATOR("Оператор"), ACTOR("Актер");
+    DIRECTOR("DIRECTOR"), PRODUCER("producer"), SCENARIO("scenario"), OPERATOR("operator"), ACTOR("actor"), ACTRISS("actress");
 
     private String name;
 

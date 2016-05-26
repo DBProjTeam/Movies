@@ -6,8 +6,8 @@ import entities.MovieCountry;
 import util.Connector;
 
 import java.sql.*;
-import java.sql.Date;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MovieDAO {
 
@@ -163,7 +163,7 @@ public class MovieDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(INSERT_MOVIE);
-            statement.setInt(1, movie.getRuntime());
+            statement.setTime(1, movie.getRuntime());
             statement.setDate(2, movie.getReleaseDate());
             statement.setInt(3, movie.getYear());
             statement.setString(4, movie.getDescription());
@@ -183,7 +183,7 @@ public class MovieDAO {
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(UPDATE_MOVIE);
-            statement.setInt(1, movie.getRuntime());
+            statement.setTime(1, movie.getRuntime());
             statement.setDate(2, movie.getReleaseDate());
             statement.setInt(3, movie.getYear());
             statement.setString(4, movie.getDescription());
@@ -215,10 +215,10 @@ public class MovieDAO {
     public Movie obtain(ResultSet resultSet) throws SQLException {
         Movie movie = new Movie();
         movie.setMovieId(resultSet.getInt("movie_ID"));
-        movie.setRuntime(resultSet.getInt("runtime"));
+        movie.setRuntime(resultSet.getTime("runtime"));
         movie.setDescription(resultSet.getString("description"));
-        //todo поввнимательней кто писал !!!   movie.setImageId(resultSet.getInt("year"));
         movie.setYear(resultSet.getInt("year"));
+        movie.setTitle(resultSet.getString("title"));
         movie.setReleaseDate(resultSet.getDate("releaseDate"));
         movie.setImageId(resultSet.getInt("image_ID"));
         return movie;

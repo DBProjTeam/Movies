@@ -1,6 +1,7 @@
 package dao.view;
 
 import bean.MoviePersonRoleView;
+import constants.PersonRoles;
 import dao.PersonDAO;
 import util.Connector;
 
@@ -59,7 +60,7 @@ public class MoviePersonRoleDAO {
         return moviePersonRoleViews;
     }
 
-    public List<MoviePersonRoleView> getPersonByMovieId(int movie_id, String role) throws SQLException {
+    public List<MoviePersonRoleView> getPersonByMovieId(int movie_id, PersonRoles role) throws SQLException {
         List<MoviePersonRoleView> moviePersonRoleViews = new ArrayList<MoviePersonRoleView>();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -67,7 +68,7 @@ public class MoviePersonRoleDAO {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(GET_PERSON_BY_MOVIE_ID);//возможно что нет к этому фильму role
             statement.setInt(1, movie_id);
-            statement.setString(2, role);
+            statement.setString(2, role.getName());
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 moviePersonRoleViews.add(obtain(resultSet));

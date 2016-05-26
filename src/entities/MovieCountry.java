@@ -3,7 +3,6 @@ package entities;
 import java.io.Serializable;
 
 /**
- * Created by Едик  Лисогуб on 07.03.2016.
  */
 public class MovieCountry implements Serializable {
     private int id;

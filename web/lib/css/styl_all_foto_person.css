@@ -13,7 +13,7 @@ body {
 }
 
 .wepper_Head {
-    padding-top: 40px;
+    padding-top: 40px; 
 }
 
 .wepper_footer {
@@ -85,13 +85,12 @@ body {
 .seperator h3 {
     color: #000;
     padding: 0.65em;
-    padding-left: 1.8em;
+    padding-left: 1.8em; 
 }
 
 .seperator div {
     display: inline;
 }
-
 .person_bloc_img {
     background-color: #96acc3;
     width: 100%;
@@ -105,9 +104,8 @@ body {
     padding-top: 1em;
     padding-bottom: 0.5em;
     display: inline-block;
-    position: relative;
+    position: relative;    
 }
-
 .foto img {
     width: 100%;
 }

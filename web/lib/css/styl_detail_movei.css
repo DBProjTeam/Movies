@@ -13,7 +13,7 @@ body {
 }
 
 .wepper_Head {
-    padding-top: 40px;
+    padding-top: 40px; 
 }
 
 .wepper_footer {
@@ -70,7 +70,6 @@ body {
     height: 16%;
 
 }
-
 /*
     end  для всех  
 */
@@ -82,8 +81,9 @@ body {
 }
 
 .seperator h3 {
+    color: #000;
     padding: 0.75em;
-    padding-left: 1.8em;
+    padding-left: 1.8em; 
 }
 
 .wepper_body {
@@ -95,7 +95,6 @@ body {
     width: 100%;
     display: table-row;
 }
-
 .desc_movie_treuler,
 .img_movie,
 .desc_movie_img,
@@ -103,22 +102,27 @@ body {
     padding: 0.75em;
     padding-left: 1.65em;
     padding-bottom: 0.30em;
+    position: relative;
+    display: inline-block;
 }
 
 .img_movie {
     width: 31%;
-    display: table-cell;
+    display: inline-block;
+    float: left;
 }
 
 .img_movie img {
     width: 100%;
-    display: table-cell;
+    display: inline-block;
 }
 
 .desc_movie_info {
     float: left;
     padding-top: 1.3em;
-    padding-right: 50%;
+    width: 50%;
+    position: relative;
+    display: inline-block;
 }
 
 .desc_movie {
@@ -126,7 +130,7 @@ body {
 }
 
 .desc_movie_img {
-    display: table;
+    display: table;  
 }
 
 .desc_img {
@@ -146,7 +150,7 @@ body {
 
 .desc_movie strong {
     font-size: 1.7em;
-    color: #000;
+    color: #000; 
 }
 
 .desc_movie_info h4 {
@@ -158,10 +162,12 @@ body {
 .desc_static,
 .desc_dinamic {
     float: left;
+    position: relative;
+    display: inline-block;
 }
 
 .desc_static ul, .desc_dinamic ul {
-    list-style: none;
+    list-style: none; 
     display: table-cell;
 }
 
@@ -179,4 +185,20 @@ body {
     padding-bottom: 25px;
     padding-right: 20px;
 
+}
+
+.rating input[type="image"] {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+
+.bloc_rating {
+    width: 450px;
+    position: absolute;
+    vertical-align: top;
+    margin-left: 50%;
 }

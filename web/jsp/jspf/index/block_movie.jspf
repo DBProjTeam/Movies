@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Алексей
+  User: Poimanov Pavel
   Date: 18.04.2016
   Time: 23:46
   To change this template use File | Settings | File Templates.
@@ -15,8 +15,8 @@
                     <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg">
                     <br>
 
-                    <a href="do?action=movie&movie_id=${stat.current.movie_id}"><label><c:out value="${popular.title}"
-                                                                                              default="Name"/></label></a><br>
+                    <a href="do?action=movie&movie_id=${stat.current.movieId}"><label><c:out value="${popular.title}"
+                                                                                             default="Name"/></label></a><br>
 
                     <div>${popular.description}</div>
                 </div>

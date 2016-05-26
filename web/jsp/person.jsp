@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Алексей
+
   Date: 22.03.2016
   Time: 17:09
   To change this template use File | Settings | File Templates.
@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<%@ include file="/jsp/jspf/head/logo.jspf" %>
+<%@ include file="/jsp/jspf/head.jspf" %>
 
 
 <div class="wepper_main">
@@ -40,7 +40,7 @@
                     <td style=" width: 60%; display: block;">
                         <div class="desc_person_inf">
                             <ul>
-                                <li>${person.surname}</li>
+                                <li>${person.surname} ${person.name}</li>
                                 <li>${person.birth_date}</li>
                                 <c:if test="val.death_date!=null">
                                     <li>${person.death_date}</li>

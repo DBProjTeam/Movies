@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: Алексей
@@ -24,21 +23,26 @@
                     <td><strong>Страна:</strong><strong>${country.country.country}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Режиссер:</strong><strong>${director.person.name}</strong></td>
+                    <td><strong>Режиссер:</strong>
+                        <strong>
+                            <c:forEach var="dir" items="${director}">
+                                <c:out value="${dir.person.name}"/>
+                            </c:forEach>
+                        </strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Оператор:</strong><strong>${oper.person.name}</strong></td>
-                </tr>
+                    <%--<td><strong>Оператор:</strong><strong>${oper.get(0).person.name}</strong></td>
+                --%></tr>
                 <tr>
-                    <td><strong>Редактор:</strong><strong>${composer.person.name}</strong></td>
-                </tr>
+                    <%--     <td><strong>Редактор:</strong><strong>${composer.get(0).person.name}</strong></td>
+                    --%> </tr>
                 <tr>
                     <td><br><strong>${movie.description}</strong></td>
                 </tr>
             </table>
         </div>
         <div>
-            <a href="do?action=movie&movie_id=${movie.movie_id}"><label>Читать подробнее...</label></a>
+            <a href='do?action=movie&movie_id=${movie.movieId}'><label>Читать подробнее...</label></a>
         </div>
     </div>
     <div class="Big_poster">

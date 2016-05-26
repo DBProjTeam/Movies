@@ -9,9 +9,10 @@ import java.io.Serializable;
  * Можно также сюда добавить не movie_id, а entitie movie
  */
 public class MoviePersonRoleView implements Serializable {
-    private  Person person;
+    private Person person;
     private String role;
     private int movie_ID;
+
 
     public Person getPerson() {
         return person;

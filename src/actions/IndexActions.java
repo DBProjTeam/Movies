@@ -2,6 +2,7 @@ package actions;
 
 import bean.MoviePersonRoleView;
 import constants.PagePath;
+import constants.PersonRoles;
 import dao.MovieDAO;
 import dao.view.MoviePersonRoleDAO;
 import entities.Movie;
@@ -9,10 +10,9 @@ import entities.Movie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import java.util.List;
 
-/**
- * Created by Алексей on 18.04.2016.
- */
+
 public class IndexActions extends Action {
 
     @Override
@@ -22,10 +22,9 @@ public class IndexActions extends Action {
 
         Movie movie = movieDAO.getRecent();
 
-        MoviePersonRoleView director = personMRDAO.getPersonByMovieId(movie.getMovieId(), "DIRECTOR");
-        MoviePersonRoleView oper = personMRDAO.getPersonByMovieId(movie.getMovieId(), " operator");
-        MoviePersonRoleView composer = personMRDAO.getPersonByMovieId(movie.getMovieId(), "composer");
-
+        List<MoviePersonRoleView> director = personMRDAO.getPersonByMovieId(movie.getMovieId(), PersonRoles.DIRECTOR);
+        List<MoviePersonRoleView> oper = personMRDAO.getPersonByMovieId(movie.getMovieId(), PersonRoles.OPERATOR);
+        List<MoviePersonRoleView> composer = personMRDAO.getPersonByMovieId(movie.getMovieId(), PersonRoles.SCENARIO);
         request.setAttribute("popular_movies", movieDAO.getPopularMovies());
         request.setAttribute("country", movieDAO.getCountry(movie.getMovieId()));
         request.setAttribute("movie", movie);

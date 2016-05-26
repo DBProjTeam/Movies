@@ -28,22 +28,23 @@ public class MovieAction extends Action {
 
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-
         //TODO:Валидация если movie_id не указан
         int movie_id = Integer.parseInt(request.getParameter("movie_id"));
-
         MovieDAO movieDAO = new MovieDAO();
         CommentDAO commentDAO = new CommentDAO();
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         RatingDAO ratingDAO = new RatingDAO();
 
-
         Movie movie = movieDAO.getByPK(movie_id);
+
+        String country = "''";
+        if (movieDAO.getCountry(movie_id) != null) {
+            country = movieDAO.getCountry(movie_id).getCountry().getCountry();
+        }
         List<Rating> ratingList = ratingDAO.getRatingAllByIdMovie(movie_id);
         List<MoviePersonRoleView> persons = moviePersonRoleDAO.getPersonRoleByMovieId(movie_id);
         List<Comment> comments = commentDAO.getAllCommentByIdMovie(movie_id);
         double rating = getRatingAverage(ratingList);
-
         List<MoviePersonRoleView> producers = getRole(persons, PersonRoles.PRODUCER.getName());
         List<MoviePersonRoleView> actors = getRole(persons, PersonRoles.ACTOR.getName());
         List<MoviePersonRoleView> directors = getRole(persons, PersonRoles.DIRECTOR.getName());
@@ -51,6 +52,7 @@ public class MovieAction extends Action {
         List<MoviePersonRoleView> scenario = getRole(persons, PersonRoles.SCENARIO.getName());
 
         request.setAttribute("movie", movie);
+        request.setAttribute("country", country);
         request.setAttribute("comments", comments);
         request.setAttribute("directors", directors);
         request.setAttribute("actors", actors);
@@ -84,12 +86,11 @@ public class MovieAction extends Action {
             if (role.equals(moviePersonRoleView.getRole())) {
                 personsRole.add(moviePersonRoleView);
                 count++;
-                list.remove(moviePersonRoleView);
+                //list.remove(moviePersonRoleView);//TOdo Error happend here
             }
         }
         return personsRole;
     }
-
 
 
 }

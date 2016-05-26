@@ -2,15 +2,15 @@ package entities;
 
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.sql.Date;
+import java.sql.Time;
 
 /**
  * Created by Станислав on 08.03.16.
  */
 public class Movie implements Serializable {
     private int movieId;
-    private int runtime; //будет в минутах, чтоб с форматом времени не возиться
+    private Time runtime; //будет в минутах, чтоб с форматом времени не возиться
     private int year;
     private Date releaseDate;
     private String description;
@@ -33,11 +33,11 @@ public class Movie implements Serializable {
         this.movieId = movie_id;
     }
 
-    public int getRuntime() {
+    public Time getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(int runtime) {
+    public void setRuntime(Time runtime) {
         this.runtime = runtime;
     }
 
@@ -74,5 +74,6 @@ public class Movie implements Serializable {
     public void setImageId(int image_id) {
         this.imageId = image_id;
     }
+
 
 }

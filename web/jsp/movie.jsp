@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Алексей
+  User: Poimanov Pavel
   Date: 24.03.2016
   Time: 21:44
   To change this template use File | Settings | File Templates.
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <script src="/lib/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src=/"lib/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/lib/js/jquery.fitvids.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="lib/css/styl_detail_movei.css">
     <link href="lib/css/jquery.bxslider.css" rel="stylesheet"/>
@@ -27,7 +27,12 @@
 </head>
 <body>
 <div class="wepper_main">
-    <%@ include file="/jsp/jspf/head/logo.jspf" %>
+    <%@ include file="/jsp/jspf/head.jspf" %>
+    <div class="wepper_Head">
+        <div class="seperator">
+            <h3><c:out value="${movie.title}"/></h3>
+        </div>
+    </div>
     <div class="wepper_body">
         <div class="detal_movie">
 
@@ -46,35 +51,58 @@
                         <li>Оператор</li>
                         <li>Жанр</li>
                         <li>Премьера</li>
-                        <li>Возраст</li>
                         <li>Время</li>
                     </ul>
                 </div>
                 <div class="desc_dinamic">
-                    <ul>
-                        <li><c:out value="${movie.year}" default=" "/></li>
-                        <li><c:out value="${country.country.country}" default=" "/></li>
-                        <c:if test="${director.size()!=0}">
-                            <li><c:out value="${director.get(0).person.name}" default=" "/></li>
-                        </c:if>
-                        <c:if test="${composer.size()!=0}">
-                            <li><c:out value="${composer.get(0).person.name}" default=" "/></li>
-                        </c:if>
-                        <c:if test="${producer.size()!=0}">
-                            <li><c:out value="${producer.get(0).person.name}" default=" "/></li>
 
-                        </c:if>
-                        <c:if test="${oper.size()!=0}">
-                            <li><c:out value="${oper.get(0).person.name}" default=" "/></li>
-                            <li>asd</li>
-                        </c:if>
-                        <li><c:out value="${movie.releaseDate}" default=" "/></li>
-                        <li>asd</li>
-                        <li><c:out value="${movie.runtime}" default=" "/></li>
+                    <ul>
+                        <li><c:out value="${movie.year}" default="_"/></li>
+                        <li><c:out value="${country}" default="_"/></li>
+                        <li>'
+                            <c:if test="${directors.size()!=0}">
+                                <c:forEach items="${directors}" var="dir" varStatus="stat">
+                                    <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                                    <c:if test="${!stat.last}">;</c:if>
+                                </c:forEach>
+                            </c:if>'
+                        </li>
+                        <li>'
+                            <c:if test="${scenario.size()!=0}">
+                                <c:forEach items="${scenario}" var="dir">
+                                    ${dir.person.name},
+                                </c:forEach> </c:if>'
+                        </li>
+                        <li>'
+                            <c:if test="${producers.size()!=0}">
+                                <c:forEach items="${producers}" var="dir" varStatus="stat">
+                                    <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                                    <c:if test="${!stat.last}">;</c:if>
+                                </c:forEach> </c:if>'
+                        </li>
+                        <li>'
+                            <c:if test="${operators.size()!=0}">
+                                <c:forEach items="${operators}" var="dir" varStatus="stat">
+                                    <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                                    <c:if test="${!stat.last}">;</c:if>
+                                </c:forEach>
+                            </c:if>'
+                        </li>
+                        <li>'<c:if test="${producers.size()!=0}">
+                            <c:forEach items="${producers}" var="dir" varStatus="stat">
+                                <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                                <c:if test="${!stat.last}">;</c:if>
+
+                            </c:forEach>
+                        </c:if>'
+                        </li>
+                        <li><c:out value="${movie.releaseDate}" default="_"/></li>
+                        <li><c:out value="${movie.runtime}" default="_"/></li>
                     </ul>
                 </div>
             </div>
 
+            <%@ include file="jspf/movie/bloc_rating.jsp" %>
         </div>
         <div class="seperator">
             <h3>В кратце о фильме</h3>
@@ -136,12 +164,12 @@
         </thead>
         <tr>
 
-            <td>${movie.movie_id}</td>
+            <td>${movie.movieId}</td>
             <td>${movie.runtime}</td>
             <td>${movie.releaseDate}</td>
             <td>${movie.year}</td>
             <td>${movie.description}</td>
-            <td>${movie.image_id}</td>
+            <td>${movie.imageId}</td>
         </tr>
     </table>
 </article>
@@ -189,6 +217,6 @@
     Rating:
     <c:out value="${rating}" default="0"/>
 </article>
-
+<%@ include file="/jsp/jspf/footer.jspf" %>
 </body>
 </html>
