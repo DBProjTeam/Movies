@@ -1,0 +1,62 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="desc_movie_info">
+    <div class="desc_static">
+        <ul>
+            <li>Год</li>
+            <li>Страна</li>
+            <li>Режессер</li>
+            <li>Сценарий</li>
+            <li>Продюсер</li>
+            <li>Оператор</li>
+            <li>Жанр</li>
+            <li>Премьера</li>
+            <li>Время</li>
+        </ul>
+    </div>
+    <div class="desc_dinamic">
+
+        <ul>
+            <li><c:out value="${movie.year}" default="_"/></li>
+            <li><c:out value="${country}" default="_"/></li>
+            <li>'
+                <c:if test="${directors.size()!=0}">
+                    <c:forEach items="${directors}" var="dir" varStatus="stat">
+                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                        <c:if test="${!stat.last}">;</c:if>
+                    </c:forEach>
+                </c:if>'
+            </li>
+            <li>'
+                <c:if test="${scenario.size()!=0}">
+                    <c:forEach items="${scenario}" var="dir">
+                        ${dir.person.name},
+                    </c:forEach> </c:if>'
+            </li>
+            <li>'
+                <c:if test="${producers.size()!=0}">
+                    <c:forEach items="${producers}" var="dir" varStatus="stat">
+                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                        <c:if test="${!stat.last}">;</c:if>
+                    </c:forEach> </c:if>'
+            </li>
+            <li>'
+                <c:if test="${operators.size()!=0}">
+                    <c:forEach items="${operators}" var="dir" varStatus="stat">
+                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                        <c:if test="${!stat.last}">;</c:if>
+                    </c:forEach>
+                </c:if>'
+            </li>
+            <li>'<c:if test="${producers.size()!=0}">
+                <c:forEach items="${producers}" var="dir" varStatus="stat">
+                    <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                    <c:if test="${!stat.last}">;</c:if>
+
+                </c:forEach>
+            </c:if>'
+            </li>
+            <li><c:out value="${movie.releaseDate}" default="_"/></li>
+            <li><c:out value="${movie.runtime}" default="_"/></li>
+        </ul>
+    </div>
+</div>

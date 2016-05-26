@@ -1,0 +1,22 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="coments_and_mark_bloc">
+    <div class="coments_and_mark">
+        <c:forEach items="${comments}" var="coment">
+            <div class="coment">
+                <img src="img/defalt_ava.jpg" class="avatar_coment">
+
+                <div class="coment_fild">
+                    <text>Имя:</text>
+                    <text>${user_name.getNameOfUser(coment.userId)}</text>
+                    <br>
+                    <text>Дата:</text>
+                    <text>${coment.date}</text>
+                </div>
+                <div class="coment_text">
+                    <text>${coment.text}
+                    </text>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>

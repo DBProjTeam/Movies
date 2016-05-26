@@ -2,6 +2,7 @@ package actions;
 //Проверен 
 
 import bean.MoviePersonRoleView;
+import bean.NameOfPerson;
 import constants.PagePath;
 import constants.PersonRoles;
 import dao.CommentDAO;
@@ -60,6 +61,7 @@ public class MovieAction extends Action {
         request.setAttribute("operators", operators);
         request.setAttribute("scenario", scenario);
         request.setAttribute("rating", rating);
+        request.setAttribute("user_name", new NameOfPerson());
         PageAction pageAction = new PageAction(PagePath.MOVIE, true);
         return pageAction;
     }
