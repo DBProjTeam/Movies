@@ -39,10 +39,7 @@
             <div class="img_movie">
                 <img src="img/detal_movie/detal_movie_main.jpg">
             </div>
-
             <%@ include file="jspf/movie/desc_movie_info.jspf" %>
-
-
             <%@ include file="jspf/movie/bloc_rating.jspf" %>
         </div>
         <div class="seperator">
@@ -92,6 +89,7 @@
             <h3>Отзывы</h3>
         </div>
         <%@ include file="/jsp/jspf/movie/coments_and_mark_bloc.jspf" %>
+
     </div>
 </div>
 

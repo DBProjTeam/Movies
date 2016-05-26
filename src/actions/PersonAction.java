@@ -28,6 +28,8 @@ public class PersonAction extends Action {
         PersonDAO personDAO = new PersonDAO();
         Person person = personDAO.getByPK(person_id);
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
+        List<MoviePersonRoleView> d = moviePersonRoleDAO.getPersonRoleByPersonId(person_id);
+        List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(d);
         //request.setAttribute("movies", moviesWherePersonAttended);
         //request.setAttribute("roles", rolesWherePersonAttended);
         request.setAttribute("countMovie", COUNT_MOVIE_WherePersonAttended);

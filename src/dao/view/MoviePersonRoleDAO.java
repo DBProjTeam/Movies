@@ -19,7 +19,7 @@ import java.util.List;
 public class MoviePersonRoleDAO {
     private static final String GET_PERSON_BY_MOVIE_ID = "SELECT * FROM movies.movie_person_role_view where movie_ID=? and  role=?;";//запрос на выборку определенной роли в фильме
     private static String GET_PERSON_ROLE_BY_MOVIE_ID = "SELECT * FROM movie_person_role_view WHERE movie_ID=?";//запрос на выборку всех персон кто играл в фильме
-    private static String GET_PERSON_ROLE_BY_PERSON_ID = "SELECT * FROM movie_person_role_view WHERE person_ID=?";//запрос на выборку всех ролей персоны
+    private static String GET_PERSON_ROLE_BY_PERSON_ID = "SELECT * FROM movie_person_role_view WHERE person_ID=? group by movie_id";//запрос на выборку всех ролей персоны в фильмах но что б не повторялся нескольео раз в одном и том же фильме добавил групировку
     Connection connection;
 
     public List<MoviePersonRoleView> getPersonRoleByMovieId(int movie_ID) throws SQLException {

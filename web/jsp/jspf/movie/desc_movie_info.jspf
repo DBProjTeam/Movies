@@ -14,7 +14,6 @@
         </ul>
     </div>
     <div class="desc_dinamic">
-
         <ul>
             <li><c:out value="${movie.year}" default="_"/></li>
             <li><c:out value="${country}" default="_"/></li>
@@ -28,8 +27,9 @@
             </li>
             <li>'
                 <c:if test="${scenario.size()!=0}">
-                    <c:forEach items="${scenario}" var="dir">
-                        ${dir.person.name},
+                    <c:forEach items="${scenario}" var="dir" varStatus="stat">
+                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                        <c:if test="${!stat.last}">;</c:if>
                     </c:forEach> </c:if>'
             </li>
             <li>'
@@ -47,13 +47,13 @@
                     </c:forEach>
                 </c:if>'
             </li>
-            <li>'<c:if test="${producers.size()!=0}">
-                <c:forEach items="${producers}" var="dir" varStatus="stat">
-                    <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
-                    <c:if test="${!stat.last}">;</c:if>
-
-                </c:forEach>
-            </c:if>'
+            <li>'
+                <c:if test="${producers.size()!=0}">
+                    <c:forEach items="${producers}" var="dir" varStatus="stat">
+                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
+                        <c:if test="${!stat.last}">;</c:if>
+                    </c:forEach>
+                </c:if>'
             </li>
             <li><c:out value="${movie.releaseDate}" default="_"/></li>
             <li><c:out value="${movie.runtime}" default="_"/></li>
