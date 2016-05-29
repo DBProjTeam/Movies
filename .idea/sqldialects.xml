@@ -4,6 +4,5 @@
     <file url="file://$PROJECT_DIR$/sqlscript/allmybase.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sqlscript/create_movie_person_role_view.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sqlscript/movies_clean.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/sqlscript/movies_comment.sql" dialect="MySQL" />
   </component>
 </project>
