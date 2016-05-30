@@ -1,0 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="detal_movie">
+
+    <div class="img_movie">
+        <img src="/img_temp/${images.get(0).name}">
+    </div>
+    <%@ include file="/jsp/jspf/movie/desc_movie_info.jspf" %>
+    <%@ include file="/jsp/jspf/movie/bloc_rating.jspf" %>
+
+</div>

@@ -41,6 +41,6 @@ public class Rate extends Action {
             ratingDAO.update(rating);
         }
 
-        return new PageAction("do?action=movie_page&movie_id=" + movieID, false);
+        return new PageAction("do?action=movie&movie_id=" + movieID, false);
     }
 }

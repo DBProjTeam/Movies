@@ -16,6 +16,7 @@ import java.util.List;
 public class ImageDAO {
     public static final String ALL_IMAGES_IN_FILM = "SELECT Image.image_ID, Image.name  FROM  image INNER JOIN movie_image ON movie_image.image_ID = image.image_ID WHERE movie_Id=?";
     public static final String IMAGE_ON_ID = "SELECT * FROM image WHERE image_id = ?";
+    public static final String ALL_IMAGES_PERSON = "SELECT image.image_ID,image.name FROM  image INNER JOIN person_image ON person_image.image_ID = image.image_ID WHERE person_Id=?";
     Connection connection;
 
     public Image getImageById(int id) throws SQLException {
@@ -65,4 +66,24 @@ public class ImageDAO {
         return img;
     }
 
+    public List<Image> getAllImagesByPersonId(int person_id) throws SQLException {
+        List<Image> images = new ArrayList<Image>();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = Connector.getConnection();
+            statement = connection.prepareStatement(ALL_IMAGES_PERSON);
+            statement.setInt(1, person_id);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                images.add(obtain(resultSet));
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+
+        return images;
+
+    }
 }

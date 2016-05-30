@@ -36,15 +36,8 @@
         </div>
     </div>
     <div class="wepper_body">
-        <div class="detal_movie">
-
-            <div class="img_movie">
-                <img src="/img_temp/${images.get(0).name}">
-            </div>
-            <%@ include file="jspf/movie/desc_movie_info.jspf" %>
-            <%@ include file="jspf/movie/bloc_rating.jspf" %>
-            <a href="/jsp/allperson_on_film.jsp">...</a>
-        </div>
+        <%@ include file="/jsp/jspf/movie/desc.jspf" %>
+        <a href="/jsp/allperson_on_film.jsp">...</a>
         <div class="seperator">
             <h3>В кратце о фильме</h3>
         </div>
@@ -56,7 +49,7 @@
         <div class="seperator">
             <h3>Изображения</h3>
         </div>
-        <%@ include file="jspf/movie/images.jspf" %>
+        <%@ include file="/jsp/jspf/movie/images.jspf" %>
 
         <div class="seperator">
             <h3>Трейлер</h3>
@@ -73,6 +66,5 @@
 
     <%@ include file="/jsp/jspf/footer.jspf" %>
 </div>
-
 </body>
 </html>

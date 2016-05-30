@@ -2,9 +2,11 @@ package actions;
 
 import bean.MoviePersonRoleView;
 import constants.PagePath;
+import dao.ImageDAO;
 import dao.MovieDAO;
 import dao.PersonDAO;
 import dao.view.MoviePersonRoleDAO;
+import entities.Image;
 import entities.Movie;
 import entities.Person;
 import entities.Role;
@@ -26,14 +28,19 @@ public class PersonAction extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         int person_id = Integer.parseInt(request.getParameter("person_id"));
         PersonDAO personDAO = new PersonDAO();
+        ImageDAO imageDAO = new ImageDAO();
         Person person = personDAO.getByPK(person_id);
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         List<MoviePersonRoleView> d = moviePersonRoleDAO.getPersonRoleByPersonId(person_id);
         List<Movie> moviesWherePersonAttended = getMovieWherePersonAttended(d);
-        //request.setAttribute("movies", moviesWherePersonAttended);
+        List<Image> images = imageDAO.getAllImagesByPersonId(person_id);
+        images.add(0, imageDAO.getImageById(person.getImageId()));
+        request.setAttribute("person", person);
+        request.setAttribute("movies", moviesWherePersonAttended);
+        request.setAttribute("images", images);
         //request.setAttribute("roles", rolesWherePersonAttended);
         request.setAttribute("countMovie", COUNT_MOVIE_WherePersonAttended);
-        request.setAttribute("person", person);
+
         return new PageAction(PagePath.PERSON, true);//
     }
 

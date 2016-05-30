@@ -1,0 +1,26 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="desc_person">
+    <div class="name_person"><h3>${person.name}</h3></div>
+    <table width="100%">
+        <tr>
+            <td style=" width:  28%;">
+                <div class="desc_person_img">
+                    <img src="/img_temp/${images.get(0).name}">
+                </div>
+            </td>
+            <td style=" width: 60%; display: block;">
+                <div class="desc_person_inf">
+                    <ul>
+                        <li>${person.surname} ${person.name}</li>
+                        <li>Родился: ${person.birth_date}</li>
+                        <c:if test="val.death_date!=null">
+                            <li>Умер: ${person.death_date}</li>
+                        </c:if>
+                        <li>Страна: ${person.country}</li>
+                        <li>Всего фильмов: <c:out value="${countMovie}" default="0"/></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -15,7 +15,26 @@
 
 </head>
 <body>
-<c:import url="jspf/head.jspf"/>
+<c:import url="/jsp/jspf/head.jspf"/>
+<div class="wepper_body">
+    <div class="seperator"><h3>Все персоны фильма</h3></div>
+    <div class="list">
+        <div class="items">
+            <img src="img/person_img/person_03.jpg">
+            <a href="#">Name</a><br>
+            <a>Дата рождения: <span>date</span></a><br>
+            <a>тип кто он: <span>date</span></a>
+        </div>
+        <div class="items">
+            <img src="img/person_img/person_03.jpg">
+            <a href="#">Name</a><br>
+            <a>Дата рождения: <span>date</span></a><br>
+            <a>тип кто он: <span>date</span></a>
+        </div>
+    </div>
+    <div style="margin-top:20px; " class="seperator"></div>
+</div>
+
 
 </body>
 </html>

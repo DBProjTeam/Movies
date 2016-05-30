@@ -1,19 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="desc_movie_img">
+<div class="desc_img_person">
+
     <table>
         <tr>
             <c:forEach var="img" begin="1" items="${images}" varStatus="stat">
             <td>
                 <div class="desc_img">
-                    <img src="/img_temp/${img.name}">
+                    <div class="img_person"><img src="/img_temp/${img.name}"></div>
                 </div>
             </td>
-            <c:if test="${stat.count%4==0}">
+            <c:if test="${stat.count%5==0}">
         </tr>
         <tr>
             </c:if>
             </c:forEach>
         </tr>
     </table>
-
 </div>

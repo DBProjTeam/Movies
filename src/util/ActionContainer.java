@@ -1,7 +1,11 @@
 package util;
 
 import actions.*;
-import actions.profile.*;
+import actions.profile.ChangeProfile;
+import actions.profile.Login;
+import actions.profile.Logout;
+import actions.profile.Registration;
+import actions.user.Rate;
 import actions.user.ViewFavoriteMovies;
 import constants.PagePath;
 
@@ -32,7 +36,7 @@ public class ActionContainer {
 
         /*===============Movie=======================*/
         actionMap.put("movie", new MovieAction());
-        actionMap.put("rating", new AddRating());
+        actionMap.put("rating", new Rate());
 
 
         /*=================Person====================*/
