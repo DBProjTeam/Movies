@@ -6,10 +6,12 @@ import bean.NameOfPerson;
 import constants.PagePath;
 import constants.PersonRoles;
 import dao.CommentDAO;
+import dao.ImageDAO;
 import dao.MovieDAO;
 import dao.RatingDAO;
 import dao.view.MoviePersonRoleDAO;
 import entities.Comment;
+import entities.Image;
 import entities.Movie;
 import entities.Rating;
 
@@ -22,6 +24,7 @@ import java.util.ListIterator;
 
 /**
  * Created by Станислав on 09.03.16.
+ * modify pavel
  */
 public class MovieAction extends Action {
 
@@ -30,12 +33,16 @@ public class MovieAction extends Action {
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         //TODO:Валидация если movie_id не указан
-        int movie_id = Integer.parseInt(request.getParameter("movie_id"));
+        int movie_id = 0;
+
+        movie_id = Integer.parseInt(request.getParameter("movie_id"));
+
+
         MovieDAO movieDAO = new MovieDAO();
         CommentDAO commentDAO = new CommentDAO();
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         RatingDAO ratingDAO = new RatingDAO();
-
+        ImageDAO imageDAO = new ImageDAO();
         Movie movie = movieDAO.getByPK(movie_id);
 
         String country = "''";
@@ -52,7 +59,10 @@ public class MovieAction extends Action {
         List<MoviePersonRoleView> operators = getRole(persons, PersonRoles.OPERATOR.getName());
         List<MoviePersonRoleView> scenario = getRole(persons, PersonRoles.SCENARIO.getName());
 
+        List<Image> images = imageDAO.getAllImagesByMovieId(movie_id);
+        images.add(0, imageDAO.getImageById(movie.getImageId()));
         request.setAttribute("movie", movie);
+        request.setAttribute("images", images);
         request.setAttribute("country", country);
         request.setAttribute("comments", comments);
         request.setAttribute("directors", directors);

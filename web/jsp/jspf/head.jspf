@@ -1,4 +1,5 @@
 <!--Кусок кода с шапкой страницы-->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="wepper_Head">
     <%@ include file="/jsp/jspf/content/logo.jspf" %>

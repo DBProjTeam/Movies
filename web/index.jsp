@@ -34,7 +34,8 @@
         });
     </script>
     <script type="text/javascript" src="lib/js/paveljs.js"></script>
-
+    <title>FilmSearch.ua</title>
+    <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
 
 </head>
 <body>

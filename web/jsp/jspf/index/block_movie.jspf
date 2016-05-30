@@ -14,10 +14,8 @@
                 <div class="film">
                     <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg">
                     <br>
-
                     <a href="do?action=movie&movie_id=${stat.current.movieId}"><label><c:out value="${popular.title}"
                                                                                              default="Name"/></label></a><br>
-
                     <div>${popular.description}</div>
                 </div>
             </td>

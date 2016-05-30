@@ -24,6 +24,8 @@
             useCSS: false
         });
     </script>
+    <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
+
 </head>
 <body>
 <div class="wepper_main">
@@ -37,10 +39,11 @@
         <div class="detal_movie">
 
             <div class="img_movie">
-                <img src="img/detal_movie/detal_movie_main.jpg">
+                <img src="/img_temp/${images.get(0).name}">
             </div>
             <%@ include file="jspf/movie/desc_movie_info.jspf" %>
             <%@ include file="jspf/movie/bloc_rating.jspf" %>
+            <a href="/jsp/allperson_on_film.jsp">...</a>
         </div>
         <div class="seperator">
             <h3>В кратце о фильме</h3>
@@ -53,32 +56,8 @@
         <div class="seperator">
             <h3>Изображения</h3>
         </div>
-        <div class="desc_movie_img">
-            <table>
-                <tr>
-                    <td>
-                        <div class="desc_img">
-                            <img src="img/detal_movie/detal_movie_02.jpg">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="desc_img">
-                            <img src="img/detal_movie/detal_movie_01.jpg">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="desc_img">
-                            <img src="img/detal_movie/detal_movie_03.jpg">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="desc_img">
-                            <img src="img/detal_movie/detal_movie_04.jpg">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <%@ include file="jspf/movie/images.jspf" %>
+
         <div class="seperator">
             <h3>Трейлер</h3>
         </div>
@@ -91,8 +70,9 @@
         <%@ include file="/jsp/jspf/movie/coments_and_mark_bloc.jspf" %>
 
     </div>
+
+    <%@ include file="/jsp/jspf/footer.jspf" %>
 </div>
 
-<%@ include file="/jsp/jspf/footer.jspf" %>
 </body>
 </html>

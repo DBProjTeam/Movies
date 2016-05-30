@@ -11,6 +11,8 @@
     <title>Все участвующие в фильме </title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/lib/css/person_style.css">
+    <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
+
 </head>
 <body>
 <c:import url="jspf/head.jspf"/>

@@ -1,0 +1,20 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="desc_movie_img">
+    <table>
+        <tr>
+            <c:forEach var="img" begin="1" items="${images}" varStatus="stat">
+            <td>
+                <div class="desc_img">
+                    <img src="/img_temp/${img.name}">
+                </div>
+            </td>
+            <c:if test="${stat.count%4==0}">
+        </tr>
+        <tr>
+            </c:if>
+            </c:forEach>
+        </tr>
+    </table>
+
+    </table>
+</div>

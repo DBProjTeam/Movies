@@ -1,14 +1,14 @@
 <div class="bloc_rating">
-    <form class="rating" method="post" id="rang">
+    <form class="rating" method="get" id="rang" action="do?action=rating&movie_id=${movie.movieId}&login=${user.login}">
     </form>
     <script type="text/javascript">
         var rating = <c:out value="${rating}" default="0"/>;
         rating = Math.round(rating);
         for (i = 0; i < rating; i++) {
-            $("#rang").append('<input type="image" src="/lib/css/images/fill_like.png" value=' + i + '' + '/> ');
+            $("#rang").append('<input type="image" src="/lib/css/images/fill_like.png" value=' + i + '>' + "</input>");
         }
         while (i < 10) {
-            $("#rang").append('<input type="image" src="/lib/css/images/like.png" value=' + i + '/> ');
+            $("#rang").append('<input type="image" src="/lib/css/images/like.png" value=' + i + '> ' + "</input>");
             i++;
         }
     </script>
