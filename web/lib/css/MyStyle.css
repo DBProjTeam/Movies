@@ -11,6 +11,12 @@ body{
     height: 300px; 
     width: 100%;
 }
+.Mybaner{
+    height:195px;
+    width:250px;
+    margin-left:25px;
+    margin-bottom:20px;
+}
 .sorch strong{
     color: #fff;
     font-family: TimeNewRoma;
@@ -205,7 +211,7 @@ body{
 }
 .dec_rec{
     height: 170px;
-    width: 650px;
+    width: 65%;
     float: right;
     margin-top: 30px;
     margin-right: 40px;
@@ -259,7 +265,7 @@ body{
 }
 .coment{
     height: 150px;
-    width: 780px;
+    width: 68.5%;
     float: right;
     margin-right: 40px;
     background-color: #f3f3c5;

@@ -93,7 +93,9 @@ body {
 
 .detal_movie {
     width: 100%;
-    display: table-row;
+    display: inline-block;
+    position: relative;
+    padding-top: 20px;
 }
 .desc_movie_treuler,
 .img_movie,
@@ -107,13 +109,14 @@ body {
 }
 
 .img_movie {
-    width: 31%;
+    width: 35%;
     display: inline-block;
     float: left;
 }
 
 .img_movie img {
     width: 100%;
+    height: 220px;
     display: inline-block;
 }
 
@@ -158,26 +161,34 @@ body {
     margin: 0.001em;
     display: table-row;
 }
-
+.desc_dinamic{
+    margin-left: 20px;
+    width: 50%;
+}
 .desc_static,
 .desc_dinamic {
-    float: left;
+
     position: relative;
     display: inline-block;
 }
 
 .desc_static ul, .desc_dinamic ul {
     list-style: none; 
-    display: table-cell;
+    display: inline-block;
+    position: relative;
 }
-
-.desc_static ul li, .desc_dinamic ul li {
-    padding-bottom: 0.7em;
-    font-size: 1.4em;
+.desc_dinamic ul{
+    width: 100%;
+}
+.desc_static ul li{
+    padding-bottom: 0.6em;
+    font-size: 1.3em;
 }
 
 .desc_dinamic ul li {
-    padding-left: 50px;
+    padding-bottom: 0.7em;
+    padding-left: 10px;
+    font-size: 1.2em;
 }
 
 .desc_treuler {
