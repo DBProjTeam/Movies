@@ -5,6 +5,8 @@ import actions.profile.ChangeProfile;
 import actions.profile.Login;
 import actions.profile.Logout;
 import actions.profile.Registration;
+import actions.search.FullSearch;
+import actions.search.Search;
 import actions.user.Rate;
 import actions.user.ViewFavoriteMovies;
 import constants.PagePath;
@@ -33,6 +35,10 @@ public class ActionContainer {
         actionMap.put("logout", new Logout());
 
 
+        /*===============Search=======================*/
+        actionMap.put("full_search", new FullSearch());
+        actionMap.put("search", new Search());
+
 
         /*===============Movie=======================*/
         actionMap.put("movie", new MovieAction());
@@ -41,8 +47,8 @@ public class ActionContainer {
 
         /*=================Person====================*/
         actionMap.put("person",new PersonAction());
+        actionMap.put("all_persons_on_film", new PageForward(PagePath.ALL_PERSONS_ON_FILM));
 
-        actionMap.put("search", new Search());
 
 
 

@@ -26,6 +26,8 @@ public class MovieDAO {
     private static final String INSERT_MOVIE = "INSERT INTO movie (runtime,releaseDate,year,description,image_ID,title,country) VALUES( ?, ?, ?, ?, ?, ?,?);";
     private static final String UPDATE_MOVIE = "UPDATE movie SET runtime=?, releaseDate=?,year=?,description=?, image_ID=?, title=?, country=? WHERE movie_ID=?;";
     private static final String DELETE_MOVIE = "DELETE FROM movie WHERE movie_ID =?;";
+    private static final String GET_MIN_MAX_YEAR = "SELECT MIN(YEAR) AS 'min',MAX(YEAR)AS 'max' FROM movie";
+
     Connection connection;
 
     public List<Movie> getPopularMovies() throws SQLException {
@@ -110,7 +112,7 @@ public class MovieDAO {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(SEARCH_BY_TITLE);
             statement.setString(1, word);
-            resultSet = statement.executeQuery();
+            resultSet = statement.executeQuery();//не верный синтксис sql
             while (resultSet.next()) {//Исправлено
                 movies.add(obtain(resultSet));
             }
@@ -169,7 +171,7 @@ public class MovieDAO {
             statement.setString(4, movie.getDescription());
             statement.setInt(5, movie.getImageId());
             statement.setString(6, movie.getTitle());
-           // statement.setString(7, movie.getCountry().getCountry());
+            // statement.setString(7, movie.getCountry().getCountry());
             isOk = statement.execute();
         } finally {
             Connector.close(statement);
@@ -232,4 +234,23 @@ public class MovieDAO {
         return movieCountry;
     }
 
+    public int[] getMinMaxYear() throws SQLException {
+        int year[] = {2000, 2018};
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = Connector.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_MIN_MAX_YEAR);
+            while (resultSet.next()) {
+                year[0] = resultSet.getInt("min");
+                year[1] = resultSet.getInt("max");
+            }
+        } finally {
+            Connector.close(statement);
+            Connector.close(resultSet);
+        }
+        return year;
+    }
 }

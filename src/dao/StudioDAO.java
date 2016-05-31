@@ -5,7 +5,6 @@ import util.Connector;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ public class StudioDAO {
 
     Connection connection;
 
-    public List <Studio> getAll() throws SQLException {
+    public List<Studio> getAllStudio() throws SQLException {
         List<Studio> studios = null;
         Statement statement = null;
         ResultSet resultSet = null;

@@ -1,5 +1,7 @@
-package actions;
+package actions.user;
 
+import actions.Action;
+import actions.PageAction;
 import dao.UserMovieFavoriteDAO;
 import entities.User;
 import entities.UserMovieFavorite;
@@ -16,15 +18,15 @@ public class DeleteMovieFromFavoriteUser extends Action {
 
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        HttpSession session=request.getSession();
+        HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        if (user!=null){
+        if (user != null) {
             UserMovieFavoriteDAO userMovieFavoriteDAO = new UserMovieFavoriteDAO();
             UserMovieFavorite userMovieFavorite = new UserMovieFavorite();
             userMovieFavorite.setUserId(user.getId());
             userMovieFavorite.setMovieId(Integer.parseInt(request.getParameter("movieFavoriteId")));
             userMovieFavoriteDAO.deleteMovieIdFavoriteUser(userMovieFavorite);
         }
-        return new PageAction("",false);// здесь вставить ссылку обрат.
+        return new PageAction("", false);// здесь вставить ссылку обрат.
     }
 }

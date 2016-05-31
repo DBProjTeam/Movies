@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <script src="../../lib/js/jquery-2.2.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../lib/css/styl_detail_movei.css">
+    <link rel="stylesheet" type="text/css" href="..//lib/css/styl_detail_movei.css">
     <link rel="shortcut icon" href="../../img/logo.JPG" type="image/jpg">
 
 </head>
@@ -27,7 +27,7 @@
     </div>
     <div class="wepper_body">
         <%@ include file="/jsp/jspf/movie/desc.jspf" %>
-        <a href="/jsp/allperson_on_film.jsp">...</a>
+        <a href="do?action=all_persons_on_film">...</a>
         <div class="seperator">
             <h3>В кратце о фильме</h3>
         </div>

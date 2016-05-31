@@ -15,12 +15,13 @@
 <body>
 <div class="wepper_main">
     <div class="wepper_head">
-        <div class="seperator">
-            <h3><big>F</big>ilms<big>S</big>earch.ua</h3>
-        </div>
+
+        <%@include file="/jsp/jspf/head.jspf" %>
+        >
         <div class="discription">
             <span class="titel">Результат поиска</span>
         </div>
+
     </div>
     <div class="wepper_body">
         <div class="bloc_search_2">
@@ -51,13 +52,13 @@
         </div>
         <div class="bloc_search_1" style="padding-top: 10px; margin-top:25px; ">
                 <h2>Персоны</h2>
-                <div class="person_list">
+            <%--    <div class="person_list">
                     <c:if test="${searchPerson!=null}">
                         <c:forEach var="person" items="searchPerson">
                             <div class="person_items">
                                 <img src="img/person_img/Person_07.jpg">
                                 <div>
-                                    <span>Дата рождения:</span><span>${person.birth_date}</span><br>
+                                    <span>Дата рождения:</span><span>${person}</span><br>
                                     <span>Дата смерти:</span><span>   
                                       <c:if test="${person.death_date!=null}">
                                             ${person.death_date}
@@ -80,7 +81,7 @@
                         <div style="padding-bottom: 10px;">По вашему запросу персон не найдено!</div>
                     </c:if>
                 </div>
-        </div>
+        --%></div>
     </div>
 </body>
 </html>

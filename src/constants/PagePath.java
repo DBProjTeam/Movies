@@ -13,7 +13,9 @@ public class PagePath {
 
     public static final String FAVORITE_MOVIES = "/jsp/favorite_movies.jsp";
 
+    public static final String FULL_SEARCH = "/jsp/full_search.jsp";
     public static final String SEARCH_RESULT = "/jsp/search_result.jsp";
+    public static final String ALL_PERSONS_ON_FILM = "/jsp/allperson_on_film.jsp";
 
     public static final String MOVIE = "/jsp/movie.jsp";
     public static final String PERSON = "/jsp/person.jsp";

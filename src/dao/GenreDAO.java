@@ -3,6 +3,7 @@ package dao;
 
 import entities.Genre;
 import util.Connector;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,7 +27,7 @@ public class GenreDAO {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(GET_ALL_GENRE);
             while (resultSet.next()){
-
+                list.add(obtain(resultSet));
             }
         }finally {
             Connector.close(resultSet);
