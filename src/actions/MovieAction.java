@@ -32,7 +32,6 @@ public class MovieAction extends Action {
 
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        //TODO:Валидация если movie_id не указан
         int movie_id = 0;
 
         movie_id = Integer.parseInt(request.getParameter("movie_id"));
