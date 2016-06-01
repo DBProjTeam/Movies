@@ -2,7 +2,6 @@ package actions.profile;
 
 import actions.Action;
 import actions.PageAction;
-import constants.PagePath;
 import dao.UserDAO;
 import entities.User;
 

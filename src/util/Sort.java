@@ -45,7 +45,6 @@ public class Sort {
         });
     }
 
-
     public static void sortMovieByRating(List<Movie> list) {
         ListIterator<Movie> iterator = list.listIterator();
         Movie movie = null;
@@ -86,14 +85,6 @@ public class Sort {
             this.rating = calculationRatingMovie(movie.getMovieId());
         }
 
-        public double getRating() {
-            return rating;
-        }
-
-        public Movie getMovie() {
-            return movie;
-        }
-
         private static double calculationRatingMovie(int movie_id) {
             RatingDAO ratingDAO = new RatingDAO();
             int count = 0;
@@ -111,6 +102,14 @@ public class Sort {
             }
             count++;
             return ((sum * 1.0) / (count * 1.0));
+        }
+
+        public double getRating() {
+            return rating;
+        }
+
+        public Movie getMovie() {
+            return movie;
         }
     }
 

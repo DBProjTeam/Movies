@@ -20,5 +20,6 @@ public class PagePath {
     public static final String MOVIE = "/jsp/movie.jsp";
     public static final String PERSON = "/jsp/person.jsp";
 
+    public static final String ERROR_PAGE = "/jsp/error_page.jsp";
 
 }

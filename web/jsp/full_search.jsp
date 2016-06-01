@@ -6,16 +6,18 @@
   Time: 2:56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
 <html>
 <head>
     <title>Расширеный поиск</title>
     <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/css/style_search.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+<% request.setCharacterEncoding("UTF-8"); %>
 <div class="wepper_main">
     <div class="wepper_head">
         <div class="seperator">
@@ -28,9 +30,9 @@
     </div>
     <div class="wepper_body">
         <div class="bloc_search_1">
-            <form action="do?action=search" method="post">
+            <form method="get" accept-charset="utf-8">
                 <span><h2>Искать фильм:</h2></span><br>
-
+                <input hidden="hidden" formenctype="application/x-www-form-urlencoded" value="search" name="action">
                 <div class="head_bloc_1">
                     <div>
                         <input type="text" name="title">

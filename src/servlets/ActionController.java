@@ -5,7 +5,6 @@ import actions.PageAction;
 import util.ActionContainer;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,26 +16,39 @@ import java.sql.SQLException;
  */
 
 public class ActionController extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        process(request, response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        process(request, response);
-    }
-
-    private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String actionName = request.getParameter("action");
-        Action action = ActionContainer.getAction(actionName);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-            PageAction pageAction = action.execute(request,response);
-            if (pageAction.isForward()) {
-                request.getRequestDispatcher(pageAction.getPage()).forward(request,response);
-            } else {
-                response.sendRedirect(pageAction.getPage());
-            }
+            process(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            process(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        String actionName = request.getParameter("action");
+        Action action = ActionContainer.getAction(actionName);
+        PageAction pageAction = action.execute(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        if (pageAction.isForward()) {
+            request.getRequestDispatcher(pageAction.getPage()).forward(request, response);
+        } else {
+            response.sendRedirect(pageAction.getPage());
         }
 
     }

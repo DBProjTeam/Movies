@@ -55,7 +55,6 @@ public class ActionContainer {
 
         /*===============Other============================*/
         actionMap.put("index", new IndexActions());
-        actionMap.put("error", null); //TODO: error action
     }
 
     public static Action getAction(String name) {

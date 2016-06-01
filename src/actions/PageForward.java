@@ -2,7 +2,6 @@ package actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
 
 /**
  * Created by Vyacheslav.
@@ -16,7 +15,7 @@ public class PageForward extends  Action{
     }
 
     @Override
-    public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+    public PageAction execute(HttpServletRequest request, HttpServletResponse response) {
         return new PageAction(pagePath, true);
     }
 

@@ -34,7 +34,7 @@
                             <strong>Имя:</strong>
                         </td>
                         <td>
-                            <input type="text" name="name"></input>
+                            <input type="text" name="name"/>
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +42,7 @@
                             <strong>Фамилия:</strong>
                         </td>
                         <td>
-                            <input type="text" name="surname"></input>
+                            <input type="text" name="surname"/>
                         </td>
                     </tr>
                     <tr>
