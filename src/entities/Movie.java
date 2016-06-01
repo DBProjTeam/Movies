@@ -17,6 +17,26 @@ public class Movie implements Serializable {
     private int imageId;
     private String title;
 
+    public Movie() {
+        this.movieId = 1;
+        this.runtime = new Time(0);
+        this.releaseDate = new Date(0);
+        this.year = 0;
+        this.description = new String();
+        this.imageId = 111;
+        this.title = new String();
+    }
+
+    public Movie(Movie m) {
+        this.movieId = m.getMovieId();
+        this.runtime = m.getRuntime();
+        this.releaseDate = m.getReleaseDate();
+        this.year = m.getYear();
+        this.description = m.getDescription();
+        this.imageId = m.getImageId();
+        this.title = m.getTitle();
+    }
+
     public String getTitle() {
         return title;
     }

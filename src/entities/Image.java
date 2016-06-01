@@ -9,6 +9,17 @@ public class Image implements Serializable {
     private int id;
     private String name;
 
+    public Image() {
+        this.id = 111;
+        this.name = "movie-1.png";
+    }
+
+
+    public Image(String name) {
+        this();
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

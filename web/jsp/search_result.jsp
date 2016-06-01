@@ -32,7 +32,7 @@
                     <c:forEach var="movie" items="${searchMovie}">
                         <div class="items">
                             <%--Здесь постер фильма--%>
-                                <img src="img/small_baner_film/gh.png">
+                                <img src="/img_temp/${movie.mainImage.name}">
                             <div>
                                 <span>Год:</span><span>${movie.year}</span><br>
                                 <span>Время:</span><span>${movie.runtime}</span><br>
@@ -41,7 +41,8 @@
                                 <span>Режесер:</span><span>bos</span><br>
                             </div>
                             <div class="name">
-                                <a href="#">${movie.title}</a>
+                                <span>Название:</span><span><a href="do?action=movie&movie_id=${movie.movieId}"><c:out
+                                    value="${movie.title}" default="Без названия"/></a></span><br>
                             </div>
                         </div>
                     </c:forEach>
