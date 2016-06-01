@@ -22,7 +22,7 @@ public class Rate extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         int movieID = Integer.parseInt(request.getParameter("movie_id"));
-        int score = Integer.parseInt(request.getParameter("score"));
+        int score = Integer.parseInt(request.getParameter("rang"));
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");

@@ -11,6 +11,8 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../lib/css/style_search.css">
+    <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
+
     <title>Результаты поиска по запросу ${word}</title>
 </head>
 <body>
@@ -20,7 +22,7 @@
         <%@include file="/jsp/jspf/head.jspf" %>
 
         <div class="discription">
-            <span class="titel">Результат поиска</span>
+            <span class="titel">Результат поиск по запросу ${word} </span>
         </div>
 
     </div>

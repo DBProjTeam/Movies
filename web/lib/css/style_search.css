@@ -9,6 +9,14 @@ body {
     margin: 0 auto;
 }
 
+input#foobar {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: url('/lib/css/images/buttonSearch.PNG') no-repeat;
+    width: 120px;
+    height: 20px;
+}
 .seperator {
     width: 100%;
     background: #f4f0cd;

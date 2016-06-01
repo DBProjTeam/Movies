@@ -1,15 +1,40 @@
 <div class="bloc_rating">
-    <form class="rating" method="get" id="rang" action="do?action=rating&movie_id=${movie.movieId}&login=${user.login}">
+    <form class="rating" method="post" id="rang"
+          action="do?action=rating&movie_id=${movie.movieId}&login=${user.login}">
     </form>
     <script type="text/javascript">
         var rating = <c:out value="${rating}" default="0"/>;
+
         rating = Math.round(rating);
+
         for (i = 0; i < rating; i++) {
-            $("#rang").append('<input type="image" src="/lib/css/images/fill_like.png" value=' + i + '>' + "</input>");
+            process(i, 'fill_like.png');
         }
         while (i < 10) {
-            $("#rang").append('<input type="image" src="/lib/css/images/like.png" value=' + i + '> ' + "</input>");
+            process(i, 'like.png');
             i++;
+        }
+
+        function process(i, str) {
+            input = document.createElement("input");
+            $(input).attr({
+                name: 'rang',
+                type: 'submit',
+                value: i + 1
+            });
+            $(input).css({
+                width: '20px',
+                height: '20px',
+                display: 'inline-block',
+                position: 'relative',
+                padding: '0px',
+                margin: '0px',
+                width: '24px', height: '24px',
+                order: '0px', padding: '0px', margin: '0px'
+            });
+            url = 'url(/lib/css/images/' + str;
+            $(input).css('background', url);
+            $("#rang").append(input);
         }
     </script>
 </div>
