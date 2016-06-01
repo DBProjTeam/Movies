@@ -11,7 +11,7 @@ public class FieldValidator {
 
     private static final String PASSWORD_PATTERN = "^[A-Za-z0-9]{4,20}$";
     private static final String NAME_SURNAME_PATTERN = "^[A-Za-zА-Яа-я]{2,30}$";
-    private static final String TITLE_PATTERN = "[A-Za-zА-Яа-я]/s*[A-Za-zА-Яа-я]/s*$";
+    private static final String TITLE_PATTERN = ".*$";
 
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$";

@@ -11,14 +11,14 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../lib/css/style_search.css">
-    <title>Результаты поиска</title>
+    <title>Результаты поиска по запросу ${word}</title>
 </head>
 <body>
 <div class="wepper_main">
     <div class="wepper_head">
 
         <%@include file="/jsp/jspf/head.jspf" %>
-        >
+
         <div class="discription">
             <span class="titel">Результат поиска</span>
         </div>
@@ -32,7 +32,7 @@
                     <c:forEach var="movie" items="${searchMovie}">
                         <div class="items">
                             <%--Здесь постер фильма--%>
-                            <img src="img/small_baner_film/${movie.image_id}.png">
+                                <img src="img/small_baner_film/gh.png">
                             <div>
                                 <span>Год:</span><span>${movie.year}</span><br>
                                 <span>Время:</span><span>${movie.runtime}</span><br>
