@@ -43,6 +43,7 @@
     <%@ include file="/jsp/jspf/head.jspf" %>
     <%@ include file="/jsp/jspf/index/main.jspf" %>
     <%@ include file="/jsp/jspf/footer.jspf" %>
+
 </div>
 
 

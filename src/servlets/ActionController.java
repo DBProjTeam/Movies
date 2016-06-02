@@ -8,8 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 /**
  * Created by Vyacheslav.
@@ -26,6 +28,8 @@ public class ActionController extends HttpServlet {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
@@ -38,13 +42,19 @@ public class ActionController extends HttpServlet {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
-    private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ParseException {
         String actionName = request.getParameter("action");
+        HttpSession session = request.getSession();
         System.out.println("ActionController.process : request received '" + actionName + "'");
         Action action = ActionContainer.getAction(actionName);
+        if (!actionName.contentEquals("login")) {
+            session.setAttribute("last_url", request.getRequestURL() + "?" + request.getQueryString());
+        }
         PageAction pageAction = action.execute(request, response);
         response.setContentType("text/html;charset=UTF-8");
         if (pageAction.isForward()) {

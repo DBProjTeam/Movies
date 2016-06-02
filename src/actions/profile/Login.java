@@ -26,15 +26,16 @@ public class Login extends Action {
         System.out.println("Login.execute: login=" + login + ", password=" + password);
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getByLogin(login);
-
         if (user == null || !user.getPassword().equals(password)) {
             request.setAttribute("error", "Неправильный логин или пароль");
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+
             System.out.println("Login.execute: user login=" + login + " logged");
-            return new PageAction("do?action=index", false);
+            return new PageAction((String) session.getAttribute("last_url"), false);
         }
+
         return new PageAction(PagePath.LOGIN, true);
     }
 }
