@@ -11,6 +11,7 @@ import entities.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +30,6 @@ public class MovieAction extends Action {
         int movie_id = 0;
 
         movie_id = Integer.parseInt(request.getParameter("movie_id"));
-
-
         MovieDAO movieDAO = new MovieDAO();
         CommentDAO commentDAO = new CommentDAO();
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
@@ -38,7 +37,7 @@ public class MovieAction extends Action {
         ImageDAO imageDAO = new ImageDAO();
         GenreDAO genreDAO = new GenreDAO();
         Movie movie = movieDAO.getByPK(movie_id);
-
+        HttpSession session = request.getSession();
         String country = "''";
         if (movieDAO.getCountry(movie_id) != null) {
             country = movieDAO.getCountry(movie_id).getCountry().getCountry();
@@ -55,6 +54,7 @@ public class MovieAction extends Action {
         List<Genre> genres = genreDAO.getMovieGenres(movie_id);
         List<Image> images = imageDAO.getAllImagesByMovieId(movie_id);
         images.add(0, imageDAO.getImageById(movie.getImageId()));
+
         request.setAttribute("movie", movie);
         request.setAttribute("images", images);
         request.setAttribute("country", country);
@@ -67,8 +67,19 @@ public class MovieAction extends Action {
         request.setAttribute("rating", rating);
         request.setAttribute("genres", genres);
         request.setAttribute("user_name", new NameOfPerson());
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            boolean inUserCollection = isInCollection(user.getId(), movie_id);
+            request.setAttribute("is_in_celection", inUserCollection);
+        }
         PageAction pageAction = new PageAction(PagePath.MOVIE, true);
         return pageAction;
+    }
+
+    private boolean isInCollection(int user, int movie_id) throws SQLException {
+        UserMovieFavoriteDAO userMovieFavoriteDAO = new UserMovieFavoriteDAO();
+
+        return userMovieFavoriteDAO.existsMovieUser(user, movie_id);
     }
 
     private double getRatingAverage(List<Rating> ratings) {

@@ -12,8 +12,8 @@
     <title>Movie-<c:out value="${movie.title}"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="..//lib/css/styl_detail_movei.css">
+    <script src="/lib/js/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/css/styl_detail_movei.css">
     <link rel="shortcut icon" href="../../img/logo.JPG" type="image/jpg">
 
 </head>
@@ -28,9 +28,16 @@
     <div class="wepper_body">
         <%@ include file="/jsp/jspf/movie/desc.jspf" %>
         <c:if test="${not empty user}">
-            <form action="do?action=add_favorite_movie" method="post">
+            <form action="do?action=add_favorite_movie" id="inCollaction" method="post">
                 <input type="hidden" name="movieId" value="${movie.movieId}"/>
-                <input type="submit" value="Добавить фильм в коллекцию">
+
+                <script type="text/javascript">
+                    if (!${is_in_celection}) {
+                        $("#inCollaction").append(' <input type="submit" value="Добавить фильм в коллекцию">');
+                    } else {
+                        $("#inCollaction").append("<p>Фильм уже в колекции</p>");
+                    }
+                </script>
             </form>
         </c:if>
         <a href="do?action=all_persons_on_film">...</a>
