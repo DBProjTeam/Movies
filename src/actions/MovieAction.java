@@ -25,6 +25,21 @@ public class MovieAction extends Action {
 
     private static final int COUNT_MAX_ROLE = 10;
 
+    public static List<MoviePersonRoleView> getRole(List<MoviePersonRoleView> list, String role) {
+        ListIterator<MoviePersonRoleView> iterator = list.listIterator();
+        List<MoviePersonRoleView> personsRole = new ArrayList<MoviePersonRoleView>();
+        int count = 0;
+        while (iterator.hasNext() && count < COUNT_MAX_ROLE) {
+            MoviePersonRoleView moviePersonRoleView = iterator.next();
+            if (role.equals(moviePersonRoleView.getRole())) {
+                personsRole.add(moviePersonRoleView);
+                count++;
+                //list.remove(moviePersonRoleView);//TOdo Error happend here
+            }
+        }
+        return personsRole;
+    }
+
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         int movie_id = 0;
@@ -92,22 +107,6 @@ public class MovieAction extends Action {
             count++;
         }
         return (sum * 1.0) / (count * 1.0);
-    }
-
-
-    private List<MoviePersonRoleView> getRole(List<MoviePersonRoleView> list, String role) {
-        ListIterator<MoviePersonRoleView> iterator = list.listIterator();
-        List<MoviePersonRoleView> personsRole = new ArrayList<MoviePersonRoleView>();
-        int count = 0;
-        while (iterator.hasNext() && count < COUNT_MAX_ROLE) {
-            MoviePersonRoleView moviePersonRoleView = iterator.next();
-            if (role.equals(moviePersonRoleView.getRole())) {
-                personsRole.add(moviePersonRoleView);
-                count++;
-                //list.remove(moviePersonRoleView);//TOdo Error happend here
-            }
-        }
-        return personsRole;
     }
 
 

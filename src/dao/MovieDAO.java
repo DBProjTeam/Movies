@@ -22,7 +22,7 @@ public class MovieDAO {
     private static final String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
     private static final String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";
     private static final String GET_MOVIE_ALL = "SELECT * FROM movie;";
-    private static final String SEARCH_BY_TITLE = "CALL findMovie(?)";
+    private static final String SEARCH_BY_TITLE = "CALL findMovie(?,?,?,?,?,?,?)";
     private static final String INSERT_MOVIE = "INSERT INTO movie (runtime,releaseDate,year,description,image_ID,title,country) VALUES( ?, ?, ?, ?, ?, ?,?);";
     private static final String UPDATE_MOVIE = "UPDATE movie SET runtime=?, releaseDate=?,year=?,description=?, image_ID=?, title=?, country=? WHERE movie_ID=?;";
     private static final String DELETE_MOVIE = "DELETE FROM movie WHERE movie_ID =?;";
@@ -67,7 +67,7 @@ public class MovieDAO {
     }
 
     public MovieCountry getCountry(int movie_id) throws SQLException {
-        MovieCountry movieCountry = null;
+        MovieCountry movieCountry = new MovieCountry();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -104,7 +104,7 @@ public class MovieDAO {
         return movie;
     }
 
-    public List<Movie> searchByTitle(String word) throws SQLException {
+    public List<Movie> searchByTitle(String word, boolean c, boolean g, boolean s, String country, String genre, String studio) throws SQLException {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
@@ -113,6 +113,12 @@ public class MovieDAO {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(SEARCH_BY_TITLE);
             statement.setString(1, word);
+            statement.setBoolean(2, c);
+            statement.setBoolean(3, g);
+            statement.setBoolean(4, s);
+            statement.setString(5, country);
+            statement.setString(6, genre);
+            statement.setString(7, studio);
             resultSet = statement.executeQuery();//не верный синтксис sql
             while (resultSet.next()) {
                 movies.add(obtain(resultSet));

@@ -1,6 +1,10 @@
 package dao;
 
+import actions.MovieAction;
 import bean.MovieImages;
+import bean.MoviePersonRoleView;
+import constants.PersonRoles;
+import entities.Country;
 import entities.Image;
 import entities.Movie;
 import entities.UserMovieFavorite;
@@ -96,7 +100,8 @@ public class UserMovieFavoriteDAO {
             while (resultSet.next()) {
                 Movie movie = movieDAO.obtain(resultSet);
                 Image image = imageDAO.getImageById(resultSet.getInt("image_ID"));
-                userMovieFavoritesList.add(new MovieImages(movie, image));
+
+                userMovieFavoritesList.add(new MovieImages(movie, image, getCountry(movie.getMovieId()), getDirectorOfFilm(movie.getMovieId())));
             }
         } finally {
             Connector.close(statement);
@@ -105,6 +110,25 @@ public class UserMovieFavoriteDAO {
         return userMovieFavoritesList;
     }
 
+    private MoviePersonRoleView getDirectorOfFilm(int movieId) throws SQLException {
+        dao.view.MoviePersonRoleDAO moviePersonRoleDAO = new dao.view.MoviePersonRoleDAO();
+        List<MoviePersonRoleView> persons = moviePersonRoleDAO.getPersonRoleByMovieId(movieId);
+        if (!persons.isEmpty()) {
+            List<MoviePersonRoleView> directors = MovieAction.getRole(persons, PersonRoles.DIRECTOR.getName());
+            if (!directors.isEmpty()) {
+                return directors.get(0);
+            } else {
+                return new MoviePersonRoleView();
+            }
+        } else {
+            return new MoviePersonRoleView();
+        }
+    }
+
+    private Country getCountry(int movieId) throws SQLException {
+        return (new MovieDAO().getCountry(movieId)).getCountry();
+
+    }
 
     private UserMovieFavorite obtain(ResultSet resultSet) throws SQLException {
         UserMovieFavorite userMovieFavorite = new UserMovieFavorite();

@@ -22,7 +22,7 @@
         <%@include file="/jsp/jspf/head.jspf" %>
 
         <div class="discription">
-            <span class="titel">Результат поиск по запросу ${word} </span>
+            <span class="titel">Результат поиск по запросу ${word}</span>
         </div>
 
     </div>
@@ -39,8 +39,9 @@
                                 <span>Год:</span><span>${movie.year}</span><br>
                                 <span>Время:</span><span>${movie.runtime}</span><br>
                                 <span>Релиз:</span><span>${movie.releaseDate}</span><br>
-                                <span>Стнара:</span><span>country</span><br>
-                                <span>Режесер:</span><span>bos</span><br>
+                                <span>Страна:</span><span>${movie.country.country}</span><br>
+                                <span>Режисер:</span><span><c:if test="${movie.director.person.id!=1}"> <a
+                                    href="do?action=person&person_id=${movie.director.person.id}"></c:if> ${movie.director.person.name}</a></span><br>
                             </div>
                             <div class="name">
                                 <span>Название:</span><span><a href="do?action=movie&movie_id=${movie.movieId}"><c:out
@@ -87,5 +88,6 @@
                 </div>
         --%></div>
     </div>
+</div>
 </body>
 </html>

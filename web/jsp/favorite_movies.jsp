@@ -32,9 +32,10 @@
                             <div>
                                 <span>Год:</span><span>${movie.year}</span><br>
                                 <span>Время:</span><span>${movie.runtime}</span><br>
-                                <span>Релиз:</span><span>${movie.releaseDate}</span><br>
-                                <span>Страна:</span><span>country</span><br>
-                                <span>режиссер:</span><span>bos</span><br>
+                                <span>Страна:</span><span>${movie.country.country}</span><br>
+                                <span>Режисер:</span><span><c:if test="${movie.director.person.id!=1}"> <a
+                                    href="do?action=person&person_id=${movie.director.person.id}"></c:if> ${movie.director.person.name}</a></span><br>
+
                             </div>
                                     <a href="do?action=delete_favorite_movie&movieId=${movie.movieId}">Удалить из коллекции</a>
                             <div class="name">
@@ -51,5 +52,6 @@
         </div>
 
     </div>
+</div>
 </body>
 </html>

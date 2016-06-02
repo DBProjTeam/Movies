@@ -15,6 +15,15 @@ public class Person implements Serializable {
     private String country;
     private int imageId;
 
+    public Person() {
+        this.id = 1;
+        this.name = "Без имени";
+        this.birth_date = new Date();
+        this.death_date = new Date();
+        this.country = "Без Страны";
+        this.imageId = 111;
+    }
+
     public int getId() {
         return id;
     }

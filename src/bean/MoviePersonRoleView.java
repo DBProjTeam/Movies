@@ -13,6 +13,11 @@ public class MoviePersonRoleView implements Serializable {
     private String role;
     private int movie_ID;
 
+    public MoviePersonRoleView() {
+        this.person = new Person();
+        this.role = "";
+        this.movie_ID = 111;
+    }
 
     public Person getPerson() {
         return person;

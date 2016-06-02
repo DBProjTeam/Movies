@@ -9,6 +9,10 @@ public class MovieCountry implements Serializable {
     private int movieId;
     private Country country;
 
+    public MovieCountry() {
+        this.id = 111;
+        this.country = new Country("Без страны");
+    }
     public int getId() {
         return id;
     }

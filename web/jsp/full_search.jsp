@@ -76,7 +76,7 @@
                         <select name="studio">
                             <option selected>Пусто</option>
                             <c:forEach items="${studios}" var="stud">
-                                <option>${stud.name}</option>
+                                <option value="${stud.id}">${stud.name}</option>
                             </c:forEach>
                         </select>
                         <button style="margin-left: 36.5%; background-color:  #8dacc2;" class="mybuton" type="submit">
