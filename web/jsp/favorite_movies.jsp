@@ -10,15 +10,12 @@
 </head>
 <body>
 <div class="wepper_main">
-    <div class="wepper_head">
-
         <%@include file="/jsp/jspf/head.jspf" %>
-
         <div class="discription">
             <span class="titel">Коллекция фильмов</span>
         </div>
 
-    </div>
+
     <div class="wepper_body">
         <div class="bloc_search_2">
 

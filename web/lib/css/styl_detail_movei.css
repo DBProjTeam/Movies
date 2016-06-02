@@ -256,3 +256,6 @@ body {
     position: relative;
     display: inline-block;
 }
+.button_style{
+    padding: 5px;
+}

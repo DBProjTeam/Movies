@@ -33,7 +33,7 @@
 
                 <script type="text/javascript">
                     if (!${is_in_celection}) {
-                        $("#inCollaction").append(' <input type="submit" value="Добавить фильм в коллекцию">');
+                        $("#inCollaction").append(' <input class="button_style" type="submit" value="Добавить фильм в коллекцию">');
                     } else {
                         $("#inCollaction").append("<p>Фильм уже в колекции</p>");
                     }
