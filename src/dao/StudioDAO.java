@@ -13,7 +13,7 @@ import java.util.List;
 public class StudioDAO {
     private static final String GET_STUDIO_BY_ID = "SELECT  * FROM movies.studio WHERE (studio_ID = ?);";
     private static final String GET_STUDIO_BY_NAME = "SELECT * FROM movies.studio WHERE (name = ? );";
-    private static final String GET_ALL = "SELECT * FROM    movies.studio ;";
+    private static final String GET_ALL = "SELECT * FROM    movies.studio ORDER BY name  ;";
 
     Connection connection;
 

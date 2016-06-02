@@ -11,7 +11,7 @@ import java.util.List;
 public class PersonDAO {
 
     private static final String GET_PERSON_BY_ID = "SELECT * FROM person WHERE person_ID=?";
-    private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME = "SELECT * FROM person WHERE(person.name LIKE ?'%') OR (person.surname LIKE ?'%')";
+    private static final String SEARCH_PERSON_BY_NAME_AND_SURNAME = "call findPerson(?,?)";
     private static final String INSERT_PERSON = "INSERT INTO person (name,surname,birth_date,death_date,country,image_ID) VALUES (?,?,?,?,?,?);";
     private static final String UPDATE_PERSON = "UPDATE person SET name=?, surname=?, birth_date=?, death_date=?, country=?,image_ID=? WHERE person_ID=?;";
     private static final String DELETE_PERSON = "DELETE FROM person WHERE person_ID=?;";
@@ -57,14 +57,14 @@ public class PersonDAO {
 
     }
 
-    public List<Person> searchPersonByNameAndSurname(String words) throws SQLException {
+    public List<Person> searchPersonByNameAndSurname(String name, String words) throws SQLException {
         List<Person> person = new ArrayList<Person>();
         PreparedStatement statement = null;
         ResultSet res = null;
         try {
             connection = Connector.getConnection();
             statement = connection.prepareStatement(SEARCH_PERSON_BY_NAME_AND_SURNAME);
-            statement.setString(1, words);
+            statement.setString(1, name);
             statement.setString(2, words);
             res = statement.executeQuery();
             while (res.next()) {

@@ -31,6 +31,13 @@ public class Search extends Action {
 
     static private StringBuilder staticSb = new StringBuilder();
 
+    public static String checkParam(String country) {
+        if ("Пусто".compareTo(country) == 0) {
+            country = null;
+        }
+        return country;
+    }
+
     @Override
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
@@ -49,10 +56,10 @@ public class Search extends Action {
 
         //Log to show params
         staticSb.delete(0, staticSb.length());//clear buffer
-        System.out.println(staticSb.append("searchAction.execute: title:= ").append(word).append(" country:= ").append(country).append(" genre:= ").append(genre).append(" studio:= ").append(studio).toString());
+        System.out.println(staticSb.append("searchAction.execute: title:= ").append(word).append(" country:= ").append(country).append(" genre:= ").append(genre).append(" studio:= ").append(studio).append(" from:=").append(from).append(" to:=").append(to).toString());
         ///////////////-------------------------------///////////////
         if (!FieldValidator.isMovieTitleValid(word)) {
-            request.setAttribute("error", "error.search.word.specified");//todo не работает как надо
+            request.setAttribute("error", "error.search.word.specified");// не работает как надо
         } else {
             List<Movie> movies = searchByTitle(word, needCountry, needGenre, needStudio, country, genre, studio, from, to);
 
@@ -63,6 +70,13 @@ public class Search extends Action {
                 for (Movie movie : movies) {
                     MovieImages movieImages = new MovieImages(movie, getImage(movie.getImageId()), getCountry(movie.getMovieId()), getDirectorOfFilm(movie.getMovieId()));
                     listmovieImages.add(movieImages);
+                }
+                if (!listmovieImages.isEmpty()) {
+
+                    request.setAttribute("person", true);
+                    request.setAttribute("movies", true);
+                } else {
+                    request.setAttribute("movies", false);
                 }
                 request.setAttribute("word", word);
                 request.setAttribute("searchMovie", listmovieImages);
@@ -101,13 +115,6 @@ public class Search extends Action {
         ImageDAO imageDAO = new ImageDAO();
         List<Image> images = imageDAO.getAllImagesByMovieId(movieId);
         return images;
-    }
-
-    private String checkParam(String country) {
-        if ("Пусто".compareTo(country) == 0) {
-            country = null;
-        }
-        return country;
     }
 
     private List<Movie> searchByTitle(String word, boolean c, boolean g, boolean s, String country, String genre, String studio, int from, int to) throws SQLException {

@@ -12,7 +12,7 @@
 <head>
     <link type="text/css" rel="stylesheet" href="../lib/css/style_search.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
-
+    <script src="/lib/js/jquery-2.2.3.min.js"></script>
     <title>Результаты поиска по запросу ${word}</title>
 </head>
 <body>
@@ -27,7 +27,20 @@
 
     </div>
     <div class="wepper_body">
-        <div class="bloc_search_2">
+        <script type="text/javascript">
+            if (${movie}) {
+                $("#movie").attr({
+                    hidden: "hidden"
+                });
+            }
+            if (${person}) {
+                $("#person").attr({
+                    hidden: "hidden"
+                });
+            }
+
+        </script>
+        <div class="bloc_search_2" id="movie">
             <h2>Фильмы</h2>
             <div class="list_film">
                 <c:if test="${searchMovie!=null}">
@@ -55,15 +68,15 @@
                 </c:if>
             </div>
         </div>
-        <div class="bloc_search_1" style="padding-top: 10px; margin-top:25px; ">
+        <div class="bloc_search_1" id="person" style="padding-top: 10px; margin-top:25px; ">
                 <h2>Персоны</h2>
-            <%--    <div class="person_list">
-                    <c:if test="${searchPerson!=null}">
-                        <c:forEach var="person" items="searchPerson">
+
+            <div class="person_list">
+                <c:forEach var="person" items="${persons}">
                             <div class="person_items">
                                 <img src="img/person_img/Person_07.jpg">
                                 <div>
-                                    <span>Дата рождения:</span><span>${person}</span><br>
+                                    <span>Дата рождения:</span><span>${person.birth_date}</span><br>
                                     <span>Дата смерти:</span><span>   
                                       <c:if test="${person.death_date!=null}">
                                             ${person.death_date}
@@ -81,12 +94,10 @@
                                 </div>
                             </div>
                         </c:forEach>
-                    </c:if>
-                    <c:if test="${searchPerson==null}">
-                        <div style="padding-bottom: 10px;">По вашему запросу персон не найдено!</div>
-                    </c:if>
-                </div>
-        --%></div>
+
+
+            </div>
+        </div>
     </div>
 </div>
 </body>
