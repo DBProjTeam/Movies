@@ -48,10 +48,9 @@
                 </c:if>'
             </li>
             <li>'
-                <c:if test="${producers.size()!=0}">
-                    <c:forEach items="${producers}" var="dir" varStatus="stat">
-                        <a href="do?action=person&person_id=${dir.person.id}"> ${dir.person.name} ${dir.person.surname}</a>
-                        <c:if test="${!stat.last}">;</c:if>
+                <c:if test="${genres.size()!=0}">
+                    <c:forEach items="${genres}" var="dir" varStatus="stat">
+                        ${dir.genre} <c:if test="${!stat.last}">;</c:if>
                     </c:forEach>
                 </c:if>'
             </li>

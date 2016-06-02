@@ -5,15 +5,9 @@ import bean.MoviePersonRoleView;
 import bean.NameOfPerson;
 import constants.PagePath;
 import constants.PersonRoles;
-import dao.CommentDAO;
-import dao.ImageDAO;
-import dao.MovieDAO;
-import dao.RatingDAO;
+import dao.*;
 import dao.view.MoviePersonRoleDAO;
-import entities.Comment;
-import entities.Image;
-import entities.Movie;
-import entities.Rating;
+import entities.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,6 +36,7 @@ public class MovieAction extends Action {
         MoviePersonRoleDAO moviePersonRoleDAO = new MoviePersonRoleDAO();
         RatingDAO ratingDAO = new RatingDAO();
         ImageDAO imageDAO = new ImageDAO();
+        GenreDAO genreDAO = new GenreDAO();
         Movie movie = movieDAO.getByPK(movie_id);
 
         String country = "''";
@@ -57,7 +52,7 @@ public class MovieAction extends Action {
         List<MoviePersonRoleView> directors = getRole(persons, PersonRoles.DIRECTOR.getName());
         List<MoviePersonRoleView> operators = getRole(persons, PersonRoles.OPERATOR.getName());
         List<MoviePersonRoleView> scenario = getRole(persons, PersonRoles.SCENARIO.getName());
-
+        List<Genre> genres = genreDAO.getMovieGenres(movie_id);
         List<Image> images = imageDAO.getAllImagesByMovieId(movie_id);
         images.add(0, imageDAO.getImageById(movie.getImageId()));
         request.setAttribute("movie", movie);
@@ -70,6 +65,7 @@ public class MovieAction extends Action {
         request.setAttribute("operators", operators);
         request.setAttribute("scenario", scenario);
         request.setAttribute("rating", rating);
+        request.setAttribute("genres", genres);
         request.setAttribute("user_name", new NameOfPerson());
         PageAction pageAction = new PageAction(PagePath.MOVIE, true);
         return pageAction;
