@@ -59,27 +59,20 @@ public class Search extends Action {
         } else {
             List<Movie> movies = searchByTitle(word, country, genre, studio, from, to);
 
-            if (movies.isEmpty()) {
-                request.setAttribute("error", MESSAGES_BY_NOT_FOUND);
-            } else {
-                List<MovieImages> listmovieImages = new ArrayList<MovieImages>();
-                for (Movie movie : movies) {
-                    MovieImages movieImages = new MovieImages(movie, getImage(movie.getImageId()), getCountry(movie.getMovieId()), getDirectorOfFilm(movie.getMovieId()));
-                    listmovieImages.add(movieImages);
-                }
-                if (!listmovieImages.isEmpty()) {
 
-                    request.setAttribute("person", true);
-                    request.setAttribute("movies", true);
-                } else {
-                    request.setAttribute("movies", false);
-                }
-                request.setAttribute("word", word);
-                request.setAttribute("searchMovie", listmovieImages);
-                return new PageAction(PagePath.SEARCH_RESULT, true);// здесь вставить ссылку на страницу поиска!!!!!;
+            List<MovieImages> listmovieImages = new ArrayList<MovieImages>();
+            for (Movie movie : movies) {
+                MovieImages movieImages = new MovieImages(movie, getImage(movie.getImageId()), getCountry(movie.getMovieId()), getDirectorOfFilm(movie.getMovieId()));
+                listmovieImages.add(movieImages);
             }
+            request.setAttribute("movie", false);
+            request.setAttribute("person", true);
+            request.setAttribute("word", word);
+            request.setAttribute("searchMovie", listmovieImages);
+            return new PageAction(PagePath.SEARCH_RESULT, true);
         }
-        return new PageAction(PagePath.ERROR_PAGE, true);
+
+        return new PageAction(PagePath.SEARCH_RESULT, true);
     }
 
     private MoviePersonRoleView getDirectorOfFilm(int movieId) throws SQLException {

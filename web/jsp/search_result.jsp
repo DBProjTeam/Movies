@@ -16,6 +16,8 @@
     <title>Результаты поиска по запросу ${word}</title>
 </head>
 <body>
+
+
 <div class="wepper_main">
     <div class="wepper_head">
 
@@ -27,23 +29,10 @@
 
     </div>
     <div class="wepper_body">
-        <script type="text/javascript">
-            if (${movie}) {
-                $("#movie").attr({
-                    hidden: "hidden"
-                });
-            }
-            if (${person}) {
-                $("#person").attr({
-                    hidden: "hidden"
-                });
-            }
-
-        </script>
         <div class="bloc_search_2" id="movie">
             <h2>Фильмы</h2>
             <div class="list_film">
-                <c:if test="${searchMovie!=null}">
+                <c:if test="${!searchMovie.isEmpty()}">
                     <c:forEach var="movie" items="${searchMovie}">
                         <div class="items">
                             <%--Здесь постер фильма--%>
@@ -63,15 +52,17 @@
                         </div>
                     </c:forEach>
                 </c:if>
-                <c:if test="${searchMovie==null}">
+                <c:if test="${searchMovie.isEmpty()}">
                     <div>По вашему запросу фильмов не найдено!</div>
                 </c:if>
             </div>
         </div>
+
         <div class="bloc_search_1" id="person" style="padding-top: 10px; margin-top:25px; ">
                 <h2>Персоны</h2>
-
             <div class="person_list">
+
+                <c:if test="${!persons.isEmpty()}">
                 <c:forEach var="person" items="${persons}">
                             <div class="person_items">
                                 <img src="img/person_img/Person_07.jpg">
@@ -94,9 +85,26 @@
                                 </div>
                             </div>
                         </c:forEach>
+                </c:if>
+                <c:if test="${persons.isEmpty()}">
+                    <div>По вашему запросу фильмов не найдено!</div>
+                </c:if>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    if (${movie}) {
+        $("#movie").attr({
+            hidden: "hidden"
+        });
+    }
+    if (${person}) {
+        $("#person").attr({
+            hidden: "hidden"
+        });
+    }
+
+</script>
 </body>
 </html>
