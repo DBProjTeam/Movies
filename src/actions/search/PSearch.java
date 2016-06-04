@@ -26,12 +26,8 @@ public class PSearch extends Action {
         List<Person> persons = searchPersonsNameOrSurname(name, role);
         request.setAttribute("persons", persons);
         request.setAttribute("word", name);
-        if (!persons.isEmpty()) {
-            request.setAttribute("person", false);
-            request.setAttribute("movie", true);
-        } else {
-            request.setAttribute("person", true);
-        }
+        request.setAttribute("person", false);
+        request.setAttribute("movie", true);
         return new PageAction(PagePath.SEARCH_RESULT, true);
     }
 

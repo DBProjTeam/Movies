@@ -11,10 +11,39 @@
 <html>
 <head>
     <title>Расширеный поиск</title>
+    <%-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+ --%>
+    <link href="/lib/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="/lib/js/jquery-2.2.3.min.js"></script>
+    <script src="/lib/js/jquery-ui.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../lib/css/style_search.css">
     <link type="text/css" rel="stylesheet" href="../lib/css/MyStyle.css">
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
-    <script src="/lib/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#search").keyup(function () {
+                var title = $("#search").val();
+                $.ajax({
+                    type: 'GET',
+                    data: {title: title},
+                    url: 'ServletAjax',
+                    success: function (data) {
+                        console.log(data);
+                        $("#search").autocomplete({
+                            minLength: 0,
+                            source: data,
+                            select: function (event, ui) {
+                                location.href = "do?action=movie&movie_id=" + ui.item.movieId;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
@@ -31,12 +60,13 @@
     </div>
     <div class="wepper_body">
         <div class="bloc_search_1">
-            <form method="get" accept-charset="utf-8">
+            </form>
+            <form method="get" id="res" accept-charset="utf-8" name="to_search">
                 <span><h2>Искать фильм:</h2></span><br>
-                <input hidden="hidden" formenctype="application/x-www-form-urlencoded" value="search" name="action">
+                <input hidden="hidden" value="search" name="action">
                 <div class="head_bloc_1">
                     <div>
-                        <input type="text" name="title">
+                        <input id="search" name="title" type="text"/>
                         <text>Полное или частичное названия фильма</text>
                     </div>
                     <div>
@@ -87,7 +117,7 @@
                         </button>
                     </div>
                 </div>
-            </form>
+
         </div>
         <div class="bloc_search_2">
             <span>
@@ -96,6 +126,7 @@
 
             <form action="do?" method="get">
                 <input name="action" hidden="hidden" value="psearch">
+
                 <div style="width: 100%;">
                     <div style="width: 29%;display: inline-block; position: relative;">
                         <select style="width: 95%;" name="role">

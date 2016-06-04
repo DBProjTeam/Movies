@@ -39,5 +39,7 @@
     </orderEntry>
     <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1" level="project" />
+    <orderEntry type="library" name="com.fasterxml.jackson.annotations" level="project" />
+    <orderEntry type="library" name="com.fasterxml.jackson.core" level="project" />
   </component>
 </module>

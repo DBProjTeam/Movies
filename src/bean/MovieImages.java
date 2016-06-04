@@ -12,6 +12,7 @@ import java.util.List;
  * Created by Pavel on 01.06.2016.
  */
 public class MovieImages extends Movie implements Serializable {
+    private String label = null;
     private List<Image> images = null;
     private Image mainImage = null;
     private Country country = null;
@@ -19,12 +20,18 @@ public class MovieImages extends Movie implements Serializable {
 
     public MovieImages() {
         super();
+        this.label = "";
         this.images = new ArrayList<Image>(0);
         this.mainImage = new Image();
     }
 
+    public MovieImages(Movie m) {
+        super(m);
+        this.label = m.getTitle();
+    }
     public MovieImages(Movie m, Image s) {
         super(m);
+        this.label = m.getTitle();
         this.mainImage = s;
         this.images = new ArrayList<Image>(0);
     }
@@ -74,5 +81,13 @@ public class MovieImages extends Movie implements Serializable {
 
     public void setDirector(MoviePersonRoleView director) {
         this.director = director;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 }
