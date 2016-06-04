@@ -50,10 +50,6 @@ public class Search extends Action {
         int from = Integer.parseInt(request.getParameter("from"));
         int to = Integer.parseInt(request.getParameter("to"));
 
-        boolean needCountry = (country != null) ? true : false;
-        boolean needGenre = (genre != null) ? true : false;
-        boolean needStudio = (studio != null) ? true : false;
-
         //Log to show params
         staticSb.delete(0, staticSb.length());//clear buffer
         System.out.println(staticSb.append("searchAction.execute: title:= ").append(word).append(" country:= ").append(country).append(" genre:= ").append(genre).append(" studio:= ").append(studio).append(" from:=").append(from).append(" to:=").append(to).toString());
@@ -61,7 +57,7 @@ public class Search extends Action {
         if (!FieldValidator.isMovieTitleValid(word)) {
             request.setAttribute("error", "error.search.word.specified");// не работает как надо
         } else {
-            List<Movie> movies = searchByTitle(word, needCountry, needGenre, needStudio, country, genre, studio, from, to);
+            List<Movie> movies = searchByTitle(word, country, genre, studio, from, to);
 
             if (movies.isEmpty()) {
                 request.setAttribute("error", MESSAGES_BY_NOT_FOUND);
@@ -117,9 +113,9 @@ public class Search extends Action {
         return images;
     }
 
-    private List<Movie> searchByTitle(String word, boolean c, boolean g, boolean s, String country, String genre, String studio, int from, int to) throws SQLException {
+    private List<Movie> searchByTitle(String word, String country, String genre, String studio, int from, int to) throws SQLException {
         MovieDAO movieDAO = new MovieDAO();
-        List<Movie> movies = movieDAO.searchByTitle(word, c, g, s, country, genre, studio, from, to);
+        List<Movie> movies = movieDAO.searchByTitle(word, country, genre, studio, from, to);
         return movies;
     }
 }
