@@ -21,6 +21,6 @@ public class AddCountry extends Action {
         System.out.println("AddCountry.execute: country=" + countryString);
         CountryDAO countryDAO = new CountryDAO();
         countryDAO.insert(countryString);
-        return new PageAction(PagePath.EDITOR_SHOW_COUNTRIES, true);
+        return new PageAction(PagePath.EDITOR_SHOW_PERSONS, true);
     }
 }

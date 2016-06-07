@@ -47,8 +47,8 @@ public class Search extends Action {
         String genre = checkParam(request.getParameter("genre"));
         String studio = checkParam(request.getParameter("studio"));
 
-        int from = Integer.parseInt(request.getParameter("from"));
-        int to = Integer.parseInt(request.getParameter("to"));
+        String from = checkParam(request.getParameter("from"));
+        String to = checkParam(request.getParameter("to"));
 
         //Log to show params
         staticSb.delete(0, staticSb.length());//clear buffer
@@ -106,7 +106,7 @@ public class Search extends Action {
         return images;
     }
 
-    private List<Movie> searchByTitle(String word, String country, String genre, String studio, int from, int to) throws SQLException {
+    private List<Movie> searchByTitle(String word, String country, String genre, String studio, String from, String to) throws SQLException {
         MovieDAO movieDAO = new MovieDAO();
         List<Movie> movies = movieDAO.searchByTitle(word, country, genre, studio, from, to);
         return movies;

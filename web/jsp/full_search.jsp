@@ -75,13 +75,13 @@
                         <div style=" width: 35%; display: inline-block; position: relative;">
                             <input style="width: 100%; height: 35px;" id="to_year" name="to" min="${min_year}"
                                    max="${max_year}"
-                                   type="number" value="${max_year}">
+                                   type="number" ">
                         </div>
                         <text style="font-size: 1.3em; float: right; padding-right:5px; "> по</text>
                         <div style="width: 35%; display: inline-block; position: relative; float: right;">
                             <input style="width: 100%; height: 35px;" id="from_year" name="from" min="${min_year}"
-                                   max="${max_year}"
-                                   type="number" value="${min_year}">
+                                   max="${max_year}" type="number"">
+                            <input id="spinner" class="ui-spinner-input">
                         </div>
                         <script src="/lib/js/scripts_change_year.js" type="application/javascript"></script>
                     </div>
@@ -131,9 +131,10 @@
                 <div style="width: 100%;">
                     <div style="width: 29%;display: inline-block; position: relative;">
                         <select style="width: 95%;" name="role">
+                            <option selected>Пусто</option>
                             <c:forEach var="rol" items="${roles}">
-                                <option selected>Пусто</option>
-                                <option>${rol.role}</option>
+
+                            <option>${rol.role}</option>
                             </c:forEach>
                         </select>
                         <span>Роль</span>

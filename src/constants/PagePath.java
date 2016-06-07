@@ -24,6 +24,7 @@ public class PagePath {
 
 
     /*=====================Editor actions==============================*/
+    public static final String EDITOR_PANEL = "/jsp/editor/panel.jsp";
 
     //country
     public static final String EDITOR_SHOW_COUNTRIES = "/jsp/editor/country/show_countries.jsp";

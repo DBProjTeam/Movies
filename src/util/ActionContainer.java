@@ -62,7 +62,7 @@ public class ActionContainer {
         actionMap.put("all_persons_on_film",new PageAllPersonFilm());
 
         /*=================Editor====================*/
-
+        actionMap.put("panel", new PageForward(PagePath.EDITOR_PANEL));
         //country
         actionMap.put("show_countries", new ShowCountries());
         actionMap.put("add_country_page", new PageForward(PagePath.EDITOR_ADD_COUNTRY));

@@ -45,7 +45,7 @@ public class ServletAjax extends HttpServlet {
     }
 
     private List<MovieImages> getByTitlelike(String title) throws SQLException {
-        List<Movie> movies = new MovieDAO().searchByTitle(title, "", "", "", 1000, 2080);
+        List<Movie> movies = new MovieDAO().searchByTitle(title, "", "", "", "", "");
         List<MovieImages> movieImageslist = new ArrayList<MovieImages>();
         for (Movie mov : movies) {
             movieImageslist.add(new MovieImages(mov));

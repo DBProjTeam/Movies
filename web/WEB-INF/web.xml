@@ -34,13 +34,14 @@
             <param-name>admin</param-name>
             <!-- Это доступно только для админа -->
             <param-value>
-                none
+                panel
             </param-value>
         </init-param>
         <init-param>
             <param-name>editor</param-name>
             <!-- Это доступно только для редактора и админа -->
             <param-value>
+                panel
                 psearch
                 show_countries
                 add_country_page

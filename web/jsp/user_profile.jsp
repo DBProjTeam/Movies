@@ -21,9 +21,9 @@
             <div class="profile">
                 <div class="avat">
                     <%--сылка на изображения как сделать?--%>
-                    <img src="/../img_temp/avatar.png">
-                    <%--<img src="img/person_img/${user.imageId}.jpg">--%>
-                    <%--<div><input class="button" type="button" value="Выбрать файл"/></div>--%>
+                        <img src="img/person_img/${user.imageId}.jpg">
+
+                        <div><input class="button" type="button" value="Выбрать файл"/></div>
                 </div>
                 <div class="desc" >
                     <form method="post" action="do">
@@ -46,21 +46,27 @@
                                     <button class="button" type="submit" value="Value_action" name="this_name_action">Изменить данные</button>
                                 </div>
                                 <div class="clik">
-                                    <%--<button class="button" value="Value_action" name="this_name_action"  >Удалить профиль</button>--%>
+                                    <button class="button" value="Value_action" name="this_name_action">Удалить
+                                        профиль
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="seperator"><h3><a class="button" href="do?action=favorite_movies">Все избранные фильмы</a></h3></div>
+            <div class="seperator"><h3><a href="do?action=favorite_movies">Все избранные фильмы</a></h3></div>
             <%-- 4 рандомных фильма пользователя--%>
-            <%--<div class="fime_like">--%>
-                <%--<div class="items"><img src="../img/small_baner_film/small-baner-film_02.png"><br/><a href="#">Lin Namek</a></div>--%>
-                <%--<div class="items"><img src="../img/small_baner_film/small-baner-film_03.png"><br/><a href="#">Link Name </a></div>--%>
-                <%--<div class="items"><img src="../img/small_baner_film/small-baner-film_04.png"><br/><a href="#">Link Name</a></div>--%>
-                <%--<div class="items"><img src="../img/small_baner_film/small-baner-film_05.png"><br/><a href="#">Link Name</a></div>--%>
-            <%--</div>--%>
+            <div class="fime_like">
+                <div class="items"><img src="../img/small_baner_film/small-baner-film_02.png"><br/><a href="#">Lin
+                    Namek</a></div>
+                <div class="items"><img src="../img/small_baner_film/small-baner-film_03.png"><br/><a href="#">Link
+                    Name </a></div>
+                <div class="items"><img src="../img/small_baner_film/small-baner-film_04.png"><br/><a href="#">Link
+                    Name</a></div>
+                <div class="items"><img src="../img/small_baner_film/small-baner-film_05.png"><br/><a href="#">Link
+                    Name</a></div>
+            </div>
         </div>
     <div class="wepper_footer">
         <div class="footer">

@@ -104,7 +104,7 @@ public class MovieDAO {
         return movie;
     }
 
-    public List<Movie> searchByTitle(String word, String country, String genre, String studio, int from, int to) throws SQLException {
+    public List<Movie> searchByTitle(String word, String country, String genre, String studio, String from, String to) throws SQLException {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
@@ -116,8 +116,8 @@ public class MovieDAO {
             statement.setString(2, country);
             statement.setString(3, genre);
             statement.setString(4, studio);
-            statement.setInt(5, from);
-            statement.setInt(6, to);
+            statement.setString(5, from);
+            statement.setString(6, to);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 movies.add(obtain(resultSet));
