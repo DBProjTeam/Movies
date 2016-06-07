@@ -20,15 +20,12 @@
 
 
 <div class="wepper_main">
+    <%@include file="/jsp/jspf/head.jspf" %>
     <div class="wepper_head">
-
-        <%@include file="/jsp/jspf/head.jspf" %>
         <div class="seperator">  </div>
             <div class="discription">
                 <span class="titel">Результат поиск по запросу ${word}</span>
             </div>
-
-
     </div>
     <div class="wepper_body">
         <div class="bloc_search_2" id="movie">

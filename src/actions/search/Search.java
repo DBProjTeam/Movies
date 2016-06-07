@@ -58,8 +58,6 @@ public class Search extends Action {
             request.setAttribute("error", "error.search.word.specified");// не работает как надо
         } else {
             List<Movie> movies = searchByTitle(word, country, genre, studio, from, to);
-
-
             List<MovieImages> listmovieImages = new ArrayList<MovieImages>();
             for (Movie movie : movies) {
                 MovieImages movieImages = new MovieImages(movie, getImage(movie.getImageId()), getCountry(movie.getMovieId()), getDirectorOfFilm(movie.getMovieId()));

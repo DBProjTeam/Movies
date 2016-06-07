@@ -31,7 +31,7 @@ public class PagePath {
     public static final String EDITOR_ADD_COUNTRY = "/jsp/editor/country/add_country.jsp";
 
     //person
-    public static final String EDITOR_SHOW_PERSONS = "/jsp/editor/person/show_persons.jsp";
+    public static final String EDITOR_SHOW_PERSONS = "/jsp/editor/person/show_persons.jspf";
     public static final String EDITOR_ADD_PERSON = "/jsp/editor/person/add_person.jsp";
     public static final String EDITOR_UPDATE_PERSON = "/jsp/editor/person/update_person.jsp";
 

@@ -149,13 +149,14 @@ public class MovieDAO {
     }
 
     public List<Movie> getAllMovie() throws SQLException {
-        PreparedStatement statement = null;
+        Statement statement = null;
         ResultSet resultSet = null;
         List<Movie> movies = new ArrayList<Movie>();
         try {
             connection = Connector.getConnection();
+            statement = connection.createStatement();
             resultSet = statement.executeQuery(GET_MOVIE_ALL);
-            while (resultSet.next()) {//Исправлено
+            while (resultSet.next()) {
                 movies.add(obtain(resultSet));
             }
         } finally {

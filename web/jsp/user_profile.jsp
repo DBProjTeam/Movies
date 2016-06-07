@@ -38,7 +38,6 @@
                         <div class="fields">
                             <div class="field"><input type="text" name="name" value="${user.name}"/></div>
                             <div class="field"><input type="text" name="surname" value="${user.surname}"/></div>
-
                             <div class="field"><text>${user.role}</text></div>
                         </div>
                         <div>
@@ -51,6 +50,13 @@
                                         <%--профиль--%>
                                     <%--</button>--%>
                                 </div>
+                                <c:if test="${user.role=='EDITOR'}">
+                                    <div class="clik">
+                                        <button class="button" value="Value_action" name="this_name_action">
+                                            <a href="do?action=panel"> Panel</a>
+                                        </button>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </form>

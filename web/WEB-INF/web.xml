@@ -41,6 +41,7 @@
             <param-name>editor</param-name>
             <!-- Это доступно только для редактора и админа -->
             <param-value>
+                show_movies
                 panel
                 psearch
                 show_countries

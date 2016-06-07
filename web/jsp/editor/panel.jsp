@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -9,41 +10,103 @@
 <html>
 <head>
     <title>Admin Panel</title>
-    <script src="/lib/js/jquery-2.2.3.min.js"></script>
-    <script src="/lib/js/jquery-ui.js"></script>
-    <link href="/lib/css/jquery-ui.css" type="text/css" rel="stylesheet">
-    <link href="/lib/css/admin_styl.css" rel="stylesheet">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#tabs").tabs({
-                show: function (e, ui) {
-                    if (ui.index != 0) {
-                        $(ui.panel).html("<img id='load' src='tab-load1.gif' />")
-                    }
-                }
-            });
-        });
-    </script>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/admin_styl.css">
+
 </head>
 <body>
 
 <div class="wepper_main">
     <%@include file="/jsp/jspf/head.jspf" %>
     <div class="wepper_body">
-        <div class="seperator"><h3></h3></div>
-        <div class="content_main">
-            <div id="tabs">
+        <div class="left_nav">
+            <div>
                 <ul class="menu">
-                    <li><a href="do?action=show_persons">Persons</a></li>
-                    <li><a href="do?action=show_countries">Countries</a></li>
-                    <li><a href="#tabs-3">Коментарии</a></li>
+                    <li><a href="do?action=show_persons">Персоны</a>
+                    </li>
+                    <li><a href="do?action=show_movies">Фильм</a>
+                    </li>
                 </ul>
-                <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna,
-                    interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.
-                </div>
             </div>
         </div>
+        <div class="content_main">
+            <c:if test="${persons!=null}">
+                <div class="in_context" style="padding: 2px;">
+                    <div class="link"><a href="">Главная</a>»<a href="#">Панель управления</a>»<a href="">Персоны</a><a
+                            href="">Добавить материал</a></div>
+                    <hr style="width: 100%;">
+                    <%@include file="/jsp/editor/person/show_persons.jspf" %>
+                    <div class="pagination">
+                        <a href="">Назад</a>
+                        <a href="">1</a>
+                        <a href="">Вперед</a>
+                    </div>
+                </div>
 
+            </c:if>
+            <c:if test="${movies!=null}">
+
+                <div class="in_context" style="padding: 2px;">
+                    <div class="link"><a href="">Главная</a>»<a href="#">Панель управления</a>»<a href="">Фильмы</a><a
+                            href="">Добавить материал</a></div>
+                    <hr style="width: 100%;">
+
+                    <%@include file="/jsp/editor/movies/show_movies.jspf" %>
+                        <%-- <div class="movies">
+
+                             <table>
+                                 <tr><th width="2%">ID</th><th width="10%">Названия</th><th width="10%">Длительность</th><th width="10%">Страна</th><th width="5%">Год</th><th width="1%"></th><th width="1%"></th></tr>
+                                 <tr>
+                                     <td>ID</td>
+                                     <td><a href="#">NameFilm</a></td>
+                                     <td>runtime</td>
+                                     <td>country</td>
+                                     <td>year</td>
+                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
+                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
+                                 </tr>
+
+                                 <tr>
+                                     <td>ID</td>
+                                     <td><a href="#">NameFilm</a></td>
+                                     <td>runtime</td>
+                                     <td>country</td>
+                                     <td>year</td>
+                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
+                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
+                                 </tr>
+
+                                 <tr>
+                                     <td>ID</td>
+                                     <td><a href="#">NameFilm</a></td>
+                                     <td>runtime</td>
+                                     <td>country</td>
+                                     <td>year</td>
+                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
+                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
+                                 </tr>
+
+                                 <tr>
+                                     <td>ID</td>
+                                     <td><a href="#">NameFilm</a></td>
+                                     <td>runtime</td>
+                                     <td>country</td>
+                                     <td>year</td>
+                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
+                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
+                                 </tr>
+
+                             </table>
+                         </div>
+                         <div class="pagination">
+                             <a href="">Назад</a>
+                             <a href="">1</a>
+                             <a href="">2</a>
+                             <a href="">Вперед</a>
+                         </div>--%>
+                </div>
+            </c:if>
+        </div>
         <%@include file="/jsp/jspf/footer.jspf" %>
     </div>
 </div>

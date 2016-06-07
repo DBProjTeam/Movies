@@ -3,6 +3,7 @@ package util;
 import actions.*;
 import actions.editor.country.AddCountry;
 import actions.editor.country.ShowCountries;
+import actions.editor.movie.ShowMovie;
 import actions.editor.person.AddPerson;
 import actions.editor.person.DeletePerson;
 import actions.editor.person.ShowPersons;
@@ -74,7 +75,8 @@ public class ActionContainer {
         actionMap.put("update_person_page", new PageForward(PagePath.EDITOR_UPDATE_PERSON));
         actionMap.put("update_person", new UpdatePerson());
         actionMap.put("delete_person", new DeletePerson());
-
+        //movie
+        actionMap.put("show_movies", new ShowMovie());
         /*===============Other============================*/
         actionMap.put("index", new IndexActions());
     }

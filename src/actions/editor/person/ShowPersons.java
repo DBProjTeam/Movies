@@ -19,6 +19,6 @@ public class ShowPersons extends Action {
     public PageAction execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, UnsupportedEncodingException {
         PersonDAO personDAO = new PersonDAO();
         request.setAttribute("persons", personDAO.getAll());
-        return new PageAction(PagePath.EDITOR_SHOW_PERSONS, true);
+        return new PageAction(PagePath.EDITOR_PANEL, true);
     }
 }

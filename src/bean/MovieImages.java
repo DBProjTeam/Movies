@@ -3,6 +3,7 @@ package bean;
 import entities.Country;
 import entities.Image;
 import entities.Movie;
+import entities.MovieCountry;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class MovieImages extends Movie implements Serializable {
         super(m);
         this.label = m.getTitle();
     }
+
     public MovieImages(Movie m, Image s) {
         super(m);
         this.label = m.getTitle();
@@ -49,6 +51,11 @@ public class MovieImages extends Movie implements Serializable {
         this.images = new ArrayList<Image>();
         this.country = c;
         this.director = mpr;
+    }
+
+    public MovieImages(Movie movie, MovieCountry country) {
+        super(movie);
+        this.country = country.getCountry();
     }
 
     public Country getCountry() {
