@@ -1,5 +1,4 @@
 var mas_url_img_head = [
-	"img/cader_from_firlm/cadr_from_film_03.jpg",
 	"img/cader_from_firlm/cadr_from_film_09.png",
 	"img/cader_from_firlm/cadr_from_film_12.png"
 ];

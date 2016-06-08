@@ -58,6 +58,14 @@ public class MovieImages extends Movie implements Serializable {
         this.country = country.getCountry();
     }
 
+    public MovieImages(Movie movie, Image mainImage, List<Image> images, Country country, MoviePersonRoleView moviePersonRoleView) {
+        super(movie);
+        this.mainImage = mainImage;
+        this.images = images;
+        this.country = country;
+        this.director = moviePersonRoleView;
+    }
+
     public Country getCountry() {
         return country;
     }

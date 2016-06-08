@@ -19,7 +19,29 @@
     <script type="text/javascript" src="lib/js/MyPlusBxslider.js"></script>
     <script type="application/javascript">
         $(document).ready(function () {
-            bild_My();
+            var mas_url_img_head = [
+                <c:forEach var="img"  varStatus="stat"   items="${movie.images}">
+                "/img_temp/${img.name}"<c:if test="${stat.end!=stat.index}">, </c:if>
+                </c:forEach>
+            ];
+            //console.log(mas_url_img_head);
+            var mas_url_img_prem = {
+                'Name_Film': 'img/small_baner_film/small-baner-film_02.png',
+                'Name_Film_3': 'img/small_baner_film/small-baner-film_03.png',
+                'Name_Film_4': 'img/small_baner_film/small-baner-film_04.png',
+                'Name_Film_5': 'img/small_baner_film/small-baner-film_05.png',
+                'Name_Film_6': 'img/small_baner_film/small-baner-film_06.png',
+                'Name_Film_7': 'img/small_baner_film/small-baner-film_07.jpg'
+            };
+            for (var i = 0; i < mas_url_img_head.length; i++) {
+                $('.bxslider').append('<li><img src="' + mas_url_img_head[i] + '" /></li>');
+            }
+            /* for (var i = 0; i < mas_url_img_head.length; i++) {
+             $('#bx-pager').append('<a data-slide-index="' + i + '" href=""><img class="Mybaner" src="' + mas_url_img_head[i] + '" /></a>');
+             }*/
+            for (var i in mas_url_img_prem) {
+                $('.bxslider_2').append('<li><img  src="' + mas_url_img_prem[i] + '"/><div id="neme_film_smal_baner"><a href="#">' + i + '</a></div></li>');
+            }
             $('.bxslider').bxSlider({
                 pagerCustom: '#bx-pager',
                 auto: true,
@@ -31,9 +53,10 @@
                 slideWidth: 190,
                 auto: true
             });
+
         });
+
     </script>
-    <script type="text/javascript" src="lib/js/paveljs.js"></script>
     <title>FilmSearch.ua</title>
     <link rel="shortcut icon" href="img/logo.JPG" type="image/jpg">
 
@@ -43,9 +66,6 @@
     <%@ include file="/jsp/jspf/head.jspf" %>
     <%@ include file="/jsp/jspf/index/main.jspf" %>
     <%@ include file="/jsp/jspf/footer.jspf" %>
-
 </div>
-
-
 </body>
 </html>

@@ -16,8 +16,8 @@ public class MovieDAO {
             "\t\t(select id from \n" +
             "\t\t\t(select sum(score) as 'avarage', movie_ID as 'id' from rating \n" +
             "\t\t\t\t\t group by movie_ID order by avarage desc ) \n" +
-            "\t\t\t as t2 where avarage > 22)  ";
-    private static final String GET_RECENT_MOVIE = "select * FROM movie where movie.year=Year(now()) order by movie.releaseDate  desc limit 1 ; ";
+            "\t\t\t as t2 where avarage > 0)  ";
+    private static final String GET_RECENT_MOVIE = "select * FROM movie where movie_ID=(SELECT max(movie_ID) from movie)";
     private static final String GET_COUNTRY_MOVIE = "SELECT * FROM movie_country where movie_ID=?;";
     private static final String GET_MOVIE_BY_ID = "SELECT * FROM movie WHERE movie.movie_ID=?;";
     private static final String GET_MOVIE_BY_YEAR = "SELECT * FROM movie WHERE movie.year=?;";

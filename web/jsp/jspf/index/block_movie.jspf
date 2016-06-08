@@ -12,11 +12,10 @@
             <c:forEach var="popular" items="${popular_movies}" varStatus="stat">
             <td>
                 <div class="film">
-                    <img class="img_film_size" src="../../img/center_bloc_firm/center_article_31.jpg">
+                    <img class="img_film_size" src="/img_temp/${popular.mainImage.name}">
                     <br>
                     <a href="do?action=movie&movie_id=${stat.current.movieId}"><label><c:out value="${popular.title}"
-                                                                                             default="Name"/></label></a><br>
-                    <div>${popular.description}</div>
+                                                                                             default=""/></label></a><br>
                 </div>
             </td>
             <c:if test="${stat.count%3==0}">

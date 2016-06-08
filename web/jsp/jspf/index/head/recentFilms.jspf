@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Алексей
+  User: Павел
   Date: 18.04.2016
   Time: 18:57
   To change this template use File | Settings | File Templates.
@@ -20,15 +20,11 @@
                     <td><strong>Релиз:</strong><strong>${movie.releaseDate}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>Страна:</strong><strong>${country.country.country}</strong></td>
+                    <td><strong>Страна:</strong><strong>${movie.country.country}</strong></td>
                 </tr>
                 <tr>
                     <td><strong>Режиссер:</strong>
-                        <strong>
-                            <c:forEach var="dir" items="${director}">
-                                <c:out value="${dir.person.name}"/>
-                            </c:forEach>
-                        </strong></td>
+                        <strong>${movie.director.person.name} ${movie.director.person.surname}</strong></td>
                 </tr>
                 <tr>
                     <%--<td><strong>Оператор:</strong><strong>${oper.get(0).person.name}</strong></td>
