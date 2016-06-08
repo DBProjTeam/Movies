@@ -12,10 +12,8 @@
     <title>Admin Panel</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="../lib/css/admin_styl.css">
-
 </head>
 <body>
-
 <div class="wepper_main">
     <%@include file="/jsp/jspf/head.jspf" %>
     <div class="wepper_body">
@@ -52,58 +50,7 @@
                     <hr style="width: 100%;">
 
                     <%@include file="/jsp/editor/movies/show_movies.jspf" %>
-                        <%-- <div class="movies">
 
-                             <table>
-                                 <tr><th width="2%">ID</th><th width="10%">Названия</th><th width="10%">Длительность</th><th width="10%">Страна</th><th width="5%">Год</th><th width="1%"></th><th width="1%"></th></tr>
-                                 <tr>
-                                     <td>ID</td>
-                                     <td><a href="#">NameFilm</a></td>
-                                     <td>runtime</td>
-                                     <td>country</td>
-                                     <td>year</td>
-                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
-                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
-                                 </tr>
-
-                                 <tr>
-                                     <td>ID</td>
-                                     <td><a href="#">NameFilm</a></td>
-                                     <td>runtime</td>
-                                     <td>country</td>
-                                     <td>year</td>
-                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
-                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
-                                 </tr>
-
-                                 <tr>
-                                     <td>ID</td>
-                                     <td><a href="#">NameFilm</a></td>
-                                     <td>runtime</td>
-                                     <td>country</td>
-                                     <td>year</td>
-                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
-                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
-                                 </tr>
-
-                                 <tr>
-                                     <td>ID</td>
-                                     <td><a href="#">NameFilm</a></td>
-                                     <td>runtime</td>
-                                     <td>country</td>
-                                     <td>year</td>
-                                     <td><a href=""><img title="Редактировать" class="edit_img" src="../lib/css/images/edit.gif"></a></td>
-                                     <td><a href=""><img title="Удалить" class="edit_img" src="../lib/css/images/delete.gif"></a></td>
-                                 </tr>
-
-                             </table>
-                         </div>
-                         <div class="pagination">
-                             <a href="">Назад</a>
-                             <a href="">1</a>
-                             <a href="">2</a>
-                             <a href="">Вперед</a>
-                         </div>--%>
                 </div>
             </c:if>
         </div>

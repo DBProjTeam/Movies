@@ -3,19 +3,18 @@
 <div class="movies">
     <table>
         <tr>
-            <th width="10%">Имя</th>
-            <th width="30%">Фамилия</th>
-            <th width="20%">Страна</th>
-            <th width="15%">Дата рождения</th>
-            <th width="15%">Дата смерти</th>
-            <th width="5%"></th>
-            <th width="5%"></th>
+            <th width="2%">ID</th>
+            <th width="10%">Названия</th>
+            <th width="10%">Длительность</th>
+            <th width="10%">Страна</th>
+            <th width="5%">Год</th>
+            <th width="1%"></th>
+            <th width="1%"></th>
         </tr>
         <c:forEach var="movie" items="${movies}">
             <tr>
                 <td>${movie.movieId}</td>
                 <td><a href="do?action=movie&movie_id=${movie.movieId}">${movie.title}</a></td>
-                <td>${movie.year}</td>
                 <td>${movie.runtime}</td>
                 <td>${movie.country.country}</td>
                 <td>${movie.year}</td>
